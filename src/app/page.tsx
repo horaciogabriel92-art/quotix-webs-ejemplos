@@ -237,7 +237,7 @@ export default function LandingPage() {
                 </ul>
 
                 <div className="pt-6 border-t border-[#334155] text-center">
-                  <div className="text-[#94a3b8] text-lg mb-2">Valor Total Real: <strike>$500 USD</strike></div>
+                  <div className="text-[#94a3b8] text-lg mb-2">Valor Total Real: <s>$500 USD</s></div>
                   <div className="text-[#d4f542] text-5xl font-headline font-bold mb-4">
                     $275 <span className="text-2xl">USD</span>
                   </div>

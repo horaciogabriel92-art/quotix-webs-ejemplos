@@ -3,6 +3,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/config";
 import LeadNotification from "@/components/animations/LeadNotification";
 import ColorToggle from "@/components/animations/ColorToggle";
+import PriceSlider from "@/components/animations/PriceSlider";
 
 export default function LandingPage() {
   return (
@@ -130,13 +131,8 @@ export default function LandingPage() {
                     El sistema calcula un rango de precios (pseudo-cotización) basado en tus reglas ocultas (colores, cantidad, técnica). Filtras a los curiosos al instante sin perder tu tiempo.
                   </p>
                 </div>
-                <div className="bg-[#1e293b] rounded-2xl border border-[#334155] p-6 aspect-video flex items-center justify-center md:order-1 border-dashed">
-                  {/* [FLAG_ANIMACION: Solucion_PriceSlider - Animación de un slider numérico de cantidad que actualiza en tiempo real un precio tachado por uno con descuento por volumen] */}
-                  <span className="text-slate-500 font-mono text-sm text-center">
-                    {`/* [FLAG_ANIMACION: Solucion_PriceSlider] */`}
-                    <br/>
-                    (Animación de slider de cantidad ajustando precio en tiempo real)
-                  </span>
+                <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155] md:order-1">
+                  <PriceSlider />
                 </div>
               </div>
 

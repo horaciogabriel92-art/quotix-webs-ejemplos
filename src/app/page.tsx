@@ -35,20 +35,20 @@ export default function LandingPage() {
               <div className="text-left">
                 <div className="qx-badge mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#d9469a]" />
-                  Para talleres de personalización y bordado que quieren escalar
+                  El cotizador que usan los talleres que facturan más
                 </div>
                 <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                  Deja de perder horas cotizando por WhatsApp.
+                  Tu cliente ve su logo en la prenda
                   <br />
-                  <span className="text-[#d4f542]">Que tus clientes se coticen solos.</span>
+                  <span className="text-[#d4f542]">y recibe un precio en segundos.</span>
                 </h1>
                 <p className="qx-subtitle text-lg md:text-xl mb-10 leading-relaxed text-[#cbd5e1]">
-                  Convierte a los curiosos en clientes. Un cotizador visual e interactivo donde tu cliente sube su logo, ve cómo queda en la prenda y obtiene un rango de precio al instante. Tú solo recibes el pedido cerrado.
+                  Quotix es un cotizador visual para talleres de bordado y personalización. Tu cliente sube su diseño, elige la prenda y obtiene un precio estimado al instante. Vos recibís un lead calificado con todo listo para producir.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
                     <button className="qx-btn-lime">
-                      Ver cómo funciona en mi taller →
+                      Hablar con un asesor →
                     </button>
                   </a>
                   <a href="https://demo.quotixos.com" target="_blank" rel="noreferrer">
@@ -71,14 +71,14 @@ export default function LandingPage() {
             <div className="text-center mb-16">
               <div className="qx-badge mb-4" style={{ backgroundColor: "rgba(226,232,240,0.5)", color: "#475569" }}>El problema</div>
               <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4 qx-title text-[#0f172a]">
-                El proceso actual te está robando tiempo y ventas.
+                El 80% de tu tiempo de ventas se pierde en preguntas que podrían responderse solas.
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: "😩", title: "El cliente ansioso", desc: "Te pide precio de 'una remera con un loguito'. Le pides el logo, te lo manda pixelado, no sabe el tamaño. Pierdes 40 minutos en un ida y vuelta." },
-                { icon: "💸", title: "El síndrome del 'es muy caro'", desc: "Haces todo el trabajo manual de calcular puntadas, armar el presupuesto y al final el cliente te dice 'ah, pensé que era más barato' y desaparece." },
-                { icon: "⏳", title: "Cuellos de botella", desc: "Tú eres el único que sabe cotizar. Si tú no estás frente a la computadora, el negocio simplemente no vende ni avanza." },
+                { icon: "😩", title: "El ciclo del '¿cuánto sale?'", desc: "Te piden precio por WhatsApp. Les pedís el logo. Te lo mandan en baja calidad. No saben la cantidad. No saben el color. 45 minutos después, todavía no cotizaste nada." },
+                { icon: "💸", title: "Los presupuestos que nunca cierran", desc: "Armás el cálculo manualmente. Les mandás PDF. Te dicen 'pensé que era menos'. Desaparecen. Y nunca sabés si el precio los espantó o si nunca iban a comprar." },
+                { icon: "⏳", title: "El negocio para cuando vos no estás", desc: "Sos el único que sabe cotizar. Si estás en producción, en un fin de semana o de vacaciones, los clientes esperan. Y muchos no esperan." },
               ].map((card) => (
                 <div key={card.title} className="card-shadow p-8 bg-white">
                   <div className="text-4xl mb-4">{card.icon}</div>
@@ -95,9 +95,9 @@ export default function LandingPage() {
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="text-center mb-16">
               <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
-                La experiencia de compra que tus clientes esperan
+                Tu cliente se cotiza solo.
                 <br />
-                <span className="text-[#94a3b8]">(y que tu competencia no tiene).</span>
+                <span className="text-[#94a3b8]">Vos recibís el pedido listo.</span>
               </h2>
             </div>
             
@@ -106,9 +106,9 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="text-[#d4f542] font-mono text-sm font-bold mb-2">PASO 01</div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">El efecto "WOW" visual.</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Tu logo en la prenda, antes de cotizar.</h3>
                   <p className="text-[#cbd5e1] leading-relaxed">
-                    El cliente sube su logo y el sistema lo superpone en la prenda con la textura y el color correctos. Una imagen vale más que mil presupuestos en PDF.
+                    El cliente sube su diseño y lo ve sobre la prenda en tiempo real: con el color que eligió, el tamaño real y la posición exacta. Sabe cómo va a quedar antes de pedirte un presupuesto. Menos preguntas, menos vueltas.
                   </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155]">
@@ -120,9 +120,9 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
                 <div className="md:order-2">
                   <div className="text-[#d4f542] font-mono text-sm font-bold mb-2">PASO 02</div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">Transparencia sin compromiso.</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Precio claro, sin sorpresas.</h3>
                   <p className="text-[#cbd5e1] leading-relaxed">
-                    El sistema calcula un rango de precios (pseudo-cotización) basado en tus reglas ocultas (colores, cantidad, técnica). Filtras a los curiosos al instante sin perder tu tiempo.
+                    El sistema calcula un rango de precio basado en tus fórmulas reales: cantidad, técnica, colores del diseño. El cliente sabe de entrada si le cierra. Vos no perdés tiempo con curiosos que nunca iban a comprar.
                   </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155] md:order-1">
@@ -134,9 +134,9 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="text-[#d4f542] font-mono text-sm font-bold mb-2">PASO 03</div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">Captura de Datos Inmediata.</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">El lead llega con todo listo.</h3>
                   <p className="text-[#cbd5e1] leading-relaxed">
-                    Para enviar la cotización final, el cliente te deja su nombre, WhatsApp y el logo ya vectorizado o listo para revisar. Tú recibes un lead caliente, 100% interesado.
+                    Para recibir la cotización formal, el cliente deja nombre, WhatsApp y el logo en alta calidad. Vos recibís un contacto 100% interesado, con los datos que necesitás para producir. Sin chasear. Sin insistir.
                   </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155]">
@@ -156,18 +156,18 @@ export default function LandingPage() {
             <div className="grid sm:grid-cols-3 gap-8">
               <div>
                 <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4 text-xl">⚙️</div>
-                <h4 className="font-bold text-[#0f172a] mb-2">Precios dinámicos</h4>
-                <p className="text-sm text-slate-600">Configura márgenes, recargos por urgencia y descuentos por volumen bajo tu total control.</p>
+                <h4 className="font-bold text-[#0f172a] mb-2">Cotizaciones que se ajustan solas</h4>
+                <p className="text-sm text-slate-600">Tus reglas de precio configuradas una vez. Descuentos por volumen, recargos por urgencia, márgenes por técnica. Todo automático.</p>
               </div>
               <div>
                 <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4 text-xl">🚀</div>
-                <h4 className="font-bold text-[#0f172a] mb-2">Cero habilidades técnicas</h4>
-                <p className="text-sm text-slate-600">Nosotros armamos todo tu catálogo y fórmulas. Tú solo recibes los pedidos listos.</p>
+                <h4 className="font-bold text-[#0f172a] mb-2">Funciona sin vos</h4>
+                <p className="text-sm text-slate-600">No necesitás estar frente al celular. El cotizador atiende 24/7, filtra curiosos y deja los pedidos listos para que vos solo confirmes.</p>
               </div>
               <div>
                 <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4 text-xl">✨</div>
-                <h4 className="font-bold text-[#0f172a] mb-2">Imagen hiper-profesional</h4>
-                <p className="text-sm text-slate-600">Posiciona tu marca automáticamente por encima de la competencia que cotiza en un bloc de notas.</p>
+                <h4 className="font-bold text-[#0f172a] mb-2">Te ves como la opción premium</h4>
+                <p className="text-sm text-slate-600">Un cotizador visual y profesional posiciona tu marca por encima del taller que responde en WhatsApp con "depende".</p>
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function LandingPage() {
                   Tu taller online en 48 horas.
                 </h2>
                 <p className="text-lg text-[#94a3b8] max-w-2xl mx-auto">
-                  No queremos venderte un software más, queremos armarte la presencia digital completa para que vendas más y mejor.
+                  No te vendemos un software. Te entregamos un vendedor digital que trabaja 24/7, filtra curiosos y deja los pedidos listos para producir.
                 </p>
               </div>
 
@@ -219,7 +219,7 @@ export default function LandingPage() {
                 </ul>
 
                 <div className="pt-6 border-t border-[#334155] text-center">
-                  <div className="text-[#94a3b8] text-lg mb-2">Inversión inicial: <s>$500 USD</s></div>
+                  <div className="text-[#94a3b8] text-lg mb-2">Setup + 3 meses PRO: <s>$500 USD</s></div>
                   <div className="text-[#d4f542] text-5xl font-headline font-bold mb-4">
                     $275 <span className="text-2xl">USD</span>
                   </div>
@@ -228,7 +228,7 @@ export default function LandingPage() {
                   </p>
                   <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="block">
                     <button className="qx-btn-lime w-full text-lg h-14">
-                      Agendar mi demo de 15 min →
+                      Quiero que me contacten →
                     </button>
                   </a>
                 </div>
@@ -239,13 +239,13 @@ export default function LandingPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-4 border border-slate-700 text-2xl">
                   🛡️
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">Cero riesgo para ti.</h4>
+                <h4 className="text-xl font-bold text-white mb-3">Sin compromiso de permanencia.</h4>
                 <p className="text-[#94a3b8] text-sm max-w-2xl mx-auto leading-relaxed">
-                  Pasados los 3 meses de prueba del sistema PRO, tú decides:
+                  Pasados los 3 meses, tenés dos opciones:
                   <br className="mb-2"/>
-                  👉 <strong>Opción A:</strong> Te quedas con el plan completo por $99 USD/mes para seguir automatizando tus ventas.
+                  <strong>Seguir con Quotix PRO</strong> por $99 USD/mes y seguir recibiendo pedidos cerrados automáticamente.
                   <br/>
-                  👉 <strong>Opción B:</strong> Cancelas la suscripción al cotizador, <strong>pero la Landing Page profesional sigue siendo tuya para siempre</strong> (solo pagas el mantenimiento básico de hosting). ¡No tienes nada que perder!
+                  <strong>O cancelar el SaaS</strong> y quedarte con la landing page profesional como tu sitio web principal. El dominio y el diseño son tuyos. Solo pagás hosting.
                 </p>
               </div>
             </div>
@@ -258,16 +258,16 @@ export default function LandingPage() {
             <h2 className="font-headline text-3xl font-bold mb-12 text-center text-[#0f172a]">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="font-bold text-[#0f172a] mb-2">¿Tengo que saber programar?</h4>
-                <p className="text-slate-600 text-sm">No, nosotros nos encargamos de toda la configuración técnica. Te entregamos el sistema funcionando en tu propio dominio, listo para recibir clientes.</p>
+                <h4 className="font-bold text-[#0f172a] mb-2">¿Necesito saber de tecnología?</h4>
+                <p className="text-slate-600 text-sm">No. Nosotros configuramos todo: subimos tus prendas, ajustamos tus fórmulas de precio y te entregamos el sistema listo en tu dominio. Vos solo recibís los pedidos.</p>
               </div>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="font-bold text-[#0f172a] mb-2">¿El precio que da el cotizador es final?</h4>
-                <p className="text-slate-600 text-sm">No, el sistema da una pseudo-cotización (un rango estimado). El precio final lo confirmas tú cuando revisas el logo y los detalles, pero esto te garantiza que el cliente ya está de acuerdo con ese rango de precio, filtrando a los que buscan lo más barato.</p>
+                <h4 className="font-bold text-[#0f172a] mb-2">¿El precio que muestra el cotizador es el definitivo?</h4>
+                <p className="text-slate-600 text-sm">No, y eso es lo que lo hace inteligente. El cliente recibe un rango estimado basado en tus reglas. Si le cierra, te deja sus datos. Vos revisás el diseño, confirmás el precio final y cerrás la venta. Filtrás curiosos sin perder oportunidades.</p>
               </div>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h4 className="font-bold text-[#0f172a] mb-2">¿Qué pasa después de los 3 meses incluidos?</h4>
-                <p className="text-slate-600 text-sm">Si amas el sistema (y creemos que lo harás), pasas a abonar la suscripción mensual de $99 USD. Si decides que no es para ti, te quedas con la Landing Page que te armamos como tu sitio web principal, sin obligación de pagar el SaaS.</p>
+                <h4 className="font-bold text-[#0f172a] mb-2">¿Y si después de 3 meses no quiero pagar el SaaS?</h4>
+                <p className="text-slate-600 text-sm">Te quedás con la landing page profesional como tu sitio web principal, sin costo de software. El dominio y el diseño son tuyos. Solo pagás el hosting básico. No hay letra chica.</p>
               </div>
             </div>
           </div>

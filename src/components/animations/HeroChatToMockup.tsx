@@ -303,7 +303,7 @@ function QuotixContent({ qxStep, qxQty, loopKey, compact }: { qxStep: number; qx
               </div>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }} className="flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-400/20 rounded-md px-2 py-1">
                 <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                <span className="text-[9px] text-emerald-300 font-medium">Lead calificado enviado al taller</span>
+                <span className="text-[9px] text-emerald-300 font-medium">Contacto calificado enviado al taller</span>
               </motion.div>
             </motion.div>
           )}
@@ -566,7 +566,7 @@ export default function HeroChatToMockup() {
                 <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
                 <div className="flex items-center gap-1.5">
                   <Zap className="w-3.5 h-3.5 text-lime-400" />
-                  <span className="text-[10px] text-white/70"><span className="text-lime-400 font-bold">2 min</span> y lead cerrado</span>
+                  <span className="text-[10px] text-white/70"><span className="text-lime-400 font-bold">2 min</span> y contacto cerrado</span>
                 </div>
               </div>
             </motion.div>

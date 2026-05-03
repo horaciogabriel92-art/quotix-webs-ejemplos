@@ -43,7 +43,7 @@ export default function LandingPage() {
                   <span className="text-[#d4f542]">y recibe un precio en segundos.</span>
                 </h1>
                 <p className="qx-subtitle text-lg md:text-xl mb-10 leading-relaxed text-[#cbd5e1]">
-                  Quotix es un cotizador visual para talleres de bordado y personalización. Tu cliente sube su diseño, elige la prenda y obtiene un precio estimado al instante. Vos recibís un lead calificado con todo listo para producir.
+                  Quotix es un cotizador visual para talleres de bordado y personalización. Tu cliente sube su diseño, elige la prenda y obtiene un precio estimado al instante. Vos recibís un contacto calificado con todo listo para producir.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
@@ -120,9 +120,9 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
                 <div className="md:order-2">
                   <div className="text-[#d4f542] font-mono text-sm font-bold mb-2">PASO 02</div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">Precio claro, sin sorpresas.</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Rango de precio estimado, basado en tus reglas.</h3>
                   <p className="text-[#cbd5e1] leading-relaxed">
-                    El sistema calcula un rango de precio basado en tus fórmulas reales: cantidad, técnica, colores del diseño. El cliente sabe de entrada si le cierra. Vos no perdés tiempo con curiosos que nunca iban a comprar.
+                    El sistema calcula una aproximación usando la fórmula que vos configurás: cantidad, técnica, tamaño del diseño. Si cobrás $X por 5 remeras con bordado de hasta 5 cm, esa información es la que usa. Con cada cotización que cerrás, el sistema aprende y ajusta para dar números cada vez más certeros. El precio final siempre lo confirmás vos.
                   </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155] md:order-1">
@@ -134,7 +134,7 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="text-[#d4f542] font-mono text-sm font-bold mb-2">PASO 03</div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">El lead llega con todo listo.</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-white">El contacto llega con todo listo.</h3>
                   <p className="text-[#cbd5e1] leading-relaxed">
                     Para recibir la cotización formal, el cliente deja nombre, WhatsApp y el logo en alta calidad. Vos recibís un contacto 100% interesado, con los datos que necesitás para producir. Sin chasear. Sin insistir.
                   </p>
@@ -206,7 +206,7 @@ export default function LandingPage() {
                     <span className="text-2xl">🔥</span>
                     <div>
                       <strong className="text-white block">3 Meses de Acceso Total a Quotix PRO</strong>
-                      <span className="text-[#94a3b8] text-sm">Cotizador visual, panel de control, leads ilimitados. <em className="text-[#cbd5e1]">(Valor normal: $300 USD)</em></span>
+                      <span className="text-[#94a3b8] text-sm">Cotizador visual, panel de control, contactos ilimitados. <em className="text-[#cbd5e1]">(Valor normal: $300 USD)</em></span>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">

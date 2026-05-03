@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/config";
 import LeadNotification from "@/components/animations/LeadNotification";
+import ColorToggle from "@/components/animations/ColorToggle";
 
 export default function LandingPage() {
   return (
@@ -115,13 +116,8 @@ export default function LandingPage() {
                     El cliente sube su logo y el sistema lo superpone en la prenda con la textura y el color correctos. Una imagen vale más que mil presupuestos en PDF.
                   </p>
                 </div>
-                <div className="bg-[#1e293b] rounded-2xl border border-[#334155] p-6 aspect-video flex items-center justify-center border-dashed">
-                  {/* [FLAG_ANIMACION: Solucion_ColorToggle - Animación de un selector de colores cambiando instantáneamente el color de una prenda de fondo mientras el logo permanece intacto] */}
-                  <span className="text-slate-500 font-mono text-sm text-center">
-                    {`/* [FLAG_ANIMACION: Solucion_ColorToggle] */`}
-                    <br/>
-                    (Animación de prenda cambiando de color fluido)
-                  </span>
+                <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155]">
+                  <ColorToggle />
                 </div>
               </div>
 

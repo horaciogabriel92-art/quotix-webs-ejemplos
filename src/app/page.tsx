@@ -4,6 +4,7 @@ import { WHATSAPP_URL } from "@/lib/config";
 import LeadNotification from "@/components/animations/LeadNotification";
 import ColorToggle from "@/components/animations/ColorToggle";
 import PriceSlider from "@/components/animations/PriceSlider";
+import HeroChatToMockup from "@/components/animations/HeroChatToMockup";
 
 export default function LandingPage() {
   return (
@@ -58,14 +59,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="relative">
-                {/* [FLAG_ANIMACION: Hero_ChatToMockup - Animación de un chat de WhatsApp aburrido que transiciona a la interfaz de Quotix donde se arrastra un logo sobre una prenda y aparece el precio estimado] */}
-                <div className="w-full aspect-square bg-[#1e293b] rounded-3xl border border-[#334155] flex items-center justify-center p-8 text-center border-dashed">
-                  <span className="text-slate-500 font-mono text-sm">
-                    {`/* [FLAG_ANIMACION: Hero_ChatToMockup] */`}
-                    <br/><br/>
-                    (Aquí va la animación del chat de WhatsApp transformándose en el cotizador interactivo)
-                  </span>
-                </div>
+                <HeroChatToMockup />
               </div>
             </div>
           </div>

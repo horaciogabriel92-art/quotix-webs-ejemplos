@@ -12,17 +12,14 @@ const VARIANTS = [
 export default function ColorToggle() {
   const [index, setIndex] = useState(0);
   const [showLogo, setShowLogo] = useState(false);
-  const [showUpload, setShowUpload] = useState(false);
-
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
 
-    // Ciclo: blanco (4s) → azul (4s) → negro (4s) → logo aparece → upload
+    // Ciclo: blanco (4s) → azul (4s) → negro (4s) → logo aparece
     timers.push(
       setTimeout(() => setIndex(1), 4000),
       setTimeout(() => setIndex(2), 8000),
-      setTimeout(() => setShowLogo(true), 10000),
-      setTimeout(() => setShowUpload(true), 12500)
+      setTimeout(() => setShowLogo(true), 10500)
     );
 
     return () => timers.forEach(clearTimeout);
@@ -164,27 +161,18 @@ export default function ColorToggle() {
         </p>
       </div>
 
-      {/* Área de upload que aparece al final (tipo app real) */}
+      {/* Logo cargado indicator */}
       <AnimatePresence>
-        {showUpload && (
+        {showLogo && index === 2 && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="overflow-hidden"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.25 }}
+            className="px-4 pb-3"
           >
-            <div className="mx-4 mb-3 p-3 rounded-xl border-2 border-dashed border-emerald-300 bg-emerald-50/50 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="17 8 12 3 7 8" />
-                  <line x1="12" y1="3" x2="12" y2="15" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-emerald-700">¡Diseño cargado!</p>
-                <p className="text-[11px] text-emerald-500">Haz clic para reemplazar</p>
-              </div>
+            <div className="flex items-center gap-2 text-[11px] text-emerald-600 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              Logo aplicado en la prenda
             </div>
           </motion.div>
         )}

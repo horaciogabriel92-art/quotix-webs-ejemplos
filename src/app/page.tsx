@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/config";
+import LeadNotification from "@/components/animations/LeadNotification";
 
 export default function LandingPage() {
   return (
@@ -12,14 +14,13 @@ export default function LandingPage() {
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <Link href="#como-funciona" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Cómo funciona</Link>
-            <Link href="#fundador" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Oferta Fundador</Link>
             <a href="https://app.quotixos.com/login" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Ingresar</a>
           </nav>
-          <Link href="#fundador">
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
             <Button className="h-10 px-5 rounded-xl text-sm bg-[#0f172a] hover:bg-[#1e293b] text-white font-medium">
-              Agendar Demo
+              Reservar mi demo
             </Button>
-          </Link>
+          </a>
         </div>
       </header>
 
@@ -42,14 +43,14 @@ export default function LandingPage() {
                   Convierte a los curiosos en clientes. Un cotizador visual e interactivo donde tu cliente sube su logo, ve cómo queda en la prenda y obtiene un rango de precio al instante. Tú solo recibes el pedido cerrado.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="#fundador">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
                     <button className="qx-btn-lime">
-                      Quiero aprovechar la Oferta Fundador →
+                      Ver cómo funciona en mi taller →
                     </button>
-                  </Link>
+                  </a>
                   <a href="https://demo.quotixos.com" target="_blank" rel="noreferrer">
                     <button className="qx-btn-outline">
-                      ▶ Ver Demo Interactiva
+                      ▶ Ver demo interactiva
                     </button>
                   </a>
                 </div>
@@ -152,13 +153,8 @@ export default function LandingPage() {
                     Para enviar la cotización final, el cliente te deja su nombre, WhatsApp y el logo ya vectorizado o listo para revisar. Tú recibes un lead caliente, 100% interesado.
                   </p>
                 </div>
-                <div className="bg-[#1e293b] rounded-2xl border border-[#334155] p-6 aspect-video flex items-center justify-center border-dashed">
-                  {/* [FLAG_ANIMACION: Beneficios_LeadNotification - Animación en bucle de una tarjeta estilo notificación cayendo en la pantalla: "🎯 Nuevo pedido de cotización: Juan Pérez"] */}
-                  <span className="text-slate-500 font-mono text-sm text-center">
-                    {`/* [FLAG_ANIMACION: Beneficios_LeadNotification] */`}
-                    <br/>
-                    (Notificación cayendo: "Nuevo pedido de cotización")
-                  </span>
+                <div className="rounded-2xl overflow-hidden aspect-video border border-[#334155]">
+                  <LeadNotification />
                 </div>
               </div>
             </div>
@@ -200,10 +196,10 @@ export default function LandingPage() {
             <div className="qx-card-dark p-8 md:p-12 border-2 border-[#bf3480]/50">
               <div className="text-center mb-10">
                 <div className="inline-block px-4 py-1.5 rounded-full bg-[#bf3480] text-white text-xs font-bold uppercase tracking-wider mb-6">
-                  Cupos Limitados (Solo 20 talleres)
+                  Solo 20 lugares este mes
                 </div>
                 <h2 className="font-headline text-4xl md:text-5xl font-bold mb-4 text-white">
-                  Programa Fundador: Digitaliza tu taller hoy.
+                  Tu taller online en 48 horas.
                 </h2>
                 <p className="text-lg text-[#94a3b8] max-w-2xl mx-auto">
                   No queremos venderte un software más, queremos armarte la presencia digital completa para que vendas más y mejor.
@@ -237,18 +233,18 @@ export default function LandingPage() {
                 </ul>
 
                 <div className="pt-6 border-t border-[#334155] text-center">
-                  <div className="text-[#94a3b8] text-lg mb-2">Valor Total Real: <s>$500 USD</s></div>
+                  <div className="text-[#94a3b8] text-lg mb-2">Inversión inicial: <s>$500 USD</s></div>
                   <div className="text-[#d4f542] text-5xl font-headline font-bold mb-4">
                     $275 <span className="text-2xl">USD</span>
                   </div>
                   <p className="text-sm text-white mb-6 bg-white/5 inline-block px-4 py-2 rounded-lg">
                     💳 Puedes pagarlo hasta en <strong>12 cuotas</strong> con Mercado Pago.
                   </p>
-                  <Link href="/aplicar-fundador">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="block">
                     <button className="qx-btn-lime w-full text-lg h-14">
-                      Quiero ser Fundador por $275 USD
+                      Agendar mi demo de 15 min →
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
 

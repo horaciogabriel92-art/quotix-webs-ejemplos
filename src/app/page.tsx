@@ -58,7 +58,7 @@ export default function LandingPage() {
                   </a>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative aspect-square">
                 <HeroChatToMockup />
               </div>
             </div>

@@ -44,43 +44,43 @@ export default function ColorToggle() {
         <span className="text-[10px] bg-slate-800 text-white font-semibold px-2 py-0.5 rounded-full">50 u.</span>
       </div>
 
-      {/* Área principal: prenda dominante */}
-      <div className="flex-1 min-h-0 relative mx-3 mt-2 mb-1 bg-slate-50 rounded-xl overflow-hidden">
+      {/* Área principal: prenda dominante, SIN padding para que ocupe todo */}
+      <div className="flex-1 min-h-0 relative mx-2 mt-1.5 mb-1 bg-slate-50 rounded-xl overflow-hidden">
         <img
           src="/mockups/polo-black-front.png"
           alt="Polo negro"
-          className="absolute inset-0 w-full h-full object-contain p-4"
+          className="absolute inset-0 w-full h-full object-contain"
         />
 
-        {/* Logo animado sobre la prenda */}
+        {/* Logo animado — coordenadas calibradas al pecho izquierdo del polo */}
         <AnimatePresence>
           {step >= 1 && (
             <motion.div
               key={`logo-${loopKey}`}
               className="absolute"
-              style={{ width: 44, height: 44 }}
+              style={{ width: 48, height: 48 }}
               initial={{
-                top: "42%",
+                top: "46%",
                 left: "50%",
                 x: "-50%",
                 y: "-50%",
-                scale: 2.8,
+                scale: 2.4,
                 opacity: 0,
                 rotate: 0,
               }}
               animate={{
-                top: step >= 2 ? "26%" : "42%",
-                left: step >= 2 ? "54%" : "50%",
-                x: step >= 2 ? "0%" : "-50%",
-                y: step >= 2 ? "0%" : "-50%",
-                scale: step >= 3 ? 0.85 : step >= 2 ? 1.4 : 2.8,
+                top: step >= 2 ? "33%" : "46%",
+                left: step >= 2 ? "53%" : "50%",
+                x: "-50%",
+                y: "-50%",
+                scale: step >= 3 ? 0.95 : step >= 2 ? 1.5 : 2.4,
                 opacity: 1,
-                rotate: step >= 3 ? -6 : 0,
+                rotate: step >= 3 ? -5 : 0,
               }}
               transition={{
                 type: "spring",
-                stiffness: step >= 2 ? 100 : 180,
-                damping: step >= 2 ? 16 : 20,
+                stiffness: step >= 2 ? 90 : 160,
+                damping: step >= 2 ? 15 : 18,
                 delay: step === 1 ? 0.15 : 0,
               }}
             >
@@ -123,11 +123,11 @@ export default function ColorToggle() {
         <AnimatePresence mode="wait">
           <motion.div
             key={`tip-${step}-${loopKey}`}
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
+            exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur text-white text-[10px] font-medium px-2.5 py-1 rounded-lg"
+            className="absolute top-2.5 left-2.5 bg-slate-900/80 backdrop-blur text-white text-[10px] font-medium px-2 py-1 rounded-lg"
           >
             {STEPS[step].label}
           </motion.div>
@@ -136,7 +136,6 @@ export default function ColorToggle() {
 
       {/* Barra inferior compacta */}
       <div className="px-3 pb-2.5 shrink-0 flex items-center gap-3">
-        {/* Miniaturas de color */}
         <div className="flex items-center gap-2">
           {[
             { src: "/mockups/polo-white-front.png", label: "Blanco" },
@@ -157,38 +156,19 @@ export default function ColorToggle() {
 
         <div className="flex-1" />
 
-        {/* Estado del upload */}
         <AnimatePresence mode="wait">
           {step === 0 && (
-            <motion.span
-              key="wait"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="text-[10px] text-slate-400 flex items-center gap-1"
-            >
+            <motion.span key="wait" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-[10px] text-slate-400 flex items-center gap-1">
               <Upload className="w-3 h-3" /> Esperando diseño
             </motion.span>
           )}
           {step === 1 && (
-            <motion.span
-              key="up"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="text-[10px] text-blue-500 font-medium flex items-center gap-1 animate-pulse"
-            >
+            <motion.span key="up" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-[10px] text-blue-500 font-medium flex items-center gap-1 animate-pulse">
               <Upload className="w-3 h-3" /> Subiendo logo...
             </motion.span>
           )}
           {step >= 2 && (
-            <motion.span
-              key="ok"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="text-[10px] text-emerald-600 font-medium flex items-center gap-1"
-            >
+            <motion.span key="ok" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-[10px] text-emerald-600 font-medium flex items-center gap-1">
               <CheckCircle2 className="w-3 h-3" /> Logo cargado
             </motion.span>
           )}

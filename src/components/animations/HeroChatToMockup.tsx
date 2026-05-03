@@ -134,8 +134,9 @@ function QuotixContent({ qxStep, qxQty, loopKey, compact }: { qxStep: number; qx
               style={{ width: compact ? 40 : 32, height: compact ? 40 : 32 }}
               initial={{ top: "50%", left: "50%", x: "-50%", y: "-50%", scale: 2.5, opacity: 0 }}
               animate={{
-                top: qxStep >= 3 ? "36%" : "50%",
-                left: qxStep >= 3 ? "52%" : "50%",
+                top: qxStep >= 3 ? "28%" : "50%",
+                left: qxStep >= 3 ? "54%" : "50%",
+
 
 
                 x: "-50%",
@@ -161,7 +162,7 @@ function QuotixContent({ qxStep, qxQty, loopKey, compact }: { qxStep: number; qx
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, type: "spring" }}
-              className="absolute top-[42%] left-[58%] bg-blue-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full shadow-lg"
+              className="absolute top-[34%] left-[62%] bg-blue-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full shadow-lg"
             >
               ~6.1 cm
             </motion.div>

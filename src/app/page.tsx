@@ -280,7 +280,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="font-headline font-bold text-white text-xl">Quotix</div>
           <p className="text-xs text-[#475569]">
-            © {new Date().getFullYear()} Quotix. Todos los derechos reservados.
+            © {new Date().getFullYear()} Quotix. A product of QUOTIXOS GROUP LLC. Todos los derechos reservados.
           </p>
         </div>
       </footer>

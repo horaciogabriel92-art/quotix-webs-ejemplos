@@ -149,26 +149,27 @@ export default function LandingPage() {
 
         {/* ─── Beneficios (light) ─── */}
         <section className="qx-section-light py-24 bg-white">
-          <div className="container mx-auto px-6 max-w-4xl text-center">
+          <div className="container mx-auto px-6 max-w-5xl text-center">
             <h2 className="font-headline text-3xl font-bold mb-12 text-[#0f172a]">
-              No es solo un cotizador, es tu vendedor 24/7.
+              Lo que cambia cuando el cotizador trabaja por vos.
             </h2>
-            <div className="grid sm:grid-cols-3 gap-8">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4 text-xl">⚙️</div>
-                <h4 className="font-bold text-[#0f172a] mb-2">Cotizaciones que se ajustan solas</h4>
-                <p className="text-sm text-slate-600">Tus reglas de precio configuradas una vez. Descuentos por volumen, recargos por urgencia, márgenes por técnica. Todo automático.</p>
-              </div>
-              <div>
-                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4 text-xl">🚀</div>
-                <h4 className="font-bold text-[#0f172a] mb-2">Funciona sin vos</h4>
-                <p className="text-sm text-slate-600">No necesitás estar frente al celular. El cotizador atiende 24/7, filtra curiosos y deja los pedidos listos para que vos solo confirmes.</p>
-              </div>
-              <div>
-                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4 text-xl">✨</div>
-                <h4 className="font-bold text-[#0f172a] mb-2">Te ves como la opción premium</h4>
-                <p className="text-sm text-slate-600">Un cotizador visual y profesional posiciona tu marca por encima del taller que responde en WhatsApp con "depende".</p>
-              </div>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                { icon: "⚙️", color: "bg-blue-100", title: "Cotizaciones que se ajustan solas", desc: "Tus reglas de precio configuradas una vez. Descuentos por volumen, recargos por urgencia, márgenes por técnica. Todo automático." },
+                { icon: "🚀", color: "bg-green-100", title: "Funciona sin vos", desc: "No necesitás estar frente al celular. El cotizador atiende 24/7, filtra curiosos y deja los pedidos listos para que vos solo confirmes." },
+                { icon: "✨", color: "bg-purple-100", title: "Te ves como la opción premium", desc: "Un cotizador visual y profesional posiciona tu marca por encima del taller que responde en WhatsApp con \"depende\"." },
+              ].map((card) => (
+                <div
+                  key={card.title}
+                  className="card-shadow bg-white rounded-2xl p-6 text-center transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className={`w-12 h-12 rounded-full ${card.color} flex items-center justify-center mx-auto mb-4 text-xl`}>
+                    {card.icon}
+                  </div>
+                  <h4 className="font-bold text-[#0f172a] mb-2">{card.title}</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

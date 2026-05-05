@@ -1,35 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
-import { tenantMock } from "@/lib/tenant-mock";
+import { Phone, Mail, MapPin, Clock, ArrowRight, ShoppingBag } from "lucide-react";
+import { stores } from "@/lib/store-mocks";
 
 export default function Plantilla4() {
-  const t = tenantMock;
+  const s = stores[3];
+  const c = s.colors;
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans">
+    <div className="min-h-screen font-sans" style={{ backgroundColor: c.bg, color: c.text }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100">
+      <header className="sticky top-0 z-50 backdrop-blur-xl border-b" style={{ backgroundColor: `${c.bg}ee`, borderColor: c.border }}>
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center font-medium text-white text-sm">
-              {t.logoText.charAt(0)}
+            <div className="w-9 h-9 rounded-full flex items-center justify-center font-medium text-sm" style={{ backgroundColor: c.primary, color: c.ctaText }}>
+              {s.logoText.charAt(0)}
             </div>
-            <span className="font-medium text-lg tracking-tight">{t.logoText}</span>
+            <span className="font-medium text-lg tracking-tight">{s.logoText}</span>
           </div>
-          <nav className="hidden md:flex items-center gap-10 text-sm text-slate-500">
+          <nav className="hidden md:flex items-center gap-10 text-sm" style={{ color: c.textMuted }}>
+            <a href="#productos" className="hover:text-slate-900 transition-colors">Productos</a>
             <a href="#servicios" className="hover:text-slate-900 transition-colors">Servicios</a>
-            <a href="#cotizar" className="hover:text-slate-900 transition-colors">Cotizar</a>
             <a href="#contacto" className="hover:text-slate-900 transition-colors">Contacto</a>
           </nav>
           <a
-            href={t.ctaUrl}
+            href={`https://wa.me/${s.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
+            className="px-6 py-2.5 rounded-full text-sm font-medium transition-colors hover:opacity-90"
+            style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
           >
-            Cotizar
+            Pedir presupuesto
           </a>
         </div>
       </header>
@@ -38,82 +40,93 @@ export default function Plantilla4() {
       <section className="py-24 md:py-36">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center max-w-3xl mx-auto">
-            <p className="text-sm text-slate-400 uppercase tracking-[0.3em] mb-8">
-              Cotizador online activo
+            <p className="text-sm uppercase tracking-[0.3em] mb-8" style={{ color: c.textMuted }}>
+              Taller de bordado y estampado
             </p>
             <h1 className="text-5xl md:text-7xl font-light leading-[1.1] mb-8 tracking-tight">
-              Bordados con precisión,
-              <br />
-              <span className="font-medium">cotizados con claridad.</span>
+              {s.tagline.split(",").map((part, i, arr) => (
+                <span key={i}>
+                  {part.trim()}
+                  {i < arr.length - 1 && ", "}
+                  {i === 0 && <br />}
+                </span>
+              ))}
             </h1>
-            <p className="text-lg text-slate-500 mb-12 max-w-xl mx-auto leading-relaxed">
-              Subí tu diseño, elegí la prenda y conocé el precio estimado al instante.
-              Sin compromiso. Sin esperas.
+            <p className="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style={{ color: c.textMuted }}>
+              {s.description}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={t.ctaUrl}
+                href={`https://wa.me/${s.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-10 py-4 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-colors inline-flex items-center gap-2"
+                className="px-10 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors hover:opacity-90"
+                style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
               >
-                Cotizar mi diseño
+                Pedir presupuesto
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href={`https://wa.me/${t.whatsapp.replace(/\+/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-10 py-4 rounded-full border border-slate-200 text-slate-700 font-medium hover:border-slate-300 transition-colors"
+                href="#productos"
+                className="px-10 py-4 rounded-full border font-medium transition-colors hover:bg-slate-100"
+                style={{ borderColor: c.border, color: c.text }}
               >
-                Escribir por WhatsApp
+                Ver productos
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Hero Image — full bleed minimal */}
-      <section className="px-6">
-        <div className="container mx-auto max-w-4xl">
-          <div className="relative rounded-2xl overflow-hidden bg-slate-50">
-            <Image
-              src="/mockups/polo-white-front.png"
-              alt="Polo con bordado"
-              width={800}
-              height={800}
-              className="w-full max-w-lg mx-auto"
-              unoptimized
-            />
-            <div className="absolute top-[28%] left-[54%] -translate-x-1/2 -translate-y-1/2 w-[20%] aspect-square bg-white rounded-md flex items-center justify-center text-slate-900 font-bold text-xl shadow-md">
-              Q
-            </div>
+      {/* Productos */}
+      <section id="productos" className="px-6 pb-24 md:pb-32">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-8">
+            {s.products.map((p, i) => (
+              <div key={i} className="group">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5" style={{ backgroundColor: c.cardBg, border: `1px solid ${c.border}` }}>
+                  <Image src={p.image} alt={p.name} fill className="object-contain p-8 transition-transform duration-500 group-hover:scale-105" unoptimized />
+                  {p.tag && (
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: c.primary, color: c.ctaText }}>
+                      {p.tag}
+                    </span>
+                  )}
+                </div>
+                <h3 className="font-medium text-xl mb-1">{p.name}</h3>
+                <p className="text-sm mb-4" style={{ color: c.textMuted }}>Desde {p.priceFrom}</p>
+                <button className="text-sm font-medium inline-flex items-center gap-2 transition-colors hover:opacity-70" style={{ color: c.text }}>
+                  <ShoppingBag className="w-4 h-4" />
+                  Consultar disponibilidad
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Servicios */}
-      <section id="servicios" className="py-24 md:py-32">
+      <section id="servicios" className="py-24 md:py-32" style={{ backgroundColor: c.cardBg }}>
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="mb-20">
-            <p className="text-sm text-slate-400 uppercase tracking-[0.3em] mb-4">Servicios</p>
+            <p className="text-sm uppercase tracking-[0.3em] mb-4" style={{ color: c.textMuted }}>Servicios</p>
             <h2 className="text-3xl md:text-4xl font-light tracking-tight">
-              Tres técnicas. Un resultado.
+              Tres maneras de dejar tu marca.
             </h2>
           </div>
           <div className="space-y-0">
-            {t.services.map((s, i) => (
+            {s.services.map((svc, i) => (
               <div
                 key={i}
-                className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 border-t border-slate-100 group hover:bg-slate-50/50 transition-colors -mx-6 px-6"
+                className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 border-t group hover:bg-white/50 transition-colors -mx-6 px-6"
+                style={{ borderColor: c.border }}
               >
-                <div className="text-3xl md:w-12 shrink-0">{s.icon}</div>
+                <div className="text-3xl md:w-12 shrink-0">{svc.icon}</div>
                 <div className="flex-1">
-                  <h3 className="font-medium text-xl mb-2">{s.title}</h3>
-                  <p className="text-slate-500 leading-relaxed max-w-lg">{s.desc}</p>
+                  <h3 className="font-medium text-xl mb-2">{svc.title}</h3>
+                  <p className="leading-relaxed max-w-lg" style={{ color: c.textMuted }}>{svc.desc}</p>
                 </div>
-                <div className="hidden md:block text-slate-300 group-hover:text-slate-400 transition-colors">
-                  <ArrowRight className="w-5 h-5" />
+                <div className="hidden md:block" style={{ color: c.textMuted }}>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             ))}
@@ -121,100 +134,86 @@ export default function Plantilla4() {
         </div>
       </section>
 
-      {/* CTA Cotización */}
-      <section id="cotizar" className="py-24 md:py-32 bg-slate-900 text-white">
+      {/* CTA */}
+      <section className="py-24 md:py-32">
         <div className="container mx-auto px-6 max-w-4xl text-center">
-          <p className="text-sm text-slate-500 uppercase tracking-[0.3em] mb-8">
-            Cotización online
+          <p className="text-sm uppercase tracking-[0.3em] mb-8" style={{ color: c.textMuted }}>
+            Presupuestos
           </p>
           <h2 className="text-4xl md:text-6xl font-light leading-tight mb-8">
-            Precio estimado
+            Cada pieza es única.
             <br />
-            <span className="font-medium">en menos de 2 minutos.</span>
+            <span className="font-medium">Tu presupuesto también.</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed">
-            Elegí la prenda, subí tu logo, seleccioná la posición y cantidad.
-            Vamos a darte un rango de precio basado en nuestra fórmula.
+          <p className="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style={{ color: c.textMuted }}>
+            Contanos qué necesitás: prendas, cantidad, diseño.
+            Respondemos en el día con opciones y precios.
           </p>
           <a
-            href={t.ctaUrl}
+            href={`https://wa.me/${s.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-100 transition-colors"
+            className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-medium transition-colors hover:opacity-90"
+            style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
           >
-            Ir al cotizador
+            Escribir por WhatsApp
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="py-24 md:py-32">
+      <section id="contacto" className="py-24 md:py-32" style={{ backgroundColor: c.cardBg }}>
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-20">
             <div>
-              <p className="text-sm text-slate-400 uppercase tracking-[0.3em] mb-4">Contacto</p>
+              <p className="text-sm uppercase tracking-[0.3em] mb-4" style={{ color: c.textMuted }}>Contacto</p>
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-8">
                 Hablamos.
               </h2>
-              <p className="text-slate-500 leading-relaxed">
-                Si preferís charlar antes de cotizar, escribinos por WhatsApp o email.
-                Respondemos en el día.
+              <p className="leading-relaxed" style={{ color: c.textMuted }}>
+                Respondemos por WhatsApp y email en el día.
+                Si querés pasar por el taller, avisanos antes para coordinar.
               </p>
             </div>
             <div className="space-y-6">
-              <a
-                href={`https://wa.me/${t.whatsapp.replace(/\+/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-5 py-5 border-b border-slate-100 hover:border-slate-300 transition-colors group"
-              >
-                <Phone className="w-5 h-5 text-slate-400 group-hover:text-[#25d366] transition-colors" />
-                <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">WhatsApp</div>
-                  <div className="font-medium">{t.phone}</div>
-                </div>
-              </a>
-              <a
-                href={`mailto:${t.email}`}
-                className="flex items-center gap-5 py-5 border-b border-slate-100 hover:border-slate-300 transition-colors group"
-              >
-                <Mail className="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" />
-                <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Email</div>
-                  <div className="font-medium">{t.email}</div>
-                </div>
-              </a>
-              <div className="flex items-center gap-5 py-5 border-b border-slate-100">
-                <MapPin className="w-5 h-5 text-slate-400" />
-                <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Dirección</div>
-                  <div className="font-medium">{t.address}</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-5 py-5 border-b border-slate-100">
-                <Clock className="w-5 h-5 text-slate-400" />
-                <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Horarios</div>
-                  <div className="font-medium">{t.hours}</div>
-                </div>
-              </div>
+              {[
+                { icon: Phone, label: "WhatsApp", value: s.phone, href: `https://wa.me/${s.whatsapp}` },
+                { icon: Mail, label: "Email", value: s.email, href: `mailto:${s.email}` },
+                { icon: MapPin, label: "Dirección", value: s.address },
+                { icon: Clock, label: "Horarios", value: s.hours },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href || undefined}
+                  target={item.href?.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-5 py-5 border-b group transition-colors hover:border-slate-300"
+                  style={{ borderColor: c.border }}
+                >
+                  <item.icon className="w-5 h-5 shrink-0" style={{ color: c.textMuted }} />
+                  <div>
+                    <div className="text-xs uppercase tracking-wider mb-0.5" style={{ color: c.textMuted }}>{item.label}</div>
+                    <div className="font-medium">{item.value}</div>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-100 py-10">
+      <footer className="border-t py-10" style={{ borderColor: c.border }}>
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center font-medium text-white text-xs">
-              {t.logoText.charAt(0)}
+            <div className="w-8 h-8 rounded-full flex items-center justify-center font-medium text-xs text-white" style={{ backgroundColor: c.primary }}>
+              {s.logoText.charAt(0)}
             </div>
-            <span className="font-medium">{t.logoText}</span>
+            <span className="font-medium">{s.name}</span>
           </div>
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} {t.name}. A product of QUOTIXOS GROUP LLC.
+          <p className="text-sm" style={{ color: c.textMuted }}>
+            © {new Date().getFullYear()} {s.name}. Todos los derechos reservados.
           </p>
         </div>
       </footer>

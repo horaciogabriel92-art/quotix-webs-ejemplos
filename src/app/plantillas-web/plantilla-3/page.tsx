@@ -1,87 +1,99 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
-import { tenantMock } from "@/lib/tenant-mock";
+import { Phone, Mail, MapPin, Clock, ArrowRight, ShoppingBag } from "lucide-react";
+import { stores } from "@/lib/store-mocks";
 
 export default function Plantilla3() {
-  const t = tenantMock;
+  const s = stores[2];
+  const c = s.colors;
 
   return (
-    <div className="min-h-screen bg-[#bf3480] text-white font-sans">
+    <div className="min-h-screen font-sans" style={{ backgroundColor: c.bg, color: c.text }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#bf3480]/90 border-b border-white/20">
+      <header className="sticky top-0 z-50 backdrop-blur-xl border-b" style={{ backgroundColor: `${c.bg}ee`, borderColor: c.border }}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center font-bold text-[#bf3480] text-lg">
-              {t.logoText.charAt(0)}
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg" style={{ backgroundColor: c.ctaBg, color: c.ctaText }}>
+              {s.logoText.charAt(0)}
             </div>
-            <span className="font-bold text-lg">{t.logoText}</span>
+            <span className="font-black text-lg tracking-tight">{s.logoText}</span>
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <a href="#servicios" className="hover:text-white transition-colors">Servicios</a>
-            <a href="#cotizar" className="hover:text-white transition-colors">Cotizar</a>
-            <a href="#contacto" className="hover:text-white transition-colors">Contacto</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-bold" style={{ color: c.textMuted }}>
+            <a href="#productos" className="hover:text-white transition-colors">PRODUCTOS</a>
+            <a href="#servicios" className="hover:text-white transition-colors">SERVICIOS</a>
+            <a href="#contacto" className="hover:text-white transition-colors">CONTACTO</a>
           </nav>
           <a
-            href={t.ctaUrl}
+            href={`https://wa.me/${s.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-white text-[#bf3480] font-bold text-sm hover:bg-white/90 transition-colors"
+            className="px-5 py-2.5 rounded-full font-black text-sm transition-colors hover:brightness-110"
+            style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
           >
-            Cotizar ahora
+            COTIZAR
           </a>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="py-16 md:py-28">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section style={{ background: `linear-gradient(to bottom, ${c.heroGradientFrom}, ${c.heroGradientTo})` }}>
+        <div className="container mx-auto px-6 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
               <h1 className="text-5xl md:text-7xl font-black leading-none mb-6 tracking-tight">
-                TU LOGO.
-                <br />
-                TU EQUIPO.
-                <br />
-                <span className="text-[#d4f542]">TU IDENTIDAD.</span>
+                {s.tagline.split(".").map((part, i, arr) => (
+                  <span key={i}>
+                    {i === arr.length - 1 ? <span style={{ color: c.accent }}>{part}</span> : part}
+                    {i < arr.length - 1 && "."}
+                    <br />
+                  </span>
+                ))}
               </h1>
-              <p className="text-lg text-white/80 mb-8 max-w-md">
-                Equipos deportivos, eventos corporativos, merchandising.
-                Cotizá online y tené tu presupuesto en segundos.
+              <p className="text-lg mb-8 max-w-md leading-relaxed" style={{ color: c.textMuted }}>
+                {s.description}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href={t.ctaUrl}
+                  href={`https://wa.me/${s.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full bg-white text-[#bf3480] font-black text-lg hover:bg-[#d4f542] hover:text-[#0f172a] transition-colors inline-flex items-center gap-2"
+                  className="px-8 py-4 rounded-full font-black text-lg inline-flex items-center gap-2 transition-colors hover:brightness-110"
+                  style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
                 >
-                  COTIZAR MI DISEÑO
+                  COTIZAR AHORA
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
-                  href="tel:+59898133523"
-                  className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors"
+                  href="#productos"
+                  className="px-8 py-4 rounded-full font-bold border-2 transition-colors hover:bg-white/10"
+                  style={{ borderColor: c.border, color: c.text }}
                 >
-                  LLAMAR AL TALLER
+                  VER PRODUCTOS
                 </a>
               </div>
             </div>
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden border-4 border-white/20">
-                <Image
-                  src="/mockups/polo-black-front.png"
-                  alt="Polo con bordado"
-                  width={600}
-                  height={600}
-                  className="w-full"
-                  unoptimized
-                />
-                <div className="absolute top-[28%] left-[54%] -translate-x-1/2 -translate-y-1/2 w-[22%] aspect-square bg-white rounded-lg flex items-center justify-center text-[#bf3480] font-black text-2xl shadow-2xl">
-                  Q
+            <div className="grid grid-cols-2 gap-4">
+              {s.products.map((p, i) => (
+                <div
+                  key={i}
+                  className={`rounded-3xl overflow-hidden border-2 hover:-translate-y-1 transition-all duration-300 ${i === 0 ? "col-span-2" : ""}`}
+                  style={{ borderColor: c.border, backgroundColor: c.cardBg }}
+                >
+                  <div className="relative aspect-square">
+                    <Image src={p.image} alt={p.name} fill className="object-contain p-4" unoptimized />
+                    {p.tag && (
+                      <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-black" style={{ backgroundColor: c.accent, color: c.bg }}>
+                        {p.tag}
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-black text-sm">{p.name.toUpperCase()}</h3>
+                    <p className="text-xs mt-1 font-bold" style={{ color: c.accent }}>DESDE {p.priceFrom}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -92,42 +104,69 @@ export default function Plantilla3() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-black mb-4">SERVICIOS</h2>
-            <p className="text-slate-600 max-w-xl mx-auto text-lg">
-              Tres técnicas. Un solo objetivo: que tu marca se vea impecable.
-            </p>
+            <p className="text-slate-600 text-lg">Lo que hacemos mejor que nadie.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {t.services.map((s, i) => (
-              <div
-                key={i}
-                className="p-8 rounded-3xl bg-slate-50 border-2 border-slate-100 hover:border-[#bf3480] hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="text-5xl mb-5">{s.icon}</div>
-                <h3 className="font-black text-2xl mb-3">{s.title.toUpperCase()}</h3>
-                <p className="text-slate-600 leading-relaxed">{s.desc}</p>
+            {s.services.map((svc, i) => (
+              <div key={i} className="p-8 rounded-3xl border-2 border-slate-100 hover:border-emerald-500 hover:-translate-y-1 transition-all duration-300">
+                <div className="text-5xl mb-5">{svc.icon}</div>
+                <h3 className="font-black text-2xl mb-3">{svc.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Cotización */}
-      <section id="cotizar" className="py-24 bg-[#0f172a] text-white">
+      {/* Productos */}
+      <section id="productos" className="py-20">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-black mb-4">PRODUCTOS</h2>
+            <p className="text-lg" style={{ color: c.textMuted }}>Elegí, personalizá, pedí.</p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-8">
+            {s.products.map((p, i) => (
+              <div key={i} className="rounded-3xl overflow-hidden border-2 hover:-translate-y-1 transition-all duration-300" style={{ borderColor: c.border, backgroundColor: c.cardBg }}>
+                <div className="relative aspect-square">
+                  <Image src={p.image} alt={p.name} fill className="object-contain p-6" unoptimized />
+                  {p.tag && (
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-black" style={{ backgroundColor: c.accent, color: c.bg }}>
+                      {p.tag}
+                    </span>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="font-black text-lg mb-1">{p.name.toUpperCase()}</h3>
+                  <p className="text-sm mb-4 font-bold" style={{ color: c.accent }}>DESDE {p.priceFrom}</p>
+                  <button className="w-full py-3 rounded-xl font-black text-sm transition-colors hover:brightness-110 flex items-center justify-center gap-2" style={{ backgroundColor: c.ctaBg, color: c.ctaText }}>
+                    <ShoppingBag className="w-4 h-4" />
+                    CONSULTAR
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-white text-slate-900">
         <div className="container mx-auto px-6 max-w-5xl text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-6">
             DEJÁ DE ESPERAR POR PRESUPUESTOS.
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-12">
-            En menos de 2 minutos tenés tu cotización.
-            Sin compromiso. Sin llamadas. Sin demoras.
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-12">
+            Escribinos por WhatsApp con tu diseño y en minutos tenés tu cotización.
           </p>
           <a
-            href={t.ctaUrl}
+            href={`https://wa.me/${s.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-12 py-5 rounded-full bg-[#d4f542] text-[#0f172a] font-black text-xl hover:bg-[#e5ff66] transition-colors"
+            className="inline-flex items-center gap-3 px-12 py-5 rounded-full font-black text-xl transition-colors hover:brightness-110"
+            style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
           >
-            IR AL COTIZADOR
+            COTIZAR POR WHATSAPP
             <ArrowRight className="w-6 h-6" />
           </a>
         </div>
@@ -137,56 +176,32 @@ export default function Plantilla3() {
       <section id="contacto" className="py-20 bg-white text-slate-900">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">CONTACTANOS</h2>
-            <p className="text-slate-600">
-              Si preferís hablar directo, acá estamos.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-black mb-4">CONTACTO</h2>
+            <p className="text-slate-500">Acá nos encontrás.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
-            <a
-              href={`https://wa.me/${t.whatsapp.replace(/\+/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border-2 border-slate-100 hover:border-[#25d366] transition-colors"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[#25d366]/10 flex items-center justify-center text-[#25d366]">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-sm text-slate-500">WhatsApp</div>
-                <div className="font-bold">{t.phone}</div>
-              </div>
-            </a>
-            <a
-              href={`mailto:${t.email}`}
-              className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border-2 border-slate-100 hover:border-[#bf3480] transition-colors"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[#bf3480]/10 flex items-center justify-center text-[#bf3480]">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-sm text-slate-500">Email</div>
-                <div className="font-bold">{t.email}</div>
-              </div>
-            </a>
-            <div className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border-2 border-slate-100">
-              <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-sm text-slate-500">Dirección</div>
-                <div className="font-bold">{t.address}</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border-2 border-slate-100">
-              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600">
-                <Clock className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-sm text-slate-500">Horarios</div>
-                <div className="font-bold">{t.hours}</div>
-              </div>
-            </div>
+            {[
+              { icon: Phone, label: "WhatsApp", value: s.phone, href: `https://wa.me/${s.whatsapp}` },
+              { icon: Mail, label: "Email", value: s.email, href: `mailto:${s.email}` },
+              { icon: MapPin, label: "Dirección", value: s.address },
+              { icon: Clock, label: "Horarios", value: s.hours },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.href || undefined}
+                target={item.href?.startsWith("http") ? "_blank" : undefined}
+                rel={item.href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-4 p-6 rounded-2xl border-2 border-slate-100 hover:border-emerald-500 transition-colors"
+              >
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-emerald-100 text-emerald-600">
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-sm text-slate-500">{item.label}</div>
+                  <div className="font-bold">{item.value}</div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -195,13 +210,13 @@ export default function Plantilla3() {
       <footer className="border-t-2 border-slate-100 py-10 bg-white">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#bf3480] flex items-center justify-center font-bold text-white text-sm">
-              {t.logoText.charAt(0)}
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm text-white" style={{ backgroundColor: c.primary }}>
+              {s.logoText.charAt(0)}
             </div>
-            <span className="font-bold text-slate-900">{t.logoText}</span>
+            <span className="font-bold">{s.name}</span>
           </div>
           <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} {t.name}. A product of QUOTIXOS GROUP LLC.
+            © {new Date().getFullYear()} {s.name}. Todos los derechos reservados.
           </p>
         </div>
       </footer>

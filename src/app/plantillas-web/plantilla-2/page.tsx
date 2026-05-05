@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, ArrowRight, ShoppingBag } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { stores } from "@/lib/store-mocks";
 
 export default function Plantilla2() {
@@ -20,18 +20,18 @@ export default function Plantilla2() {
             <span className="font-bold text-lg">{s.logoText}</span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm" style={{ color: c.textMuted }}>
-            <a href="#productos" className="hover:text-slate-900 transition-colors">Productos</a>
             <a href="#servicios" className="hover:text-slate-900 transition-colors">Servicios</a>
+            <a href="#trabajos" className="hover:text-slate-900 transition-colors">Trabajos</a>
             <a href="#contacto" className="hover:text-slate-900 transition-colors">Contacto</a>
           </nav>
           <a
-            href={`https://wa.me/${s.whatsapp}`}
+            href={s.ctaUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full font-bold text-sm text-white transition-colors hover:opacity-90"
             style={{ backgroundColor: c.ctaBg }}
           >
-            Pedir presupuesto
+            Cotizá tu proyecto
           </a>
         </div>
       </header>
@@ -54,11 +54,13 @@ export default function Plantilla2() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="#productos"
+                  href={s.ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 rounded-xl font-bold text-white inline-flex items-center gap-2 transition-colors hover:opacity-90"
                   style={{ backgroundColor: c.ctaBg }}
                 >
-                  Ver productos
+                  Cotizá tu proyecto
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
@@ -72,73 +74,61 @@ export default function Plantilla2() {
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {s.products.slice(0, 2).map((p, i) => (
-                <div key={i} className="rounded-2xl overflow-hidden border shadow-sm" style={{ borderColor: c.border, backgroundColor: c.cardBg }}>
-                  <div className="relative aspect-square">
-                    <Image src={p.image} alt={p.name} fill className="object-contain p-4" unoptimized />
-                    {p.tag && (
-                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: c.primary }}>
-                        {p.tag}
-                      </span>
-                    )}
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-sm">{p.name}</h3>
-                    <p className="text-xs mt-1" style={{ color: c.textMuted }}>Desde {p.priceFrom}</p>
-                  </div>
+            <div className="relative">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border" style={{ borderColor: c.border }}>
+                <Image src={s.heroImage} alt="Ejemplo de trabajo" width={600} height={600} className="w-full" unoptimized />
+                <div className="absolute top-[28%] left-[54%] -translate-x-1/2 -translate-y-1/2 w-[20%] aspect-square bg-white rounded-lg flex items-center justify-center text-slate-900 font-bold text-xl shadow-lg">
+                  Q
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Productos */}
-      <section id="productos" className="py-20">
+      {/* Servicios */}
+      <section id="servicios" className="py-20">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Productos destacados</h2>
-            <p style={{ color: c.textMuted }}>Elegí tu prenda y personalizala.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros servicios</h2>
+            <p style={{ color: c.textMuted }}>Elegí la técnica que mejor se adapte a tu proyecto. Cotizá online al instante.</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-8">
-            {s.products.map((p, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style={{ borderColor: c.border, backgroundColor: c.cardBg }}>
-                <div className="relative aspect-square bg-slate-50">
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-6" unoptimized />
-                  {p.tag && (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: c.primary }}>
-                      {p.tag}
-                    </span>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg mb-1">{p.name}</h3>
-                  <p className="text-sm mb-4" style={{ color: c.textMuted }}>Desde {p.priceFrom}</p>
-                  <button className="w-full py-2.5 rounded-xl text-sm font-bold text-white transition-colors hover:opacity-90 flex items-center justify-center gap-2" style={{ backgroundColor: c.ctaBg }}>
-                    <ShoppingBag className="w-4 h-4" />
-                    Consultar
-                  </button>
-                </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {s.services.map((svc, i) => (
+              <div key={i} className="p-8 rounded-2xl border bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style={{ borderColor: c.border }}>
+                <div className="text-4xl mb-4">{svc.icon}</div>
+                <h3 className="font-bold text-xl mb-2">{svc.title}</h3>
+                <p className="mb-4" style={{ color: c.textMuted }}>{svc.desc}</p>
+                <p className="font-bold text-sm mb-5" style={{ color: c.primary }}>Desde {svc.priceFrom} por prenda</p>
+                <a
+                  href={s.ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: c.ctaBg }}
+                >
+                  Cotizá tu proyecto
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Servicios */}
-      <section id="servicios" className="py-20" style={{ backgroundColor: c.cardBg }}>
+      {/* Trabajos */}
+      <section id="trabajos" className="py-20" style={{ backgroundColor: c.cardBg }}>
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Servicios</h2>
-            <p style={{ color: c.textMuted }}>Lo que hacemos, bien hecho.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">En qué trabajamos</h2>
+            <p style={{ color: c.textMuted }}>Cada proyecto es distinto. Acá algunos ejemplos.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {s.services.map((svc, i) => (
+            {s.portfolio.map((item, i) => (
               <div key={i} className="p-8 rounded-2xl border bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style={{ borderColor: c.border }}>
-                <div className="text-4xl mb-4">{svc.icon}</div>
-                <h3 className="font-bold text-xl mb-3">{svc.title}</h3>
-                <p style={{ color: c.textMuted }}>{svc.desc}</p>
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+                <p style={{ color: c.textMuted }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -149,18 +139,18 @@ export default function Plantilla2() {
       <section className="py-20">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="rounded-[2rem] p-12 md:p-16 text-center text-white" style={{ backgroundColor: c.ctaBg }}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">¿Tenés un diseño en mente?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">¿Tenés un proyecto en mente?</h2>
             <p className="text-lg max-w-2xl mx-auto mb-10" style={{ opacity: 0.9 }}>
-              Escribinos por WhatsApp con tu idea y te damos un presupuesto sin compromiso.
+              Usá nuestro cotizador online. En menos de 2 minutos tenés un presupuesto estimado basado en tu diseño.
             </p>
             <a
-              href={`https://wa.me/${s.whatsapp}`}
+              href={s.ctaUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-xl font-bold text-lg transition-colors bg-white hover:bg-slate-50"
               style={{ color: c.ctaBg }}
             >
-              Escribir por WhatsApp
+              Cotizá tu proyecto
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>
@@ -172,7 +162,7 @@ export default function Plantilla2() {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h2>
-            <p style={{ color: c.textMuted }}>Acá nos encontrás.</p>
+            <p style={{ color: c.textMuted }}>Preferís hablar directo? Acá estamos.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             {[

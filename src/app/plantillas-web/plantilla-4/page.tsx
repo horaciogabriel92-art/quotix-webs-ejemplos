@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, ArrowRight, ShoppingBag } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { stores } from "@/lib/store-mocks";
 
 export default function Plantilla4() {
@@ -20,18 +20,18 @@ export default function Plantilla4() {
             <span className="font-medium text-lg tracking-tight">{s.logoText}</span>
           </div>
           <nav className="hidden md:flex items-center gap-10 text-sm" style={{ color: c.textMuted }}>
-            <a href="#productos" className="hover:text-slate-900 transition-colors">Productos</a>
             <a href="#servicios" className="hover:text-slate-900 transition-colors">Servicios</a>
+            <a href="#trabajos" className="hover:text-slate-900 transition-colors">Trabajos</a>
             <a href="#contacto" className="hover:text-slate-900 transition-colors">Contacto</a>
           </nav>
           <a
-            href={`https://wa.me/${s.whatsapp}`}
+            href={s.ctaUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 rounded-full text-sm font-medium transition-colors hover:opacity-90"
             style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
           >
-            Pedir presupuesto
+            Cotizá tu proyecto
           </a>
         </div>
       </header>
@@ -57,49 +57,37 @@ export default function Plantilla4() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={`https://wa.me/${s.whatsapp}`}
+                href={s.ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-10 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors hover:opacity-90"
                 style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
               >
-                Pedir presupuesto
+                Cotizá tu proyecto
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#productos"
+                href={`https://wa.me/${s.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-4 rounded-full border font-medium transition-colors hover:bg-slate-100"
                 style={{ borderColor: c.border, color: c.text }}
               >
-                Ver productos
+                Escribir por WhatsApp
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Productos */}
-      <section id="productos" className="px-6 pb-24 md:pb-32">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-3 gap-8">
-            {s.products.map((p, i) => (
-              <div key={i} className="group">
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5" style={{ backgroundColor: c.cardBg, border: `1px solid ${c.border}` }}>
-                  <Image src={p.image} alt={p.name} fill className="object-contain p-8 transition-transform duration-500 group-hover:scale-105" unoptimized />
-                  {p.tag && (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: c.primary, color: c.ctaText }}>
-                      {p.tag}
-                    </span>
-                  )}
-                </div>
-                <h3 className="font-medium text-xl mb-1">{p.name}</h3>
-                <p className="text-sm mb-4" style={{ color: c.textMuted }}>Desde {p.priceFrom}</p>
-                <button className="text-sm font-medium inline-flex items-center gap-2 transition-colors hover:opacity-70" style={{ color: c.text }}>
-                  <ShoppingBag className="w-4 h-4" />
-                  Consultar disponibilidad
-                </button>
-              </div>
-            ))}
+      {/* Hero Image */}
+      <section className="px-6 pb-24 md:pb-32">
+        <div className="container mx-auto max-w-4xl">
+          <div className="relative rounded-2xl overflow-hidden" style={{ backgroundColor: c.cardBg, border: `1px solid ${c.border}` }}>
+            <Image src={s.heroImage} alt="Ejemplo de trabajo" width={800} height={800} className="w-full max-w-lg mx-auto" unoptimized />
+            <div className="absolute top-[28%] left-[54%] -translate-x-1/2 -translate-y-1/2 w-[18%] aspect-square bg-white rounded-md flex items-center justify-center text-slate-900 font-bold text-xl shadow-md">
+              Q
+            </div>
           </div>
         </div>
       </section>
@@ -123,7 +111,45 @@ export default function Plantilla4() {
                 <div className="text-3xl md:w-12 shrink-0">{svc.icon}</div>
                 <div className="flex-1">
                   <h3 className="font-medium text-xl mb-2">{svc.title}</h3>
-                  <p className="leading-relaxed max-w-lg" style={{ color: c.textMuted }}>{svc.desc}</p>
+                  <p className="leading-relaxed max-w-lg mb-4" style={{ color: c.textMuted }}>{svc.desc}</p>
+                  <p className="font-medium text-sm mb-4">Desde {svc.priceFrom} por prenda</p>
+                  <a
+                    href={s.ctaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-70"
+                    style={{ color: c.text }}
+                  >
+                    Cotizá tu proyecto
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trabajos */}
+      <section id="trabajos" className="py-24 md:py-32">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="mb-20">
+            <p className="text-sm uppercase tracking-[0.3em] mb-4" style={{ color: c.textMuted }}>Trabajos</p>
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+              Cada proyecto es distinto.
+            </h2>
+          </div>
+          <div className="space-y-0">
+            {s.portfolio.map((item, i) => (
+              <div
+                key={i}
+                className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 border-t group hover:bg-slate-50/50 transition-colors -mx-6 px-6"
+                style={{ borderColor: c.border }}
+              >
+                <div className="text-3xl md:w-12 shrink-0">{item.icon}</div>
+                <div className="flex-1">
+                  <h3 className="font-medium text-xl mb-2">{item.title}</h3>
+                  <p className="leading-relaxed max-w-lg" style={{ color: c.textMuted }}>{item.desc}</p>
                 </div>
                 <div className="hidden md:block" style={{ color: c.textMuted }}>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -135,28 +161,27 @@ export default function Plantilla4() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32" style={{ backgroundColor: c.text, color: c.bg }}>
         <div className="container mx-auto px-6 max-w-4xl text-center">
-          <p className="text-sm uppercase tracking-[0.3em] mb-8" style={{ color: c.textMuted }}>
-            Presupuestos
+          <p className="text-sm uppercase tracking-[0.3em] mb-8" style={{ opacity: 0.5 }}>
+            Cotizador online
           </p>
           <h2 className="text-4xl md:text-6xl font-light leading-tight mb-8">
-            Cada pieza es única.
+            Presupuesto estimado
             <br />
-            <span className="font-medium">Tu presupuesto también.</span>
+            <span className="font-medium">en menos de 2 minutos.</span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style={{ color: c.textMuted }}>
-            Contanos qué necesitás: prendas, cantidad, diseño.
-            Respondemos en el día con opciones y precios.
+          <p className="text-lg max-w-xl mx-auto mb-12 leading-relaxed" style={{ opacity: 0.7 }}>
+            Subí tu diseño, elegí la técnica y la cantidad, y recibí un rango de precio basado en nuestra fórmula.
           </p>
           <a
-            href={`https://wa.me/${s.whatsapp}`}
+            href={s.ctaUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-medium transition-colors hover:opacity-90"
-            style={{ backgroundColor: c.ctaBg, color: c.ctaText }}
+            style={{ backgroundColor: c.bg, color: c.text }}
           >
-            Escribir por WhatsApp
+            Cotizá tu proyecto
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

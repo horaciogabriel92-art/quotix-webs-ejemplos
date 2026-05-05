@@ -9,13 +9,15 @@ export interface StoreMock {
   email: string;
   address: string;
   hours: string;
-  products: {
-    name: string;
-    priceFrom: string;
-    image: string;
-    tag?: string;
-  }[];
+  ctaUrl: string;
+  heroImage: string;
   services: {
+    title: string;
+    desc: string;
+    priceFrom: string;
+    icon: string;
+  }[];
+  portfolio: {
     title: string;
     desc: string;
     icon: string;
@@ -41,23 +43,25 @@ export const stores: StoreMock[] = [
     id: 1,
     name: "Ink & Thread",
     logoText: "Ink & Thread",
-    tagline: "Tu estilo, bordado y estampado.",
+    tagline: "Tu estilo, bordado y estampado a medida.",
     description:
-      "Prendas personalizadas para equipos, empresas y eventos. Elegí, subí tu diseño y te lo preparamos.",
+      "Prendas personalizadas para equipos, empresas y eventos. Cotizá tu proyecto online y recibí tu presupuesto al instante.",
     phone: "+598 99 123 456",
     whatsapp: "59899123456",
     email: "hola@inkandthread.uy",
     address: "Mercedes 1011, Montevideo",
     hours: "Lun a Vie: 10:00 - 19:00",
-    products: [
-      { name: "Polo clásico bordado", priceFrom: "$890", image: "/mockups/polo-white-front.png", tag: "Más vendido" },
-      { name: "Polo premium", priceFrom: "$1.190", image: "/mockups/polo-blue-front.png" },
-      { name: "Polo negro estampado", priceFrom: "$990", image: "/mockups/polo-black-front.png", tag: "Nuevo" },
-    ],
+    ctaUrl: "https://demo.quotixos.com",
+    heroImage: "/mockups/polo-white-front.png",
     services: [
-      { title: "Bordado computarizado", desc: "Hasta 12 colores. Ideal para logos corporativos y uniformes.", icon: "🧵" },
-      { title: "Estampado DTF", desc: "Colores vibrantes y duraderos. Perfecto para poleras y merchandising.", icon: "🎨" },
-      { title: "Sublimación", desc: "Diseños sin límites de color para prendas técnicas.", icon: "🔥" },
+      { title: "Bordado computarizado", desc: "Hasta 12 colores. Ideal para logos corporativos y uniformes.", priceFrom: "$450", icon: "🧵" },
+      { title: "Estampado DTF", desc: "Colores vibrantes y duraderos. Perfecto para poleras y merchandising.", priceFrom: "$320", icon: "🎨" },
+      { title: "Sublimación full print", desc: "Diseños sin límites de color para prendas técnicas.", priceFrom: "$380", icon: "🔥" },
+    ],
+    portfolio: [
+      { title: "Equipos deportivos", desc: "Uniformes completos con nombre y número.", icon: "⚽" },
+      { title: "Eventos corporativos", desc: "Chombas y gorras con tu marca.", icon: "🏢" },
+      { title: "Merchandising", desc: "Bolsas, remeras y accesorios personalizados.", icon: "🛍️" },
     ],
     colors: {
       primary: "#0ea5e9",
@@ -80,21 +84,23 @@ export const stores: StoreMock[] = [
     logoText: "Estampados del Sur",
     tagline: "Calidad que se nota, precio que cierra.",
     description:
-      "Desde 2015 estampando y bordando para negocios, clubes y celebraciones. Presupuesto sin compromiso.",
+      "Desde 2015 bordando y estampando para negocios, clubes y celebraciones. Cotizá tu proyecto online sin compromiso.",
     phone: "+598 92 345 678",
     whatsapp: "59892345678",
     email: "info@estampadosdelsur.uy",
     address: "Av. Italia 2456, Montevideo",
     hours: "Lun a Sáb: 9:00 - 18:00",
-    products: [
-      { name: "Polo corporativo", priceFrom: "$750", image: "/mockups/polo-blue-front.png", tag: "Oferta" },
-      { name: "Polo deportivo", priceFrom: "$920", image: "/mockups/polo-white-front.png" },
-      { name: "Polo eventos", priceFrom: "$850", image: "/mockups/polo-black-front.png", tag: "Personalizable" },
-    ],
+    ctaUrl: "https://demo.quotixos.com",
+    heroImage: "/mockups/polo-blue-front.png",
     services: [
-      { title: "Serigrafía textil", desc: "La opción más económica para grandes cantidades.", icon: "🖨️" },
-      { title: "Bordado directo", desc: "Acabado premium que dura años de lavados.", icon: "✂️" },
-      { title: "DTF full color", desc: "Impresión digital directa sobre film. Sin mínimo de colores.", icon: "🌈" },
+      { title: "Serigrafía textil", desc: "La opción más económica para grandes cantidades.", priceFrom: "$180", icon: "🖨️" },
+      { title: "Bordado directo", desc: "Acabado premium que dura años de lavados.", priceFrom: "$420", icon: "✂️" },
+      { title: "DTF full color", desc: "Impresión digital directa sobre film. Sin mínimo de colores.", priceFrom: "$290", icon: "🌈" },
+    ],
+    portfolio: [
+      { title: "Uniformes escolares", desc: "Logos institucionales bordados con calidad.", icon: "🎓" },
+      { title: "Fiestas y celebraciones", desc: "Remeras temáticas para despedidas y cumpleaños.", icon: "🎉" },
+      { title: "Negocios locales", desc: "Delantales, gorras y uniformes de trabajo.", icon: "🏪" },
     ],
     colors: {
       primary: "#ea580c",
@@ -115,23 +121,25 @@ export const stores: StoreMock[] = [
     id: 3,
     name: "Bordado Pro",
     logoText: "Bordado Pro",
-    tagline: "TU EQUIPO. TU MARCA. TU ESTILO.",
+    tagline: "Tu equipo. Tu marca. Tu estilo.",
     description:
-      "Especialistas en bordado para equipos deportivos y merchandising de eventos. Cotizá online y recibí en 48hs.",
+      "Especialistas en bordado para equipos deportivos y merchandising de eventos. Cotizá tu proyecto online y recibí en 48hs.",
     phone: "+598 93 456 789",
     whatsapp: "59893456789",
     email: "pedidos@bordadopro.uy",
     address: "18 de Julio 1800, Local 12, Montevideo",
     hours: "Lun a Vie: 9:00 - 20:00",
-    products: [
-      { name: "Camiseta técnica", priceFrom: "$1.290", image: "/mockups/polo-black-front.png", tag: "TOP" },
-      { name: "Polo entrenamiento", priceFrom: "$1.050", image: "/mockups/polo-white-front.png" },
-      { name: "Chomba deportiva", priceFrom: "$1.450", image: "/mockups/polo-blue-front.png", tag: "NUEVO" },
-    ],
+    ctaUrl: "https://demo.quotixos.com",
+    heroImage: "/mockups/polo-black-front.png",
     services: [
-      { title: "BORDADO 3D / PUFF", desc: "Efecto volumétrico ideal para gorras y chaquetas.", icon: "🏆" },
-      { title: "ESTAMPADO DTF", desc: "Full color sobre cualquier tela. Sin mínimo de unidades.", icon: "🔥" },
-      { title: "PACKAGING PERSONALIZADO", desc: "Bolsas, etiquetas y stickers con tu marca.", icon: "📦" },
+      { title: "Bordado 3D / Puff", desc: "Efecto volumétrico ideal para gorras y chaquetas.", priceFrom: "$650", icon: "🏆" },
+      { title: "Estampado DTF", desc: "Full color sobre cualquier tela. Sin mínimo de unidades.", priceFrom: "$350", icon: "🔥" },
+      { title: "Packaging personalizado", desc: "Bolsas, etiquetas y stickers con tu marca.", priceFrom: "$120", icon: "📦" },
+    ],
+    portfolio: [
+      { title: "Equipos de fútbol", desc: "Camisetas técnicas con nombre, número y escudo.", icon: "⚽" },
+      { title: "Torneos y ligas", desc: "Kits completos para jugadores y árbitros.", icon: "🏆" },
+      { title: "Gimnasios y crossfit", desc: "Indumentaria deportiva de alto rendimiento.", icon: "💪" },
     ],
     colors: {
       primary: "#059669",
@@ -154,21 +162,23 @@ export const stores: StoreMock[] = [
     logoText: "La Fábrica del Logo",
     tagline: "Donde tu diseño cobra vida.",
     description:
-      "Taller de bordado y estampado boutique. Trabajamos con marcas que buscan diferenciarse. Turnos programados.",
+      "Taller de bordado y estampado boutique. Trabajamos con marcas que buscan diferenciarse. Cotizá tu proyecto online.",
     phone: "+598 94 567 890",
     whatsapp: "59894567890",
     email: "hello@lafabrica.uy",
     address: "José Ellauri 450, Punta Carretas",
     hours: "Mar a Sáb: 11:00 - 18:00",
-    products: [
-      { name: "Polo artisan", priceFrom: "$1.590", image: "/mockups/polo-white-front.png", tag: "Edición limitada" },
-      { name: "Polo minimal", priceFrom: "$1.390", image: "/mockups/polo-black-front.png" },
-      { name: "Polo heritage", priceFrom: "$1.790", image: "/mockups/polo-blue-front.png", tag: "Premium" },
-    ],
+    ctaUrl: "https://demo.quotixos.com",
+    heroImage: "/mockups/polo-white-front.png",
     services: [
-      { title: "Bordado a mano", desc: "Puntada por puntada. Piezas únicas con acabado artesanal.", icon: "🪡" },
-      { title: "DTF de alta resolución", desc: "Impresión fotográfica sobre textil. Detalle máximo.", icon: "📸" },
-      { title: "Diseño gráfico", desc: "Si no tenés logo, lo creamos. Incluye mockup digital.", icon: "✏️" },
+      { title: "Bordado a mano", desc: "Puntada por puntada. Piezas únicas con acabado artesanal.", priceFrom: "$1.200", icon: "🪡" },
+      { title: "DTF alta resolución", desc: "Impresión fotográfica sobre textil. Detalle máximo.", priceFrom: "$480", icon: "📸" },
+      { title: "Diseño gráfico", desc: "Si no tenés logo, lo creamos. Incluye mockup digital.", priceFrom: "$800", icon: "✏️" },
+    ],
+    portfolio: [
+      { title: "Marcas de moda", desc: "Etiquetas interiores y parches personalizados.", icon: "👕" },
+      { title: "Restaurantes y bares", desc: "Delantales, servilletas y uniformes de cocina.", icon: "🍽️" },
+      { title: "Startups y agencias", desc: "Welcome kits para onboarding de equipos.", icon: "🚀" },
     ],
     colors: {
       primary: "#18181b",

@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/config";
+import MobileHeader from "@/components/MobileHeader";
 import LeadNotification from "@/components/animations/LeadNotification";
 import ColorToggle from "@/components/animations/ColorToggle";
 import PriceSlider from "@/components/animations/PriceSlider";
@@ -9,24 +9,7 @@ import HeroChatToMockup from "@/components/animations/HeroChatToMockup";
 export default function LandingPage() {
   return (
     <div className="min-h-screen font-body">
-      {/* ─── Header (light) ─── */}
-      <header className="bg-white border-b border-slate-100">
-        <div className="container mx-auto px-6 py-5 flex justify-between items-center">
-          <div className="font-headline text-2xl font-bold tracking-tight text-[#0f172a]">
-            Quotix
-          </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="#como-funciona" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Cómo funciona</Link>
-            <Link href="/precios" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Precios</Link>
-            <a href="https://app.quotixos.com/login" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Ingresar</a>
-          </nav>
-          <a href="https://app.quotixos.com/registro" target="_blank" rel="noreferrer">
-            <Button className="h-10 px-5 rounded-xl text-sm bg-[#0f172a] hover:bg-[#1e293b] text-white font-medium">
-              Registrate gratis
-            </Button>
-          </a>
-        </div>
-      </header>
+      <MobileHeader />
 
       <main>
         {/* ─── Hero (dark) ─── */}

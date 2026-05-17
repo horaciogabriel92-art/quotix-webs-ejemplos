@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Check, X, ArrowRight, Sparkles, Zap, Crown, Building2 } from "lucide-react";
+import MobileHeader from "@/components/MobileHeader";
 
 const PLANS = [
   {
@@ -140,29 +141,14 @@ export default function PreciosPage() {
 
   return (
     <div className="min-h-screen font-body bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-slate-100">
-        <div className="container mx-auto px-6 py-5 flex justify-between items-center">
-          <Link href="/" className="font-headline text-2xl font-bold tracking-tight text-[#0f172a]">
-            Quotix
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/#como-funciona" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Cómo funciona</Link>
-            <Link href="/precios" className="text-sm text-[#0f172a] font-medium">Precios</Link>
-            <a href="https://app.quotixos.com/login" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Ingresar</a>
-          </nav>
-          <a href="https://app.quotixos.com/registro" className="inline-flex items-center justify-center h-10 px-5 rounded-xl text-sm bg-[#0f172a] hover:bg-[#1e293b] text-white font-medium transition-colors">
-            Registrate gratis
-          </a>
-        </div>
-      </header>
+      <MobileHeader />
 
       {/* Hero */}
       <section className="qx-section-dark py-20 md:py-24">
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <div className="qx-badge mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d9469a]" />
-            Empezá gratis, upgradá cuando crezcas
+            Empezá gratis, pagá solo si necesitás más
           </div>
           <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             Elegí el plan que hace{" "}

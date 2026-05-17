@@ -17,11 +17,12 @@ export default function LandingPage() {
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <Link href="#como-funciona" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Cómo funciona</Link>
+            <Link href="/precios" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Precios</Link>
             <a href="https://app.quotixos.com/login" className="text-sm text-slate-500 hover:text-[#0f172a] transition-colors">Ingresar</a>
           </nav>
-          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+          <a href="https://app.quotixos.com/registro" target="_blank" rel="noreferrer">
             <Button className="h-10 px-5 rounded-xl text-sm bg-[#0f172a] hover:bg-[#1e293b] text-white font-medium">
-              Reservar mi demo
+              Registrate gratis
             </Button>
           </a>
         </div>
@@ -46,9 +47,9 @@ export default function LandingPage() {
                   Quotix es un cotizador visual para talleres de bordado y personalización. Tu cliente sube su diseño, elige la prenda y obtiene un precio estimado al instante. Vos recibís un contacto calificado con todo listo para producir.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                  <a href="https://app.quotixos.com/registro" target="_blank" rel="noreferrer">
                     <button className="qx-btn-lime">
-                      Hablar con un asesor →
+                      Empezar gratis →
                     </button>
                   </a>
                   <a href="https://demo.quotixos.com" target="_blank" rel="noreferrer">
@@ -56,6 +57,11 @@ export default function LandingPage() {
                       ▶ Ver demo interactiva
                     </button>
                   </a>
+                  <Link href="/precios">
+                    <button className="qx-btn-outline" style={{ borderColor: "#475569" }}>
+                      Ver planes
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="relative aspect-square">
@@ -277,11 +283,19 @@ export default function LandingPage() {
 
       {/* ─── Footer (dark) ─── */}
       <footer className="bg-[#0a0f1e] border-t border-[#1e293b]">
-        <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-headline font-bold text-white text-xl">Quotix</div>
-          <p className="text-xs text-[#475569]">
-            © {new Date().getFullYear()} Quotix. A product of QUOTIXOS GROUP LLC. Todos los derechos reservados.
-          </p>
+        <div className="container mx-auto px-6 py-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="font-headline font-bold text-white text-xl">Quotix</div>
+            <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#475569]">
+              <Link href="/precios" className="hover:text-white transition-colors">Precios</Link>
+              <a href="https://app.quotixos.com/registro" className="hover:text-white transition-colors">Registro</a>
+              <a href="https://app.quotixos.com/login" className="hover:text-white transition-colors">Login</a>
+              <a href="https://demo.quotixos.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Demo</a>
+            </nav>
+            <p className="text-xs text-[#475569]">
+              © {new Date().getFullYear()} Quotix. A product of QUOTIXOS GROUP LLC. Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

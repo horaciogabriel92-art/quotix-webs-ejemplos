@@ -261,7 +261,7 @@ export default function PreciosPage() {
               return (
                 <div
                   key={plan.id}
-                  className={`relative rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 ${
+                  className={`relative rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-1 ${
                     plan.popular
                       ? "border-2 border-[#bf3480] bg-[#0f172a] text-white shadow-xl shadow-[#bf3480]/10"
                       : plan.id === "free"
@@ -275,7 +275,7 @@ export default function PreciosPage() {
                     </div>
                   )}
 
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 mx-auto ${
                     plan.popular ? "bg-[#bf3480]/20 text-[#d9469a]" : "bg-slate-100 text-slate-600"
                   }`}>
                     <Icon className="w-5 h-5" />
@@ -319,7 +319,7 @@ export default function PreciosPage() {
                     {plan.cta}
                   </a>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 text-left">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm">
                         {f.included ? (

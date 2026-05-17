@@ -177,34 +177,64 @@ export default function PreciosPage() {
       {/* Promo Fundador */}
       <section className="qx-section-dark pb-16 -mt-4">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="relative rounded-3xl overflow-hidden border-2 border-[#d4f542]/30 bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-8 md:p-10">
+          <div className="relative rounded-3xl overflow-hidden border-2 border-[#d4f542]/30 bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-8 md:p-12">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#d4f542]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="relative flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
+            <div className="relative">
+              <div className="text-center mb-10">
                 <div className="inline-block px-3 py-1 rounded-full bg-[#d4f542]/15 text-[#d4f542] text-xs font-bold uppercase tracking-wider mb-4">
-                  Oferta de lanzamiento
+                  Oferta de lanzamiento — Solo 20 lugares
                 </div>
-                <h2 className="font-headline text-2xl md:text-3xl font-bold text-white mb-3">
-                  Pack de Lanzamiento — $275 USD
+                <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-4">
+                  Tu página web con cotizador visual + 3 meses de Profesional.
                 </h2>
-                <p className="text-[#94a3b8] leading-relaxed mb-4">
-                  Setup completo + 3 meses de Profesional incluidos + landing page personalizada + dominio propio.
-                  Te armamos todo. Vos solo recibís los pedidos.
-                </p>
-                <p className="text-sm text-[#d4f542]">
-                  💳 Pagalo en hasta 12 cuotas con Mercado Pago.
+                <p className="text-[#94a3b8] max-w-2xl mx-auto">
+                  No es solo un software. Es tu taller online completo: landing page profesional, cotizador visual en tiempo real, dominio propio y configuración llave en mano.
                 </p>
               </div>
-              <a
-                href="https://wa.me/59898133523?text=Quiero%20el%20Pack%20de%20Lanzamiento%20$275"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0"
-              >
-                <button className="qx-btn-lime">
-                  Quiero el pack →
-                </button>
-              </a>
+
+              {/* Value stack */}
+              <div className="grid md:grid-cols-3 gap-4 mb-10">
+                {[
+                  { icon: "🌐", title: "Landing page profesional", desc: "Diseño exclusivo con tu marca y dominio propio.", value: "$200", valueNote: "USD" },
+                  { icon: "🔥", title: "Cotizador visual PRO", desc: "3 meses de acceso total. Tu cliente se cotiza solo.", value: "$237", valueNote: "3 meses" },
+                  { icon: "🛠️", title: "Setup llave en mano", desc: "Subimos tus prendas y calibramos tus precios.", value: "$150+", valueNote: "Valor real" },
+                ].map((item, i) => (
+                  <div key={i} className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 text-center">
+                    <div className="text-3xl mb-3">{item.icon}</div>
+                    <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-sm text-[#94a3b8] mb-4">{item.desc}</p>
+                    <div className="text-lg">
+                      <span className="text-[#64748b] line-through mr-2">{item.value}</span>
+                      <span className="text-[#d4f542] font-bold">Incluido</span>
+                    </div>
+                    <div className="text-xs text-[#64748b] mt-1">{item.valueNote}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Price anchoring */}
+              <div className="rounded-2xl bg-[#0f172a] border border-[#334155] p-8 text-center">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-2">
+                  <span className="text-[#94a3b8] text-lg">Valor real de todo:</span>
+                  <span className="text-[#64748b] text-2xl line-through">$500+ USD</span>
+                </div>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
+                  <span className="text-white text-lg font-medium">Tu inversión hoy:</span>
+                  <span className="text-[#d4f542] text-4xl font-headline font-bold">$275 USD</span>
+                </div>
+                <p className="text-sm text-[#94a3b8] mb-6">
+                  💳 Pagalo en hasta <strong className="text-white">12 cuotas</strong> con Mercado Pago. Sin permanencia.
+                </p>
+                <a
+                  href="https://wa.me/59898133523?text=Quiero%20el%20Pack%20de%20Lanzamiento%20$275"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="qx-btn-lime text-lg h-14 px-10">
+                    Quiero el pack →
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>

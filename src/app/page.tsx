@@ -195,7 +195,7 @@ export default function LandingPage() {
                   Tu taller online en 48 horas.
                 </h2>
                 <p className="text-lg text-[#94a3b8] max-w-2xl mx-auto">
-                  No te vendemos un software. Te entregamos un vendedor digital que trabaja 24/7, filtra curiosos y deja los pedidos listos para producir.
+                  Tu página web profesional con cotizador visual en tiempo real, lista de precios automática y contactos calificados. En 48 horas, sin que vos hagas nada.
                 </p>
               </div>
 

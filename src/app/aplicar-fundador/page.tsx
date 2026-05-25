@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { API_URL } from "@/lib/api";
@@ -7,10 +9,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, Send } from "lucide-react";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function ApplyFounderPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { format } = useCurrency();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -60,7 +64,7 @@ export default function ApplyFounderPage() {
           </Link>
           <div>
             <h1 className="text-3xl font-headline font-bold">Aplicar como Fundador</h1>
-            <p className="text-[#94a3b8] text-sm">20 cupos limitados • $300 USD • 3 meses incluidos</p>
+            <p className="text-[#94a3b8] text-sm">20 cupos limitados • {format(300)} • 3 meses incluidos</p>
           </div>
         </div>
 

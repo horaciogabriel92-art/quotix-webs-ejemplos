@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useSpring, useTransform } from "motion/react";
 import { TrendingDown, Zap, ShieldCheck } from "lucide-react";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const BASE_PRICE = 15;
 
@@ -24,8 +25,9 @@ function calc(qty: number) {
 }
 
 function AnimatedNumber({ value }: { value: number }) {
+  const { format } = useCurrency();
   const spring = useSpring(value, { stiffness: 80, damping: 20 });
-  const display = useTransform(spring, (v) => Math.round(v).toLocaleString());
+  const display = useTransform(spring, (v) => format(Math.round(v)));
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -39,13 +41,14 @@ function AnimatedNumber({ value }: { value: number }) {
     return unsub;
   }, [display]);
 
-  return <span ref={ref}>{value.toLocaleString()}</span>;
+  return <span ref={ref}>{format(value)}</span>;
 }
 
 export default function PriceSlider() {
   const [sceneIdx, setSceneIdx] = useState(0);
   const [loopKey, setLoopKey] = useState(0);
   const [showSavings, setShowSavings] = useState(false);
+  const { format } = useCurrency();
 
   const scene = SCENES[sceneIdx];
   const { qty } = scene;
@@ -151,10 +154,10 @@ export default function PriceSlider() {
             >
               {discount > 0 && (
                 <span className="text-sm text-white/40 line-through">
-                  ${BASE_PRICE.toFixed(2)}
+                  {format(BASE_PRICE)}
                 </span>
               )}
-              <span className="text-lg font-bold text-white">${unit.toFixed(2)}</span>
+              <span className="text-lg font-bold text-white">{format(unit)}</span>
               {discount > 0 && (
                 <motion.span
                   initial={{ scale: 0, rotate: -20 }}
@@ -181,12 +184,12 @@ export default function PriceSlider() {
 
           <div className="text-[10px] text-white/40 uppercase tracking-wider mb-1">Total estimado</div>
           <div className="text-4xl font-bold text-white tracking-tight">
-            $<AnimatedNumber value={total} />
+            <AnimatedNumber value={total} />
           </div>
 
           <div className="flex items-center gap-2 mt-2">
             <span className="text-xs text-white/40">
-              Rango: ${min.toLocaleString()} — ${max.toLocaleString()}
+              Rango: {format(min)} — {format(max)}
             </span>
             <ShieldCheck className="w-3.5 h-3.5 text-lime-400" />
           </div>
@@ -201,7 +204,7 @@ export default function PriceSlider() {
                 className="mt-2 pt-2 border-t border-white/10"
               >
                 <span className="text-[10px] text-lime-400 font-medium">
-                  Ahorrás ${((BASE_PRICE - unit) * qty).toLocaleString()} vs. precio base
+                  Ahorrás {format((BASE_PRICE - unit) * qty)} vs. precio base
                 </span>
               </motion.div>
             )}

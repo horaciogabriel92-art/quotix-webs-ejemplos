@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { CurrencySelector } from "./CurrencySelector";
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +42,7 @@ export default function MobileHeader() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
+          <CurrencySelector variant="light" />
           <a
             href="https://app.quotixos.com/login"
             className="h-10 px-5 rounded-xl text-sm border border-slate-200 text-slate-700 font-medium hover:border-slate-300 hover:bg-slate-50 transition-colors inline-flex items-center justify-center"
@@ -90,6 +92,10 @@ export default function MobileHeader() {
             </a>
 
             <div className="pt-4 space-y-3">
+              <div className="flex items-center justify-between py-2">
+                <span className="text-sm text-slate-500">Moneda</span>
+                <CurrencySelector variant="light" />
+              </div>
               <a
                 href="https://app.quotixos.com/login"
                 onClick={() => setIsOpen(false)}

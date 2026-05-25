@@ -1,9 +1,13 @@
 "use client";
 
+"use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { Check, X, ArrowRight, Sparkles, Zap, Crown, Building2 } from "lucide-react";
 import MobileHeader from "@/components/MobileHeader";
+import { useCurrency } from "@/context/CurrencyContext";
+import { CurrencySelector } from "@/components/CurrencySelector";
 
 const PLANS = [
   {
@@ -138,6 +142,7 @@ const TABLE_FEATURES = [
 
 export default function PreciosPage() {
   const [isYearly, setIsYearly] = useState(false);
+  const { format } = useCurrency();
 
   return (
     <div className="min-h-screen font-body bg-white">
@@ -181,16 +186,16 @@ export default function PreciosPage() {
               {/* Value stack */}
               <div className="grid md:grid-cols-3 gap-4 mb-10">
                 {[
-                  { icon: "🌐", title: "Landing page profesional", desc: "Diseño exclusivo con tu marca y dominio propio.", value: "$200", valueNote: "USD" },
-                  { icon: "🔥", title: "Cotizador visual PRO", desc: "3 meses de acceso total. Tu cliente se cotiza solo.", value: "$237", valueNote: "3 meses" },
-                  { icon: "🛠️", title: "Setup llave en mano", desc: "Subimos tus prendas y calibramos tus precios.", value: "$150+", valueNote: "Valor real" },
+                  { icon: "🌐", title: "Landing page profesional", desc: "Diseño exclusivo con tu marca y dominio propio.", value: 200, valueNote: "USD" },
+                  { icon: "🔥", title: "Cotizador visual PRO", desc: "3 meses de acceso total. Tu cliente se cotiza solo.", value: 237, valueNote: "3 meses" },
+                  { icon: "🛠️", title: "Setup llave en mano", desc: "Subimos tus prendas y calibramos tus precios.", value: 150, valueNote: "Valor real" },
                 ].map((item, i) => (
                   <div key={i} className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 text-center">
                     <div className="text-3xl mb-3">{item.icon}</div>
                     <h3 className="font-bold text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-[#94a3b8] mb-4">{item.desc}</p>
                     <div className="text-lg">
-                      <span className="text-[#64748b] line-through mr-2">{item.value}</span>
+                      <span className="text-[#64748b] line-through mr-2">{format(item.value as number)}</span>
                       <span className="text-[#d4f542] font-bold">Incluido</span>
                     </div>
                     <div className="text-xs text-[#64748b] mt-1">{item.valueNote}</div>
@@ -202,11 +207,11 @@ export default function PreciosPage() {
               <div className="rounded-2xl bg-[#0f172a] border border-[#334155] p-8 text-center">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-2">
                   <span className="text-[#94a3b8] text-lg">Valor real de todo:</span>
-                  <span className="text-[#64748b] text-2xl line-through">$500+ USD</span>
+                  <span className="text-[#64748b] text-2xl line-through">{format(500)}+</span>
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
                   <span className="text-white text-lg font-medium">Tu inversión hoy:</span>
-                  <span className="text-[#d4f542] text-4xl font-headline font-bold">$275 USD</span>
+                  <span className="text-[#d4f542] text-4xl font-headline font-bold">{format(275)}</span>
                 </div>
                 <p className="text-sm text-[#94a3b8] mb-6">
                   💳 Pagalo en hasta <strong className="text-white">12 cuotas</strong> con Mercado Pago. Sin permanencia.
@@ -290,7 +295,7 @@ export default function PreciosPage() {
 
                   <div className="mb-6">
                     <span className={`font-headline text-4xl font-bold ${plan.popular ? "text-white" : "text-[#0f172a]"}`}>
-                      {price === 0 ? "Gratis" : `$${price}`}
+                      {price === 0 ? "Gratis" : format(price)}
                     </span>
                     {price > 0 && (
                       <span className={`text-sm ml-1 ${plan.popular ? "text-[#94a3b8]" : "text-slate-400"}`}>
@@ -299,7 +304,7 @@ export default function PreciosPage() {
                     )}
                     {monthlyEquiv && (
                       <div className={`text-xs mt-1 ${plan.popular ? "text-[#d4f542]" : "text-[#bf3480]"}`}>
-                        {monthlyEquiv}
+                        {monthlyEquiv.replace(/^\~(\$[\d.]+)/, `~${format(Math.round(price / 12))}`)}
                       </div>
                     )}
                   </div>
@@ -417,6 +422,7 @@ export default function PreciosPage() {
               <a href="https://app.quotixos.com/login" className="hover:text-white transition-colors">Login</a>
               <a href="https://demo.quotixos.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Demo</a>
             </nav>
+            <CurrencySelector variant="dark" />
             <p className="text-xs text-[#475569]">
               © {new Date().getFullYear()} Quotix. A product of QUOTIXOS GROUP LLC. Todos los derechos reservados.
             </p>

@@ -15,6 +15,7 @@ export interface StoreMock {
     title: string;
     desc: string;
     priceFrom: string;
+    priceFromUsd: number;
     icon: string;
   }[];
   portfolio: {
@@ -54,9 +55,9 @@ export const stores: StoreMock[] = [
     ctaUrl: "https://demo.quotixos.com",
     heroImage: "/mockups/polo-white-front.png",
     services: [
-      { title: "Bordado computarizado", desc: "Hasta 12 colores. Ideal para logos corporativos y uniformes.", priceFrom: "$450", icon: "🧵" },
-      { title: "Estampado DTF", desc: "Colores vibrantes y duraderos. Perfecto para poleras y merchandising.", priceFrom: "$320", icon: "🎨" },
-      { title: "Sublimación full print", desc: "Diseños sin límites de color para prendas técnicas.", priceFrom: "$380", icon: "🔥" },
+      { title: "Bordado computarizado", desc: "Hasta 12 colores. Ideal para logos corporativos y uniformes.", priceFrom: "$450", priceFromUsd: 450, icon: "🧵" },
+      { title: "Estampado DTF", desc: "Colores vibrantes y duraderos. Perfecto para poleras y merchandising.", priceFrom: "$320", priceFromUsd: 320, icon: "🎨" },
+      { title: "Sublimación full print", desc: "Diseños sin límites de color para prendas técnicas.", priceFrom: "$380", priceFromUsd: 380, icon: "🔥" },
     ],
     portfolio: [
       { title: "Equipos deportivos", desc: "Uniformes completos con nombre y número.", icon: "⚽" },
@@ -93,9 +94,9 @@ export const stores: StoreMock[] = [
     ctaUrl: "https://demo.quotixos.com",
     heroImage: "/mockups/polo-blue-front.png",
     services: [
-      { title: "Serigrafía textil", desc: "La opción más económica para grandes cantidades.", priceFrom: "$180", icon: "🖨️" },
-      { title: "Bordado directo", desc: "Acabado premium que dura años de lavados.", priceFrom: "$420", icon: "✂️" },
-      { title: "DTF full color", desc: "Impresión digital directa sobre film. Sin mínimo de colores.", priceFrom: "$290", icon: "🌈" },
+      { title: "Serigrafía textil", desc: "La opción más económica para grandes cantidades.", priceFrom: "$180", priceFromUsd: 180, icon: "🖨️" },
+      { title: "Bordado directo", desc: "Acabado premium que dura años de lavados.", priceFrom: "$420", priceFromUsd: 420, icon: "✂️" },
+      { title: "DTF full color", desc: "Impresión digital directa sobre film. Sin mínimo de colores.", priceFrom: "$290", priceFromUsd: 290, icon: "🌈" },
     ],
     portfolio: [
       { title: "Uniformes escolares", desc: "Logos institucionales bordados con calidad.", icon: "🎓" },
@@ -132,9 +133,9 @@ export const stores: StoreMock[] = [
     ctaUrl: "https://demo.quotixos.com",
     heroImage: "/mockups/polo-black-front.png",
     services: [
-      { title: "Bordado 3D / Puff", desc: "Efecto volumétrico ideal para gorras y chaquetas.", priceFrom: "$650", icon: "🏆" },
-      { title: "Estampado DTF", desc: "Full color sobre cualquier tela. Sin mínimo de unidades.", priceFrom: "$350", icon: "🔥" },
-      { title: "Packaging personalizado", desc: "Bolsas, etiquetas y stickers con tu marca.", priceFrom: "$120", icon: "📦" },
+      { title: "Bordado 3D / Puff", desc: "Efecto volumétrico ideal para gorras y chaquetas.", priceFrom: "$650", priceFromUsd: 650, icon: "🏆" },
+      { title: "Estampado DTF", desc: "Full color sobre cualquier tela. Sin mínimo de unidades.", priceFrom: "$350", priceFromUsd: 350, icon: "🔥" },
+      { title: "Packaging personalizado", desc: "Bolsas, etiquetas y stickers con tu marca.", priceFrom: "$120", priceFromUsd: 120, icon: "📦" },
     ],
     portfolio: [
       { title: "Equipos de fútbol", desc: "Camisetas técnicas con nombre, número y escudo.", icon: "⚽" },
@@ -171,9 +172,9 @@ export const stores: StoreMock[] = [
     ctaUrl: "https://demo.quotixos.com",
     heroImage: "/mockups/polo-white-front.png",
     services: [
-      { title: "Bordado a mano", desc: "Puntada por puntada. Piezas únicas con acabado artesanal.", priceFrom: "$1.200", icon: "🪡" },
-      { title: "DTF alta resolución", desc: "Impresión fotográfica sobre textil. Detalle máximo.", priceFrom: "$480", icon: "📸" },
-      { title: "Diseño gráfico", desc: "Si no tenés logo, lo creamos. Incluye mockup digital.", priceFrom: "$800", icon: "✏️" },
+      { title: "Bordado a mano", desc: "Puntada por puntada. Piezas únicas con acabado artesanal.", priceFrom: "$1.200", priceFromUsd: 1200, icon: "🪡" },
+      { title: "DTF alta resolución", desc: "Impresión fotográfica sobre textil. Detalle máximo.", priceFrom: "$480", priceFromUsd: 480, icon: "📸" },
+      { title: "Diseño gráfico", desc: "Si no tenés logo, lo creamos. Incluye mockup digital.", priceFrom: "$800", priceFromUsd: 800, icon: "✏️" },
     ],
     portfolio: [
       { title: "Marcas de moda", desc: "Etiquetas interiores y parches personalizados.", icon: "👕" },

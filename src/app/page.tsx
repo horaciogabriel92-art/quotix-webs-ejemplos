@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/config";
 import MobileHeader from "@/components/MobileHeader";
@@ -5,8 +7,11 @@ import LeadNotification from "@/components/animations/LeadNotification";
 import ColorToggle from "@/components/animations/ColorToggle";
 import PriceSlider from "@/components/animations/PriceSlider";
 import HeroChatToMockup from "@/components/animations/HeroChatToMockup";
+import { useCurrency } from "@/context/CurrencyContext";
+import { CurrencySelector } from "@/components/CurrencySelector";
 
 export default function LandingPage() {
+  const { format } = useCurrency();
   return (
     <div className="min-h-screen font-body">
       <MobileHeader />
@@ -189,14 +194,14 @@ export default function LandingPage() {
                     <span className="text-2xl">🌐</span>
                     <div>
                       <strong className="text-white block">Tu Landing Page Profesional Propia</strong>
-                      <span className="text-[#94a3b8] text-sm">Diseño exclusivo y dominio propio. <em className="text-[#cbd5e1]">(Valor normal: $200 USD)</em></span>
+                      <span className="text-[#94a3b8] text-sm">Diseño exclusivo y dominio propio. <em className="text-[#cbd5e1]">(Valor normal: {format(200)})</em></span>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
                     <span className="text-2xl">🔥</span>
                     <div>
                       <strong className="text-white block">3 Meses de Acceso Total a Quotix PRO</strong>
-                      <span className="text-[#94a3b8] text-sm">Cotizador visual, panel de control, contactos ilimitados. <em className="text-[#cbd5e1]">(Valor normal: $300 USD)</em></span>
+                      <span className="text-[#94a3b8] text-sm">Cotizador visual, panel de control, contactos ilimitados. <em className="text-[#cbd5e1]">(Valor normal: {format(300)})</em></span>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -209,9 +214,9 @@ export default function LandingPage() {
                 </ul>
 
                 <div className="pt-6 border-t border-[#334155] text-center">
-                  <div className="text-[#94a3b8] text-lg mb-2">Setup + 3 meses PRO: <s>$500 USD</s></div>
+                  <div className="text-[#94a3b8] text-lg mb-2">Setup + 3 meses PRO: <s>{format(500)}</s></div>
                   <div className="text-[#d4f542] text-5xl font-headline font-bold mb-4">
-                    $275 <span className="text-2xl">USD</span>
+                    {format(275)}
                   </div>
                   <p className="text-sm text-white mb-6 bg-white/5 inline-block px-4 py-2 rounded-lg">
                     💳 Puedes pagarlo hasta en <strong>12 cuotas</strong> con Mercado Pago.
@@ -233,7 +238,7 @@ export default function LandingPage() {
                 <p className="text-[#94a3b8] text-sm max-w-2xl mx-auto leading-relaxed">
                   Pasados los 3 meses, tenés dos opciones:
                   <br className="mb-2"/>
-                  <strong>Seguir con Quotix PRO</strong> por $99 USD/mes y seguir recibiendo pedidos cerrados automáticamente.
+                  <strong>Seguir con Quotix PRO</strong> por {format(99)}/mes y seguir recibiendo pedidos cerrados automáticamente.
                   <br/>
                   <strong>O cancelar el SaaS</strong> y quedarte con la landing page profesional como tu sitio web principal. El dominio y el diseño son tuyos. Solo pagás hosting.
                 </p>
@@ -275,6 +280,7 @@ export default function LandingPage() {
               <a href="https://app.quotixos.com/login" className="hover:text-white transition-colors">Login</a>
               <a href="https://demo.quotixos.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Demo</a>
             </nav>
+            <CurrencySelector variant="dark" />
             <p className="text-xs text-[#475569]">
               © {new Date().getFullYear()} Quotix. A product of QUOTIXOS GROUP LLC. Todos los derechos reservados.
             </p>

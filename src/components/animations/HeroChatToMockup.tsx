@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Clock, Zap, ArrowRight, CheckCircle2, ImageIcon, Upload, User, Phone, ChevronRight } from "lucide-react";
+import { useCurrency } from "@/context/CurrencyContext";
 
 // ── WHATSAPP MESSAGES ──
 const PHONE_MESSAGES = [
@@ -107,6 +108,7 @@ function WhatsAppContent({ msgIdx, showTyping, loopKey }: { msgIdx: number; show
 //  SUB-COMPONENTE: Panel Quotix (contenido)
 // ═══════════════════════════════════════════════════════════
 function QuotixContent({ qxStep, qxQty, loopKey, compact }: { qxStep: number; qxQty: number; loopKey: number; compact?: boolean }) {
+  const { format } = useCurrency();
   const qxStepData = QUOTIX_STEPS[qxStep];
 
   return (
@@ -298,8 +300,8 @@ function QuotixContent({ qxStep, qxQty, loopKey, compact }: { qxStep: number; qx
                 <span className="text-[9px] bg-red-500/20 text-red-300 px-1 py-0.5 rounded">-15%</span>
               </div>
               <div className="flex items-baseline gap-2">
-                <span className="text-xl font-bold text-white">$1,275</span>
-                <span className="text-[9px] text-white/40">$1,148 — $1,403</span>
+                <span className="text-xl font-bold text-white">{format(1275)}</span>
+                <span className="text-[9px] text-white/40">{format(1148)} — {format(1403)}</span>
               </div>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }} className="flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-400/20 rounded-md px-2 py-1">
                 <CheckCircle2 className="w-3 h-3 text-emerald-400" />

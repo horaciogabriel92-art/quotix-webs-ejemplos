@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { stores } from "@/lib/store-mocks";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function Plantilla4() {
+  const { format } = useCurrency();
   const s = stores[3];
   const c = s.colors;
 
@@ -112,7 +114,7 @@ export default function Plantilla4() {
                 <div className="flex-1">
                   <h3 className="font-medium text-xl mb-2">{svc.title}</h3>
                   <p className="leading-relaxed max-w-lg mb-4" style={{ color: c.textMuted }}>{svc.desc}</p>
-                  <p className="font-medium text-sm mb-4">Desde {svc.priceFrom} por prenda</p>
+                  <p className="font-medium text-sm mb-4">Desde {format(svc.priceFromUsd)} por prenda</p>
                   <a
                     href={s.ctaUrl}
                     target="_blank"

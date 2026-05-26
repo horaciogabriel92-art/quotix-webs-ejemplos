@@ -142,7 +142,7 @@ const TABLE_FEATURES = [
 
 export default function PreciosPage() {
   const [isYearly, setIsYearly] = useState(false);
-  const { format } = useCurrency();
+  const { format, currency } = useCurrency();
 
   return (
     <div className="min-h-screen font-body bg-white">
@@ -176,55 +176,90 @@ export default function PreciosPage() {
                   Oferta de lanzamiento — Solo 20 lugares
                 </div>
                 <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-4">
-                  Tu página web con cotizador visual + 3 meses de Profesional.
+                  Tu página web con cotizador visual y administrador de pedidos.
                 </h2>
                 <p className="text-[#94a3b8] max-w-2xl mx-auto">
-                  No es solo un software. Es tu taller online completo: landing page profesional, cotizador visual en tiempo real, dominio propio y configuración llave en mano.
+                  Una estructura digital completa para tu negocio que incluye una landing page profesional con tu marca, cotizador automático en tiempo real para tus clientes y la configuración inicial de todo el sistema.
                 </p>
               </div>
 
               {/* Value stack */}
               <div className="grid md:grid-cols-3 gap-4 mb-10">
-                {[
-                  { icon: "🌐", title: "Landing page profesional", desc: "Diseño exclusivo con tu marca y dominio propio.", value: 200, valueNote: "USD" },
-                  { icon: "🔥", title: "Cotizador visual PRO", desc: "3 meses de acceso total. Tu cliente se cotiza solo.", value: 237, valueNote: "3 meses" },
-                  { icon: "🛠️", title: "Setup llave en mano", desc: "Subimos tus prendas y calibramos tus precios.", value: 150, valueNote: "Valor real" },
-                ].map((item, i) => (
-                  <div key={i} className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 text-center">
-                    <div className="text-3xl mb-3">{item.icon}</div>
-                    <h3 className="font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-sm text-[#94a3b8] mb-4">{item.desc}</p>
-                    <div className="text-lg">
-                      <span className="text-[#64748b] line-through mr-2">{format(item.value as number)}</span>
-                      <span className="text-[#d4f542] font-bold">Incluido</span>
-                    </div>
-                    <div className="text-xs text-[#64748b] mt-1">{item.valueNote}</div>
+                <div className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 text-center">
+                  <div className="text-3xl mb-3">🌐</div>
+                  <h3 className="font-bold text-white mb-2">Landing page profesional</h3>
+                  <p className="text-sm text-[#94a3b8] mb-4">Diseño exclusivo con tu marca y tu propio dominio web (www.tumarca.com) incluido por un año entero. El diseño de la página te queda para siempre.</p>
+                  <div className="text-lg">
+                    <span className="text-[#64748b] line-through mr-2">{format(200)}</span>
+                    <span className="text-[#d4f542] font-bold">Incluido</span>
                   </div>
-                ))}
+                  <div className="text-xs text-[#64748b] mt-1">USD</div>
+                </div>
+                <div className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 text-center">
+                  <div className="text-3xl mb-3">🔥</div>
+                  <h3 className="font-bold text-white mb-2">Cotizador y Administrador</h3>
+                  <p className="text-sm text-[#94a3b8] mb-4">Acceso completo al sistema por 3 meses. Tus clientes se cotizan solos desde el celular y vos gestionás las órdenes en un panel organizado.</p>
+                  <div className="text-lg">
+                    <span className="text-[#64748b] line-through mr-2">{format(300)}</span>
+                    <span className="text-[#d4f542] font-bold">Incluido</span>
+                  </div>
+                  <div className="text-xs text-[#64748b] mt-1">3 meses</div>
+                </div>
+                <div className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 text-center">
+                  <div className="text-3xl mb-3">🛠️</div>
+                  <h3 className="font-bold text-white mb-2">Configuración inicial incluida</h3>
+                  <p className="text-sm text-[#94a3b8] mb-4">Nosotros nos encargamos de la puesta a punto: cargamos tus prendas de catálogo y calibramos el cotizador con tus listas de precios actuales.</p>
+                  <div className="text-lg">
+                    <span className="text-[#64748b] line-through mr-2">{format(150)}+</span>
+                    <span className="text-[#d4f542] font-bold">Incluido</span>
+                  </div>
+                  <div className="text-xs text-[#64748b] mt-1">Valor real</div>
+                </div>
               </div>
 
               {/* Price anchoring */}
-              <div className="rounded-2xl bg-[#0f172a] border border-[#334155] p-8 text-center">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-2">
-                  <span className="text-[#94a3b8] text-lg">Valor real de todo:</span>
-                  <span className="text-[#64748b] text-2xl line-through">{format(500)}+</span>
-                </div>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
-                  <span className="text-white text-lg font-medium">Tu inversión hoy:</span>
-                  <span className="text-[#d4f542] text-4xl font-headline font-bold">{format(275)}</span>
-                </div>
-                <p className="text-sm text-[#94a3b8] mb-6">
-                  💳 Pagalo en hasta <strong className="text-white">12 cuotas</strong> con Mercado Pago. Sin permanencia.
-                </p>
+              <div className="rounded-2xl bg-[#0f172a] border border-[#334155] p-8 text-center space-y-4">
+                {currency === "UYU" ? (
+                  <>
+                    <div className="text-[#94a3b8] text-lg">Valor real del montaje y configuración: <s>$U 20.000+</s></div>
+                    <div className="text-[#d4f542] text-4xl font-headline font-bold">
+                      12 cuotas sin recargo de $916
+                    </div>
+                    <p className="text-sm text-[#94a3b8]">Con mercado pago</p>
+                    <p className="text-sm text-white/70">o 1 pago contado de $9.990</p>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-2">
+                      <span className="text-[#94a3b8] text-lg">Valor real de todo:</span>
+                      <span className="text-[#64748b] text-2xl line-through">{format(500)}+</span>
+                    </div>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
+                      <span className="text-white text-lg font-medium">Tu inversión hoy:</span>
+                      <span className="text-[#d4f542] text-4xl font-headline font-bold">{format(275)}</span>
+                    </div>
+                    <p className="text-sm text-[#94a3b8] mb-6">
+                      💳 Pagalo en hasta <strong className="text-white">12 cuotas</strong> con Mercado Pago. Sin permanencia.
+                    </p>
+                  </>
+                )}
                 <a
                   href="https://wa.me/59898133523?text=Quiero%20el%20Pack%20de%20Lanzamiento%20$275"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <button className="qx-btn-lime text-lg h-14 px-10">
-                    Quiero el pack →
+                    Digitalizar mi taller ahora →
                   </button>
                 </a>
+              </div>
+
+              {/* ¿Qué pasa después de los 3 meses? */}
+              <div className="rounded-2xl bg-[#0f172a]/60 border border-[#334155] p-6 md:p-8 mt-8">
+                <h4 className="text-lg font-bold text-white mb-3">¿Qué pasa después de los 3 meses?</h4>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">
+                  La página web y el dominio siguen siendo de tu taller. El sistema de cotizaciones online te viene bonificado los primeros 90 días. Al cuarto mes, vos elegís: si la herramienta te dio resultados y te ahorró tiempo, mantenés el cotizador activo por una suscripción mensual desde {format(39)} (unos $1.500 pesos). Si decidís no continuar con el cotizador, la página te queda activa igual como un catálogo digital estático para tu negocio. No hay contratos de permanencia.
+                </p>
               </div>
             </div>
           </div>

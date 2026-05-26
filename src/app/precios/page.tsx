@@ -495,19 +495,24 @@ export default function PreciosPage() {
           <p className="text-center text-xs text-[#475569] uppercase tracking-wider mb-4">Pagá con confianza</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
-              <span className="text-base">💳</span> Visa
+              <svg viewBox="0 0 48 16" className="h-3.5 w-auto" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11.5" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold" fontStyle="italic" fontFamily="Arial, sans-serif">VISA</text></svg>
+              Visa
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
-              <span className="text-base">💳</span> Mastercard
+              <svg viewBox="0 0 24 16" className="h-3.5 w-auto" fill="none"><circle cx="9" cy="8" r="7" fill="#EB001B"/><circle cx="15" cy="8" r="7" fill="#F79E1B"/><path d="M12 3a7 7 0 0 0 0 10 7 7 0 0 0 0-10z" fill="#FF5F00"/></svg>
+              Mastercard
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
-              <span className="text-base">💳</span> Débito
+              <svg viewBox="0 0 16 16" className="h-3.5 w-auto" fill="none"><rect width="16" height="16" rx="3" fill="#00A650"/><text x="8" y="11" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="Arial, sans-serif">OCA</text></svg>
+              OCA
             </span>
             <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
-              <span className="text-base">🔒</span> Stripe
+              <svg viewBox="0 0 16 16" className="h-3.5 w-auto" fill="none"><rect width="16" height="16" rx="3" fill="#635BFF"/><path d="M8 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4A4 4 0 0 1 4 8a4 4 0 0 1 4-4z" fill="white" opacity="0.3"/><circle cx="8" cy="8" r="1.5" fill="white"/></svg>
+              Stripe
             </span>
             <span className="inline-flex items-center gap-1.5 bg-[#009ee3]/15 border border-[#009ee3]/30 rounded-lg px-3 py-1.5 text-xs text-[#00b2ff] font-medium">
-              <span className="text-base">Ⓜ️</span> Mercado Pago
+              <svg viewBox="0 0 16 16" className="h-3.5 w-auto" fill="none"><rect width="16" height="16" rx="3" fill="#009ee3"/><circle cx="5" cy="8" r="3" fill="white"/><circle cx="11" cy="8" r="3" fill="white" opacity="0.6"/></svg>
+              Mercado Pago
             </span>
           </div>
         </div>

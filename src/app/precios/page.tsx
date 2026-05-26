@@ -426,6 +426,49 @@ export default function PreciosPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="qx-section-light py-16 bg-slate-50">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="font-headline text-3xl font-bold text-center mb-4 text-[#0f172a]">
+            Preguntas Frecuentes
+          </h2>
+          <p className="text-center text-slate-500 text-sm mb-10">Quotix Uruguay</p>
+          <div className="space-y-4">
+            {[
+              {
+                q: "¿El pago de las 12 cuotas de $916 o los $9.990 contado se repite cada 3 meses?",
+                a: "No. Ese valor es un pago único por el concepto de diseño, desarrollo y configuración inicial de tu página web. No vas a volver a pagar ese monto. El acceso al sistema cotizador online te viene bonificado y libre de costos por los primeros 3 meses.",
+              },
+              {
+                q: "¿Qué pasa exactamente cuando se terminan los 3 meses incluidos?",
+                a: "La página web y el dominio .com siguen siendo de tu taller. Al cuarto mes, tú decides cómo continuar con el sistema de cotizaciones interactivas: Si la herramienta te dio resultados y te ahorró tiempo en WhatsApp, mantienes el cotizador activo pasando a una suscripción mensual básica que va desde los $1499. Si decides no continuar con el cotizador automático, el sistema se desactiva pero tu página web queda online de forma permanente funcionando como un catálogo digital estático con tus productos. No tienes contratos de permanencia de ningún tipo.",
+              },
+              {
+                q: "¿El dominio web .com es mío para siempre?",
+                a: "El paquete de lanzamiento incluye la compra, registro a tu nombre y configuración técnica de tu dominio propio (ejemplo: www.tu-taller.com) bonificado por el primer año entero. A partir del segundo año, como funciona cualquier dirección en internet, la renovación anual del nombre del sitio corre por cuenta del taller (es un costo mínimo estándar del mercado de dominios).",
+              },
+              {
+                q: "¿Qué tengo que hacer yo para configurar mis productos y precios?",
+                a: "Nada. Nosotros nos encargamos de toda la puesta a punto inicial dentro del paquete llave en mano. Una vez realizado el pago, nos envías tu lista de precios actual en el formato que la tengas hoy (puede ser un archivo Excel, una foto de una lista en papel o incluso un audio explicándonos cómo cobras) y nosotros programamos las matrices de cálculo en tu sistema junto con tus prendas de catálogo.",
+              },
+              {
+                q: "¿Qué pasa si un logo es muy complejo y el cotizador calcula mal el precio?",
+                a: "El sistema está diseñado específicamente para proteger tu margen de ganancia. La plataforma no le da al cliente final un precio cerrado y obligatorio, sino un rango de precio estimado (un parámetro). Esto te sirve como filtro para descartar a los curiosos sin presupuesto. Cuando el cliente acepta el estimado, a ti te ingresa la orden al panel con el logo limpio, los datos de contacto y las especificaciones. Tú revisas el archivo con tu experiencia, ajustas el valor real final y el sistema te genera un PDF profesional para que se lo despaches por WhatsApp y confirmes la seña. El control total del precio final siempre lo tienes tú.",
+              },
+              {
+                q: "¿El sistema sirve tanto para bordados como para estampados, serigrafía o DTF?",
+                a: "Sí. El motor de cálculo se calibra a medida según las técnicas que manejes en tu taller. Puede calcular costos basados en cantidad de puntadas e hilos para bordados, o por cantidad de colores, shablones, tintas y centímetros cuadrados para sistemas de impresión como serigrafía, sublimación, DTF o vinilo.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                <h4 className="font-bold text-[#0f172a] mb-2">{item.q}</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="qx-section-dark py-20">
         <div className="container mx-auto px-6 max-w-3xl text-center">
@@ -442,6 +485,30 @@ export default function PreciosPage() {
             <a href="https://demo.quotixos.com" target="_blank" rel="noopener noreferrer" className="qx-btn-outline">
               ▶ Ver demo interactiva
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="bg-[#0a0f1e] border-t border-[#1e293b] py-6">
+        <div className="container mx-auto px-6">
+          <p className="text-center text-xs text-[#475569] uppercase tracking-wider mb-4">Pagá con confianza</p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
+              <span className="text-base">💳</span> Visa
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
+              <span className="text-base">💳</span> Mastercard
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
+              <span className="text-base">💳</span> Débito
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white/80">
+              <span className="text-base">🔒</span> Stripe
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-[#009ee3]/15 border border-[#009ee3]/30 rounded-lg px-3 py-1.5 text-xs text-[#00b2ff] font-medium">
+              <span className="text-base">Ⓜ️</span> Mercado Pago
+            </span>
           </div>
         </div>
       </section>

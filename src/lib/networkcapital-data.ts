@@ -2,6 +2,8 @@ export const BRAND = {
   name: "Network Capital",
   slogan: "Emprendé con estilo",
   subtitle: "Venta por mayor · Hecho en Uruguay",
+  address: "Pedro Bustamante 1500, Montevideo, Uruguay",
+  mapsUrl: "https://maps.google.com/?q=Pedro+Bustamante+1500+Montevideo+Uruguay",
   whatsapp: "59898133523",
   phone: "+598 98 133 523",
   email: "networkcapital@quotixos.com",

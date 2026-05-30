@@ -1,61 +1,75 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, Instagram, Facebook, ExternalLink } from "lucide-react";
+import { Mail, Instagram, Facebook, ExternalLink, MapPin } from "lucide-react";
 import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] border-t border-white/5">
+    <footer id="contacto" className="bg-[#0A0A0A] border-t border-white/5">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12 items-center">
+        <div className="grid md:grid-cols-4 gap-10 items-start">
           {/* Logo + slogan */}
-          <div className="text-center md:text-left">
+          <div className="md:col-span-1">
             <Image
               src="/networkcapital/logo.png"
               alt="Network Capital"
               width={200}
               height={60}
-              className="object-contain mx-auto md:mx-0 mb-4"
+              className="object-contain mb-4"
             />
-            <p className="text-white/50 text-sm">
-              {BRAND.slogan}
-            </p>
-            <p className="text-[#F2B411] text-xs font-bold uppercase tracking-wider mt-2">
+            <p className="text-white/50 text-sm mb-2">{BRAND.slogan}</p>
+            <p className="text-[#F2B411] text-xs font-bold uppercase tracking-wider">
               Capital Co. · Hecho en Uruguay
             </p>
           </div>
 
           {/* Links */}
-          <div className="text-center">
-            <h4 className="text-white font-bold mb-4">NAVEGACIÓN</h4>
-            <div className="flex flex-col gap-2">
-              <a href="#productos" className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
+          <div>
+            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
+              Navegación
+            </h4>
+            <div className="flex flex-col gap-3">
+              <a
+                href="#inicio"
+                className="text-white/50 hover:text-[#F2B411] transition-colors text-sm"
+              >
+                Inicio
+              </a>
+              <a
+                href="#productos"
+                className="text-white/50 hover:text-[#F2B411] transition-colors text-sm"
+              >
                 Productos
               </a>
-              <a href={BRAND.ctaUrl} className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
-                Cotizar
+              <a
+                href="#ubicacion"
+                className="text-white/50 hover:text-[#F2B411] transition-colors text-sm"
+              >
+                Ubicación
               </a>
-              <a href={`mailto:${BRAND.email}`} className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
-                Contacto
+              <a
+                href={BRAND.ctaUrl}
+                className="text-white/50 hover:text-[#F2B411] transition-colors text-sm"
+              >
+                Cotizar
               </a>
             </div>
           </div>
 
           {/* Contact */}
-          <div className="text-center md:text-right">
-            <h4 className="text-white font-bold mb-4">CONTACTO</h4>
-            <div className="flex flex-col gap-3 items-center md:items-end">
-              <a
-                href={BRAND.ctaUrl}
-                className="inline-flex items-center gap-2 text-white/70 hover:text-[#F2B411] transition-colors text-sm"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Cotizador online
-              </a>
+          <div>
+            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
+              Contacto
+            </h4>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-start gap-2 text-white/60 text-sm">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[#F2B411]" />
+                <span>{BRAND.address}</span>
+              </div>
               <a
                 href={`mailto:${BRAND.email}`}
-                className="inline-flex items-center gap-2 text-white/70 hover:text-[#F2B411] transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-[#F2B411] transition-colors text-sm"
               >
                 <Mail className="w-4 h-4" />
                 {BRAND.email}
@@ -76,10 +90,26 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
+          {/* CTA */}
+          <div>
+            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
+              ¿Empezamos?
+            </h4>
+            <p className="text-white/50 text-sm mb-4">
+              Mínimo 15 unidades. Cotizá tu producción por mayor hoy mismo.
+            </p>
+            <a
+              href="#productos"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-[#0A0A0A] font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
+            >
+              Ver catálogo
+            </a>
+          </div>
         </div>
 
-        {/* Powered by Quotix */}
-        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Bottom */}
+        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} {BRAND.name} Co. Hecho en Uruguay.
             Todos los derechos reservados.
@@ -92,6 +122,7 @@ export default function Footer() {
           >
             <span>Creado por</span>
             <span className="font-bold">Quotix</span>
+            <ExternalLink className="w-3 h-3" />
           </a>
         </div>
       </div>

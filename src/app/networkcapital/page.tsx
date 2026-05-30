@@ -18,7 +18,7 @@ const TRUST_ITEMS = [
   {
     icon: ShoppingBag,
     title: "Venta por mayor",
-    desc: "Mínimo 15 unidades",
+    desc: "Mínimo 10 unidades",
   },
   {
     icon: Award,

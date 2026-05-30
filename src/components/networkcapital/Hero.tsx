@@ -67,7 +67,7 @@ export default function Hero() {
           >
             <span className="w-2 h-2 rounded-full bg-[#F2B411] animate-pulse" />
             <span className="text-[#F2B411] text-sm font-bold tracking-wide uppercase">
-              Venta por mayor · Mínimo 15 unidades
+              Venta por mayor · Mínimo 10 unidades
             </span>
           </motion.div>
 

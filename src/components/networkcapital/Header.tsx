@@ -57,7 +57,9 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#productos"
+              href="https://app-networkcapital.quotixos.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2.5 bg-[#F2B411] text-[#007DB8] font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
             >
               Cotizar
@@ -89,7 +91,9 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#productos"
+              href="https://app-networkcapital.quotixos.com"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="mt-2 px-6 py-3 bg-[#F2B411] text-[#007DB8] font-bold text-center rounded-lg"
             >

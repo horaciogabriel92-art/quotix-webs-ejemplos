@@ -8,7 +8,7 @@ export const BRAND = {
   phone: "+598 91 358 992",
   email: "networkcapital@quotixos.com",
   instagram: "@networkcapital.uy",
-  ctaUrl: "https://networkcapital.quotixos.com",
+  ctaUrl: "https://app-networkcapital.quotixos.com",
   minOrder: 10,
   productionDays: 7,
   depositPercent: 50,

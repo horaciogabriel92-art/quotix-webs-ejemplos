@@ -100,10 +100,12 @@ export default function Footer() {
               Mínimo 10 unidades. Cotizá tu producción por mayor hoy mismo.
             </p>
             <a
-              href="#productos"
+              href="https://app-networkcapital.quotixos.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-[#007DB8] font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
             >
-              Ver catálogo
+              Cotizar ahora
             </a>
           </div>
         </div>

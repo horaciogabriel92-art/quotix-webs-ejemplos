@@ -144,16 +144,18 @@ export default function NetworkCapitalPage() {
           <AnimatedSection delay={0.3}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#productos"
+                href="https://app-networkcapital.quotixos.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#007DB8] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
               >
-                Ver productos
+                Cotizar ahora
               </a>
               <a
-                href="#ubicacion"
+                href="#productos"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-all"
               >
-                Visitá el local
+                Ver productos
               </a>
             </div>
           </AnimatedSection>

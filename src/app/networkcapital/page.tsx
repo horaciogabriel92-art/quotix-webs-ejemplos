@@ -36,17 +36,17 @@ const STEPS = [
   {
     step: "01",
     title: "ELEGÍ TU PRODUCTO",
-    desc: "Seleccioná las prendas que necesitás de nuestro catálogo.",
+    desc: "Seleccioná del catálogo y armá tu pedido desde 10 unidades.",
   },
   {
     step: "02",
-    title: "SUBÍ TU DISEÑO",
-    desc: "Cargás tu logo en nuestro cotizador online y elegís las opciones.",
+    title: "PERSONALIZÁ TU DISEÑO",
+    desc: "Hasta 2 estampas distintas cada 10 uds. Con tu logo, tu onda.",
   },
   {
     step: "03",
-    title: "RECIBÍ TU COTIZACIÓN",
-    desc: "Te pasamos precio por mayor en menos de 24hs.",
+    title: "RECIBÍ TU PEDIDO",
+    desc: "Producción en 7 días hábiles. Calidad premium lista para tu marca.",
   },
 ];
 
@@ -99,8 +99,8 @@ export default function NetworkCapitalPage() {
               Cómo funciona
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white">
-              3 PASOS PARA{" "}
-              <span className="text-[#F2B411]">TU MARCA</span>
+              ASÍ DE SIMPLE ES{" "}
+              <span className="text-[#F2B411]">CREAR TU LÍNEA</span>
             </h2>
           </AnimatedSection>
 
@@ -108,7 +108,7 @@ export default function NetworkCapitalPage() {
             {STEPS.map((s, i) => (
               <AnimatedSection key={s.step} delay={i * 0.15}>
                 <div className="relative p-8 bg-[#131d2b] rounded-3xl border border-[#007DB8]/30 hover:border-[#007DB8]/60 transition-all h-full shadow-[0_0_20px_rgba(0,125,184,0.08)] hover:shadow-[0_0_30px_rgba(0,125,184,0.15)]">
-                  <span className="block text-6xl font-black text-[#F2B411]/10 mb-4 leading-none">
+                  <span className="block text-6xl font-black text-[#007DB8]/30 mb-4 leading-none">
                     {s.step}
                   </span>
                   <h3 className="text-white font-black text-lg mb-3 uppercase tracking-wide">

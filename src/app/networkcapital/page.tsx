@@ -99,7 +99,7 @@ export default function NetworkCapitalPage() {
               Cómo funciona
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white">
-              ASÍ DE SIMPLE ES{" "}
+              ASÍ DE FÁCIL ES{" "}
               <span className="text-[#F2B411]">CREAR TU LÍNEA</span>
             </h2>
           </AnimatedSection>

@@ -19,7 +19,7 @@ export default function ProductGrid() {
   const [selected, setSelected] = useState<Product | null>(null);
 
   return (
-    <section id="productos" className="py-20 bg-[#0B1628]">
+    <section id="productos" className="py-20 bg-[#040d14]">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -41,7 +41,7 @@ export default function ProductGrid() {
             <button
               key={product.id}
               onClick={() => setSelected(product)}
-              className="group text-left bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 hover:border-[#F2B411]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(242,180,17,0.1)]"
+              className="group text-left bg-[#07121a] rounded-2xl overflow-hidden border border-[#007DB8]/10 hover:border-[#F2B411]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,125,184,0.15)]"
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-white">
@@ -88,7 +88,7 @@ export default function ProductGrid() {
           />
 
           {/* Card */}
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0B1628] rounded-3xl border border-white/10 shadow-2xl">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#07121a] rounded-3xl border border-[#007DB8]/15 shadow-2xl">
             {/* Close */}
             <button
               onClick={() => setSelected(null)}

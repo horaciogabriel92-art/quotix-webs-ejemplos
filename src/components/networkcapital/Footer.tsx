@@ -6,7 +6,7 @@ import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-[#0A0A0A] border-t border-white/5">
+    <footer id="contacto" className="bg-[#040d14] border-t border-[#007DB8]/15">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10 items-start">
           {/* Logo + slogan */}

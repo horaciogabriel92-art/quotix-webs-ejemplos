@@ -5,7 +5,7 @@ import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Location() {
   return (
-    <section id="ubicacion" className="py-20 bg-[#0A0A0A] relative overflow-hidden">
+    <section id="ubicacion" className="py-20 bg-[#07121a] relative overflow-hidden">
       {/* Subtle grid texture */}
       <div
         className="absolute inset-0 opacity-[0.02]"
@@ -27,7 +27,7 @@ export default function Location() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Info card */}
-          <div className="bg-[#0B1628] border border-white/5 rounded-3xl p-8 md:p-10">
+          <div className="bg-[#040d14] border border-[#007DB8]/10 rounded-3xl p-8 md:p-10">
             <div className="flex items-start gap-4 mb-8">
               <div className="p-3 bg-[#F2B411]/10 rounded-xl shrink-0">
                 <MapPin className="w-6 h-6 text-[#F2B411]" />
@@ -75,7 +75,7 @@ export default function Location() {
           </div>
 
           {/* Map embed placeholder */}
-          <div className="bg-[#0B1628] border border-white/5 rounded-3xl overflow-hidden min-h-[360px] relative">
+          <div className="bg-[#040d14] border border-[#007DB8]/10 rounded-3xl overflow-hidden min-h-[360px] relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.748509498104!2d-56.1773!3d-34.9106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU0JzM4LjIiUyA1NsKwMTAnMzguMyJX!5e0!3m2!1ses!2suy!4v1"
               width="100%"

@@ -18,8 +18,8 @@ export default function Hero() {
           className="object-cover object-center opacity-50"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/50 to-[#0A0A0A]/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#007DB8]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/90 via-[#007DB8]/10 to-transparent" />
       </div>
 
       {/* Urban texture overlay */}

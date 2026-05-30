@@ -59,7 +59,7 @@ export default function NetworkCapitalPage() {
       <Hero />
 
       {/* Trust Bar */}
-      <section className="py-10 bg-[#0B1628] border-y border-white/5">
+      <section className="py-10 bg-[#007DB8]/10 border-y border-[#007DB8]/20">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {TRUST_ITEMS.map((item) => (
@@ -84,7 +84,7 @@ export default function NetworkCapitalPage() {
       <ProductGrid />
 
       {/* Process */}
-      <section className="py-20 bg-[#0A0A0A] relative">
+      <section className="py-20 bg-[#040d14] relative">
         {/* Subtle texture */}
         <div
           className="absolute inset-0 opacity-[0.015]"
@@ -108,7 +108,7 @@ export default function NetworkCapitalPage() {
             {STEPS.map((s) => (
               <div
                 key={s.step}
-                className="relative p-8 bg-[#0B1628] rounded-3xl border border-white/5 hover:border-[#F2B411]/20 transition-colors"
+                className="relative p-8 bg-[#07121a] rounded-3xl border border-[#007DB8]/10 hover:border-[#007DB8]/40 transition-colors"
               >
                 <span className="block text-6xl font-black text-[#F2B411]/10 mb-4 leading-none">
                   {s.step}
@@ -128,8 +128,8 @@ export default function NetworkCapitalPage() {
       {/* Location */}
       <Location />
 
-      {/* CTA Final — sólido, sin gradientes */}
-      <section className="py-20 bg-[#0B1628] border-t border-white/5">
+      {/* CTA Final — gradiente de marca */}
+      <section className="py-20 bg-gradient-to-br from-[#007DB8]/20 via-[#0B1628] to-[#E91E8C]/20 border-t border-white/5">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
             ¿LISTO PARA <span className="text-[#F2B411]">ROMPERLA?</span>

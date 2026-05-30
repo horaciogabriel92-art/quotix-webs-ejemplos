@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#007DB8]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B1628]"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -19,8 +19,8 @@ export default function Hero() {
           className="object-cover object-center opacity-50"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#003d5c] via-[#003d5c]/40 to-[#007DB8]/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#003d5c]/90 via-[#007DB8]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1628] via-[#0B1628]/40 to-[#007DB8]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1628]/90 via-[#007DB8]/10 to-transparent" />
       </div>
 
       {/* Urban texture overlay */}
@@ -165,7 +165,7 @@ export default function Hero() {
           >
             <motion.a
               href="#productos"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#003d5c] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#007DB8] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >

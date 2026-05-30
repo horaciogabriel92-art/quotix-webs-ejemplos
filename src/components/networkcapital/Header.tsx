@@ -27,7 +27,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#007DB8]/95 backdrop-blur-md border-b border-[#007DB8]/20 shadow-lg shadow-[#007DB8]/5"
+          ? "bg-[#0B1628]/95 backdrop-blur-md border-b border-[#007DB8]/20 shadow-lg shadow-[#0B1628]/5"
           : "bg-transparent"
       }`}
     >
@@ -40,7 +40,7 @@ export default function Header() {
               alt={BRAND.name}
               width={180}
               height={50}
-              className="object-contain h-10 md:h-14 w-auto drop-shadow-[0_0_12px_rgba(242,180,17,0.4)]"
+              className="object-contain h-14 md:h-20 w-auto drop-shadow-[0_0_16px_rgba(242,180,17,0.5)]"
               priority
             />
           </Link>
@@ -58,7 +58,7 @@ export default function Header() {
             ))}
             <a
               href="#productos"
-              className="px-5 py-2.5 bg-[#F2B411] text-[#003d5c] font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
+              className="px-5 py-2.5 bg-[#F2B411] text-[#007DB8] font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
             >
               Cotizar
             </a>
@@ -76,7 +76,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#007DB8]/98 backdrop-blur-lg border-t border-white/10">
+        <div className="md:hidden bg-[#0B1628]/98 backdrop-blur-lg border-t border-white/10">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a
@@ -91,7 +91,7 @@ export default function Header() {
             <a
               href="#productos"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 px-6 py-3 bg-[#F2B411] text-[#003d5c] font-bold text-center rounded-lg"
+              className="mt-2 px-6 py-3 bg-[#F2B411] text-[#007DB8] font-bold text-center rounded-lg"
             >
               Cotizar ahora
             </a>

@@ -52,7 +52,7 @@ const STEPS = [
 
 export default function NetworkCapitalPage() {
   return (
-    <main className="bg-[#007DB8] min-h-screen">
+    <main className="bg-[#0B1628] min-h-screen">
       {/* Sticky Header */}
       <Header />
 
@@ -60,7 +60,7 @@ export default function NetworkCapitalPage() {
       <Hero />
 
       {/* Trust Bar */}
-      <section className="py-10 bg-[#007DB8] border-y border-[#007DB8]/30">
+      <section className="py-10 bg-[#0B1628] border-y border-[#007DB8]/30">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {TRUST_ITEMS.map((item, i) => (
@@ -84,7 +84,7 @@ export default function NetworkCapitalPage() {
       <ProductGrid />
 
       {/* Process */}
-      <section className="py-20 bg-gradient-to-b from-[#007DB8] via-[#061828] to-[#007DB8] relative">
+      <section className="py-20 bg-gradient-to-b from-[#0B1628] via-[#061828] to-[#0B1628] relative">
         {/* Subtle texture */}
         <div
           className="absolute inset-0 opacity-[0.015]"
@@ -107,7 +107,7 @@ export default function NetworkCapitalPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {STEPS.map((s, i) => (
               <AnimatedSection key={s.step} delay={i * 0.15}>
-                <div className="relative p-8 bg-[#006BA3] rounded-3xl border border-[#007DB8]/30 hover:border-[#007DB8]/60 transition-all h-full shadow-[0_0_20px_rgba(0,125,184,0.08)] hover:shadow-[0_0_30px_rgba(0,125,184,0.15)]">
+                <div className="relative p-8 bg-[#131d2b] rounded-3xl border border-[#007DB8]/30 hover:border-[#007DB8]/60 transition-all h-full shadow-[0_0_20px_rgba(0,125,184,0.08)] hover:shadow-[0_0_30px_rgba(0,125,184,0.15)]">
                   <span className="block text-6xl font-black text-[#F2B411]/10 mb-4 leading-none">
                     {s.step}
                   </span>
@@ -128,7 +128,7 @@ export default function NetworkCapitalPage() {
       <Location />
 
       {/* CTA Final — gradiente de marca */}
-      <section className="py-20 bg-gradient-to-br from-[#007DB8]/30 via-[#007DB8] to-[#E91E8C]/20 border-t border-[#007DB8]/20">
+      <section className="py-20 bg-gradient-to-br from-[#0B1628]/30 via-[#0B1628] to-[#E91E8C]/20 border-t border-[#007DB8]/20">
         <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
@@ -145,7 +145,7 @@ export default function NetworkCapitalPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#productos"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#003d5c] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#007DB8] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
               >
                 Ver productos
               </a>

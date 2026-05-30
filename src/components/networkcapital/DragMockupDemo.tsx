@@ -9,7 +9,7 @@ interface Props {
 
 export default function DragMockupDemo({ productImage }: Props) {
   return (
-    <div className="relative w-full h-56 bg-[#007DB8] rounded-2xl overflow-hidden border border-[#007DB8]/10">
+    <div className="relative w-full h-56 bg-[#0B1628] rounded-2xl overflow-hidden border border-[#007DB8]/10">
       {/* Background product image */}
       <div className="absolute inset-0 opacity-30">
         <Image
@@ -21,7 +21,7 @@ export default function DragMockupDemo({ productImage }: Props) {
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#003d5c] via-[#003d5c]/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1628] via-[#0B1628]/60 to-transparent" />
 
       {/* Title */}
       <div className="absolute top-3 left-3 z-10">

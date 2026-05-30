@@ -52,7 +52,7 @@ const STEPS = [
 
 export default function NetworkCapitalPage() {
   return (
-    <main className="bg-[#0A0A0A] min-h-screen">
+    <main className="bg-[#001e2d] min-h-screen">
       {/* Sticky Header */}
       <Header />
 
@@ -60,7 +60,7 @@ export default function NetworkCapitalPage() {
       <Hero />
 
       {/* Trust Bar */}
-      <section className="py-10 bg-[#007DB8]/10 border-y border-[#007DB8]/20">
+      <section className="py-10 bg-[#002a3d] border-y border-[#007DB8]/30">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {TRUST_ITEMS.map((item, i) => (
@@ -84,7 +84,7 @@ export default function NetworkCapitalPage() {
       <ProductGrid />
 
       {/* Process */}
-      <section className="py-20 bg-[#040d14] relative">
+      <section className="py-20 bg-gradient-to-b from-[#040d14] via-[#061828] to-[#040d14] relative">
         {/* Subtle texture */}
         <div
           className="absolute inset-0 opacity-[0.015]"
@@ -107,7 +107,7 @@ export default function NetworkCapitalPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {STEPS.map((s, i) => (
               <AnimatedSection key={s.step} delay={i * 0.15}>
-                <div className="relative p-8 bg-[#07121a] rounded-3xl border border-[#007DB8]/10 hover:border-[#007DB8]/40 transition-colors h-full">
+                <div className="relative p-8 bg-[#003d5c] rounded-3xl border border-[#007DB8]/30 hover:border-[#007DB8]/60 transition-all h-full shadow-[0_0_20px_rgba(0,125,184,0.08)] hover:shadow-[0_0_30px_rgba(0,125,184,0.15)]">
                   <span className="block text-6xl font-black text-[#F2B411]/10 mb-4 leading-none">
                     {s.step}
                   </span>
@@ -128,7 +128,7 @@ export default function NetworkCapitalPage() {
       <Location />
 
       {/* CTA Final — gradiente de marca */}
-      <section className="py-20 bg-gradient-to-br from-[#007DB8]/20 via-[#0B1628] to-[#E91E8C]/20 border-t border-white/5">
+      <section className="py-20 bg-gradient-to-br from-[#007DB8]/30 via-[#002a3d] to-[#E91E8C]/20 border-t border-[#007DB8]/20">
         <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6">

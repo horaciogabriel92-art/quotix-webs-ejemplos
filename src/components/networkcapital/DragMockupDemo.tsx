@@ -9,7 +9,7 @@ interface Props {
 
 export default function DragMockupDemo({ productImage }: Props) {
   return (
-    <div className="relative w-full h-56 bg-[#0A0A0A] rounded-2xl overflow-hidden border border-[#007DB8]/10">
+    <div className="relative w-full h-56 bg-[#001e2d] rounded-2xl overflow-hidden border border-[#007DB8]/10">
       {/* Background product image */}
       <div className="absolute inset-0 opacity-30">
         <Image

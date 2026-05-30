@@ -6,17 +6,17 @@ import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-[#040d14] border-t border-[#007DB8]/15">
+    <footer id="contacto" className="bg-[#001e2d] border-t border-[#007DB8]/15">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-10 items-start">
+        <div className="grid md:grid-cols-4 gap-10 items-start text-center md:text-left">
           {/* Logo + slogan */}
           <div className="md:col-span-1">
             <Image
               src="/networkcapital/logo.png"
               alt="Network Capital"
-              width={200}
-              height={60}
-              className="object-contain mb-4"
+              width={220}
+              height={70}
+              className="object-contain mb-4 mx-auto md:mx-0 h-14 w-auto"
             />
             <p className="text-white/50 text-sm mb-2">{BRAND.slogan}</p>
             <p className="text-[#F2B411] text-xs font-bold uppercase tracking-wider">
@@ -29,7 +29,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
               Navegación
             </h4>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 items-center md:items-start">
               <a
                 href="#inicio"
                 className="text-white/50 hover:text-[#F2B411] transition-colors text-sm"
@@ -62,7 +62,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
               Contacto
             </h4>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 items-center md:items-start">
               <div className="flex items-start gap-2 text-white/60 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[#F2B411]" />
                 <span>{BRAND.address}</span>
@@ -97,7 +97,7 @@ export default function Footer() {
               ¿Empezamos?
             </h4>
             <p className="text-white/50 text-sm mb-4">
-              Mínimo 15 unidades. Cotizá tu producción por mayor hoy mismo.
+              Mínimo 10 unidades. Cotizá tu producción por mayor hoy mismo.
             </p>
             <a
               href="#productos"

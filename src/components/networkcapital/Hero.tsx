@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#001e2d]"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">

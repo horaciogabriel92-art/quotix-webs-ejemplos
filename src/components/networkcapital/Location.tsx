@@ -5,7 +5,7 @@ import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Location() {
   return (
-    <section id="ubicacion" className="py-20 bg-[#07121a] relative overflow-hidden">
+    <section id="ubicacion" className="py-20 bg-[#002a3d] relative overflow-hidden">
       {/* Subtle grid texture */}
       <div
         className="absolute inset-0 opacity-[0.02]"
@@ -27,7 +27,7 @@ export default function Location() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Info card */}
-          <div className="bg-[#040d14] border border-[#007DB8]/10 rounded-3xl p-8 md:p-10">
+          <div className="bg-[#003d5c] border border-[#007DB8]/10 rounded-3xl p-8 md:p-10">
             <div className="flex items-start gap-4 mb-8">
               <div className="p-3 bg-[#F2B411]/10 rounded-xl shrink-0">
                 <MapPin className="w-6 h-6 text-[#F2B411]" />

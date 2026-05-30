@@ -100,7 +100,7 @@ export default function ProductGrid() {
   const [activeColor, setActiveColor] = useState<string | null>(null);
 
   return (
-    <section id="productos" className="py-20 bg-[#040d14]">
+    <section id="productos" className="py-20 bg-[#002a3d]">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -139,7 +139,7 @@ export default function ProductGrid() {
                 setShowSizes(false);
                 setActiveColor(null);
               }}
-              className="group text-left bg-[#07121a] rounded-2xl overflow-hidden border border-[#007DB8]/10 hover:border-[#F2B411]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,125,184,0.15)]"
+              className="group text-left bg-[#003d5c] rounded-2xl overflow-hidden border border-[#007DB8]/10 hover:border-[#F2B411]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,125,184,0.15)]"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -215,7 +215,7 @@ export default function ProductGrid() {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-[#0A0A0A]/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#001e2d]/90 backdrop-blur-sm"
               onClick={() => setSelected(null)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -224,7 +224,7 @@ export default function ProductGrid() {
 
             {/* Card */}
             <motion.div
-              className="relative w-full max-w-5xl max-h-[92vh] overflow-y-auto bg-[#07121a] rounded-3xl border border-[#007DB8]/15 shadow-2xl"
+              className="relative w-full max-w-5xl max-h-[92vh] overflow-y-auto bg-[#003d5c] rounded-3xl border border-[#007DB8]/15 shadow-2xl"
               initial={{ opacity: 0, scale: 0.85, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -261,7 +261,7 @@ export default function ProductGrid() {
                   </div>
 
                   {/* Drag mockup demo */}
-                  <div className="p-4 bg-[#0A0A0A]">
+                  <div className="p-4 bg-[#001e2d]">
                     <DragMockupDemo productImage={selected.image} />
                   </div>
                 </div>

@@ -233,11 +233,14 @@ export default function ProductGrid() {
               {/* Close */}
               <motion.button
                 onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 z-10 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
-                whileHover={{ scale: 1.1, rotate: 90 }}
-                whileTap={{ scale: 0.9 }}
+                className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_30px_rgba(0,0,0,0.5)] transition-shadow"
+                whileHover={{ scale: 1.15, rotate: 90 }}
+                whileTap={{ scale: 0.85 }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 }}
               >
-                <X className="w-5 h-5 text-white" />
+                <X className="w-5 h-5 text-[#E91E8C]" strokeWidth={3} />
               </motion.button>
 
               <div className="grid md:grid-cols-2">

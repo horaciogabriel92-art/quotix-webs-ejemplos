@@ -36,8 +36,8 @@ const STEPS = [
   },
   {
     step: "02",
-    title: "ENVIANOS TU DISEÑO",
-    desc: "Nos mandás tu logo o diseño por WhatsApp o email.",
+    title: "SUBÍ TU DISEÑO",
+    desc: "Cargás tu logo en nuestro cotizador online y elegís las opciones.",
   },
   {
     step: "03",
@@ -129,12 +129,10 @@ export default function NetworkCapitalPage() {
               Ver productos
             </a>
             <a
-              href="https://wa.me/59898133523"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#productos"
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition-all"
             >
-              Cotizar por WhatsApp
+              Ver catálogo
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, Mail, Instagram, Facebook } from "lucide-react";
+import { Mail, Instagram, Facebook, ExternalLink } from "lucide-react";
 import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Footer() {
@@ -33,7 +33,7 @@ export default function Footer() {
               <a href="#productos" className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
                 Productos
               </a>
-              <a href={`https://wa.me/${BRAND.whatsapp}`} className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
+              <a href={BRAND.ctaUrl} className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
                 Cotizar
               </a>
               <a href={`mailto:${BRAND.email}`} className="text-white/50 hover:text-[#F2B411] transition-colors text-sm">
@@ -47,13 +47,11 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4">CONTACTO</h4>
             <div className="flex flex-col gap-3 items-center md:items-end">
               <a
-                href={`https://wa.me/${BRAND.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={BRAND.ctaUrl}
                 className="inline-flex items-center gap-2 text-white/70 hover:text-[#F2B411] transition-colors text-sm"
               >
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp
+                <ExternalLink className="w-4 h-4" />
+                Cotizador online
               </a>
               <a
                 href={`mailto:${BRAND.email}`}
@@ -80,12 +78,21 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/5 text-center">
+        {/* Powered by Quotix */}
+        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} {BRAND.name} Co. Hecho en Uruguay.
             Todos los derechos reservados.
           </p>
+          <a
+            href="https://enb.quotixos.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white/40 hover:text-[#F2B411] transition-colors text-xs"
+          >
+            <span>Creado por</span>
+            <span className="font-bold">Quotix</span>
+          </a>
         </div>
       </div>
     </footer>

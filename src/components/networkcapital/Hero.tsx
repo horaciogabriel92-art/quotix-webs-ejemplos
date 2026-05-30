@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowDown, MessageCircle } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Hero() {
@@ -75,13 +75,10 @@ export default function Hero() {
               <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </a>
             <a
-              href={`https://wa.me/${BRAND.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#productos"
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
             >
-              <MessageCircle className="w-5 h-5" />
-              Cotizar por WhatsApp
+              Cotizar ahora
             </a>
           </div>
         </div>

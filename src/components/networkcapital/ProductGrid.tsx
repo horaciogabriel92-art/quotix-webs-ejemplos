@@ -12,7 +12,6 @@ import {
   Tag,
   ShoppingBag,
   ArrowRight,
-  MessageCircle,
 } from "lucide-react";
 import { PRODUCTS, BRAND, type Product } from "@/lib/networkcapital-data";
 
@@ -189,13 +188,10 @@ export default function ProductGrid() {
                     HACÉ TU COTIZACIÓN AQUÍ
                   </a>
                   <a
-                    href={`https://wa.me/${BRAND.whatsapp}?text=Hola! Quiero cotizar ${selected.name}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`${BRAND.ctaUrl}/?producto=${selected.id}`}
                     className="flex items-center justify-center gap-2 w-full px-6 py-3 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/5 transition-all"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    Consultar por WhatsApp
+                    Ver en cotizador
                   </a>
                 </div>
               </div>

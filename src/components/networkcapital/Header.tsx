@@ -27,7 +27,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#001e2d]/95 backdrop-blur-md border-b border-[#007DB8]/20 shadow-lg shadow-[#007DB8]/5"
+          ? "bg-[#007DB8]/95 backdrop-blur-md border-b border-[#007DB8]/20 shadow-lg shadow-[#007DB8]/5"
           : "bg-transparent"
       }`}
     >
@@ -58,7 +58,7 @@ export default function Header() {
             ))}
             <a
               href="#productos"
-              className="px-5 py-2.5 bg-[#F2B411] text-[#0A0A0A] font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
+              className="px-5 py-2.5 bg-[#F2B411] text-[#003d5c] font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
             >
               Cotizar
             </a>
@@ -76,7 +76,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#001e2d]/98 backdrop-blur-lg border-t border-white/10">
+        <div className="md:hidden bg-[#007DB8]/98 backdrop-blur-lg border-t border-white/10">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a
@@ -91,7 +91,7 @@ export default function Header() {
             <a
               href="#productos"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 px-6 py-3 bg-[#F2B411] text-[#0A0A0A] font-bold text-center rounded-lg"
+              className="mt-2 px-6 py-3 bg-[#F2B411] text-[#003d5c] font-bold text-center rounded-lg"
             >
               Cotizar ahora
             </a>

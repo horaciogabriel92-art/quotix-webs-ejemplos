@@ -6,7 +6,7 @@ import { BRAND } from "@/lib/networkcapital-data";
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-[#001e2d] border-t border-[#007DB8]/15">
+    <footer id="contacto" className="bg-[#007DB8] border-t border-[#007DB8]/15">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10 items-start text-center md:text-left">
           {/* Logo + slogan */}
@@ -101,7 +101,7 @@ export default function Footer() {
             </p>
             <a
               href="#productos"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-[#0A0A0A] font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-[#003d5c] font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
             >
               Ver catálogo
             </a>

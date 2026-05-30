@@ -5,6 +5,7 @@ import ProductGrid from "@/components/networkcapital/ProductGrid";
 import Location from "@/components/networkcapital/Location";
 import Footer from "@/components/networkcapital/Footer";
 import WhatsAppSticky from "@/components/networkcapital/WhatsAppSticky";
+import AnimatedSection from "@/components/networkcapital/AnimatedSection";
 import { ShoppingBag, Truck, Award } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -62,19 +63,18 @@ export default function NetworkCapitalPage() {
       <section className="py-10 bg-[#007DB8]/10 border-y border-[#007DB8]/20">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
-            {TRUST_ITEMS.map((item) => (
-              <div
-                key={item.title}
-                className="flex items-center gap-4 justify-center md:justify-start"
-              >
-                <div className="p-3 bg-[#F2B411]/10 rounded-xl">
-                  <item.icon className="w-6 h-6 text-[#F2B411]" />
+            {TRUST_ITEMS.map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.15} direction="left">
+                <div className="flex items-center gap-4 justify-center md:justify-start">
+                  <div className="p-3 bg-[#F2B411]/10 rounded-xl">
+                    <item.icon className="w-6 h-6 text-[#F2B411]" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm">{item.title}</p>
+                    <p className="text-white/50 text-xs">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold text-sm">{item.title}</p>
-                  <p className="text-white/50 text-xs">{item.desc}</p>
-                </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function NetworkCapitalPage() {
         />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <span className="inline-block px-4 py-1 bg-[#007DB8]/10 text-[#007DB8] text-sm font-bold rounded-full mb-4 uppercase tracking-wider">
               Cómo funciona
             </span>
@@ -102,24 +102,23 @@ export default function NetworkCapitalPage() {
               3 PASOS PARA{" "}
               <span className="text-[#F2B411]">TU MARCA</span>
             </h2>
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {STEPS.map((s) => (
-              <div
-                key={s.step}
-                className="relative p-8 bg-[#07121a] rounded-3xl border border-[#007DB8]/10 hover:border-[#007DB8]/40 transition-colors"
-              >
-                <span className="block text-6xl font-black text-[#F2B411]/10 mb-4 leading-none">
-                  {s.step}
-                </span>
-                <h3 className="text-white font-black text-lg mb-3 uppercase tracking-wide">
-                  {s.title}
-                </h3>
-                <p className="text-white/50 text-sm leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
+            {STEPS.map((s, i) => (
+              <AnimatedSection key={s.step} delay={i * 0.15}>
+                <div className="relative p-8 bg-[#07121a] rounded-3xl border border-[#007DB8]/10 hover:border-[#007DB8]/40 transition-colors h-full">
+                  <span className="block text-6xl font-black text-[#F2B411]/10 mb-4 leading-none">
+                    {s.step}
+                  </span>
+                  <h3 className="text-white font-black text-lg mb-3 uppercase tracking-wide">
+                    {s.title}
+                  </h3>
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -131,27 +130,33 @@ export default function NetworkCapitalPage() {
       {/* CTA Final — gradiente de marca */}
       <section className="py-20 bg-gradient-to-br from-[#007DB8]/20 via-[#0B1628] to-[#E91E8C]/20 border-t border-white/5">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-            ¿LISTO PARA <span className="text-[#F2B411]">ROMPERLA?</span>
-          </h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
-            Cotizá tu producción por mayor hoy mismo. Mínimo 15 unidades.
-            Atención personalizada.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#productos"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#0A0A0A] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
-            >
-              Ver productos
-            </a>
-            <a
-              href="#ubicacion"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-all"
-            >
-              Visitá el local
-            </a>
-          </div>
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
+              ¿LISTO PARA <span className="text-[#F2B411]">ROMPERLA?</span>
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.15}>
+            <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
+              Cotizá tu producción por mayor hoy mismo. Mínimo 15 unidades.
+              Atención personalizada.
+            </p>
+          </AnimatedSection>
+          <AnimatedSection delay={0.3}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="#productos"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#0A0A0A] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
+              >
+                Ver productos
+              </a>
+              <a
+                href="#ubicacion"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-all"
+              >
+                Visitá el local
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

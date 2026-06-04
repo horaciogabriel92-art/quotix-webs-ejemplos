@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { CurrencyProvider } from "@/context/CurrencyContext";
+import { MetaPixel } from "@/components/MetaPixel";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es">
       <body className={`${inter.variable} antialiased font-body`}>
+        <MetaPixel />
         <CurrencyProvider>
           {children}
         </CurrencyProvider>

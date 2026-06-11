@@ -68,9 +68,6 @@ export const metadata: Metadata = {
       "Fábrica de remeras personalizadas y personalización de prendas por mayor. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades.",
     images: ["/networkcapital/hero.jpg"],
   },
-  verification: {
-    google: "google-site-verification-code",
-  },
 };
 
 const organizationSchema = {

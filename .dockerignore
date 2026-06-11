@@ -1,0 +1,12 @@
+productos/
+productos para cargar/
+node_modules/
+.next/
+out/
+build/
+*.log
+.DS_Store
+.env*.local
+.env
+.vercel
+*.tsbuildinfo

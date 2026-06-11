@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/networkcapital/Header";
 import Hero from "@/components/networkcapital/Hero";
-import ProductGrid from "@/components/networkcapital/ProductGrid";
+import CategoryGrid from "@/components/networkcapital/CategoryGrid";
 import Location from "@/components/networkcapital/Location";
 import Footer from "@/components/networkcapital/Footer";
 import WhatsAppSticky from "@/components/networkcapital/WhatsAppSticky";
@@ -80,8 +80,8 @@ export default function NetworkCapitalPage() {
         </div>
       </section>
 
-      {/* Products */}
-      <ProductGrid />
+      {/* Categories */}
+      <CategoryGrid />
 
       {/* Process */}
       <section className="py-20 bg-gradient-to-b from-[#0B1628] via-[#061828] to-[#0B1628] relative">

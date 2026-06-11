@@ -73,8 +73,7 @@ export default async function CategoryPage({ params }: Props) {
             </div>
             <p className="text-white/50 text-lg max-w-2xl">
               Calidad premium para tu marca. Todos los productos de{" "}
-              {category.name.toLowerCase()} están pensados para estampado, bordado
-              y personalización.
+              {category.name.toLowerCase()} están pensados para estampar con serigrafía y DTF.
             </p>
           </div>
         </div>

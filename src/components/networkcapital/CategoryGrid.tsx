@@ -30,11 +30,11 @@ export default function CategoryGrid() {
             Catálogo por mayor
           </motion.span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-            NUESTRAS <span className="text-[#F2B411]">CATEGORÍAS</span>
+            ELEGÍ <span className="text-[#F2B411]">TU PRENDA</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Explorá nuestro catálogo por categoría. Todos los productos están
-            pensados para estampado, bordado y personalización.
+            Explorá nuestro catálogo. Todos los productos están
+            pensados para estampar con serigrafía y DTF.
           </p>
         </motion.div>
 

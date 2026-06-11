@@ -47,6 +47,7 @@ export interface Product {
   description: string;
   features: string[];
   colors: string[];
+  colorImages?: Record<string, string>;
   minQty: number;
   weight: string;
   composition: string;
@@ -168,6 +169,12 @@ export const PRODUCTS: Product[] = [
       "Ideal para serigrafía y DTF",
     ],
     colors: ["Negro", "Gris", "Verde", "Marrón"],
+    colorImages: {
+      "Negro": "/networkcapital/productos/remera stone wash negro.jpeg",
+      "Gris": "/networkcapital/productos/remera stone wash gris-hombre.jpeg",
+      "Verde": "/networkcapital/productos/remera stone wash verde-hombre.jpeg",
+      "Marrón": "/networkcapital/productos/remera marron stone wash.jpeg",
+    },
     minQty: 10,
     weight: "180g",
     composition: "100% algodón",
@@ -191,6 +198,11 @@ export const PRODUCTS: Product[] = [
       "Ideal para serigrafía y DTF",
     ],
     colors: ["Arena", "Blanco", "Negro"],
+    colorImages: {
+      "Arena": "/networkcapital/productos/remera oversize arena mujer.png",
+      "Blanco": "/networkcapital/productos/remera oversize blanco mujer.png",
+      "Negro": "/networkcapital/productos/remera oversize negro mujer.png",
+    },
     minQty: 10,
     weight: "200g",
     composition: "100% algodón",
@@ -216,6 +228,11 @@ export const PRODUCTS: Product[] = [
       "Ideal para serigrafía y DTF",
     ],
     colors: ["Azul", "Gris", "Negro"],
+    colorImages: {
+      "Azul": "/networkcapital/productos/buzo medio cierre azul.jpeg",
+      "Gris": "/networkcapital/productos/buzo medio cierre gris.jpeg",
+      "Negro": "/networkcapital/productos/buzo medio cierre negro.jpeg",
+    },
     minQty: 10,
     weight: "280g",
     composition: "80% algodón · 20% poliéster",
@@ -312,6 +329,14 @@ export const PRODUCTS: Product[] = [
       "Ideal para serigrafía y DTF",
     ],
     colors: ["Arena", "Azul", "Francia", "Negro", "Rosa Pastel", "Verde Bosque"],
+    colorImages: {
+      "Arena": "/networkcapital/productos/canguro clasico arena.jpeg",
+      "Azul": "/networkcapital/productos/canguro clasico azul hombre.jpeg",
+      "Francia": "/networkcapital/productos/canguro clasico francia.jpeg",
+      "Negro": "/networkcapital/productos/canguro clasico negro.jpeg",
+      "Rosa Pastel": "/networkcapital/productos/canguro clasico rosa pastel.jpeg",
+      "Verde Bosque": "/networkcapital/productos/canguro clasico verde bosque.jpeg",
+    },
     minQty: 10,
     weight: "280g",
     composition: "80% algodón · 20% poliéster",
@@ -335,6 +360,11 @@ export const PRODUCTS: Product[] = [
       "Ideal para serigrafía y DTF",
     ],
     colors: ["Beige", "Negro", "Stone Wash"],
+    colorImages: {
+      "Beige": "/networkcapital/productos/canguro oversize beige.jpeg",
+      "Negro": "/networkcapital/productos/cangruo oversize negro.jpeg",
+      "Stone Wash": "/networkcapital/productos/canguro oversize stone wash.jpeg",
+    },
     minQty: 10,
     weight: "300g",
     composition: "80% algodón · 20% poliéster",

@@ -104,6 +104,7 @@ export default function ProductGrid({
   const [withPrint, setWithPrint] = useState(true);
   const [showSizes, setShowSizes] = useState(false);
   const [activeColor, setActiveColor] = useState<string | null>(null);
+  const [activeImage, setActiveImage] = useState<string>("");
 
   return (
     <section id="productos" className="py-20 bg-[#0B1628]">
@@ -143,6 +144,7 @@ export default function ProductGrid({
               key={product.id}
               onClick={() => {
                 setSelected(product);
+                setActiveImage(product.image);
                 setWithPrint(true);
                 setShowSizes(false);
                 setActiveColor(null);
@@ -257,7 +259,7 @@ export default function ProductGrid({
                   {/* Product image */}
                   <div className="relative aspect-square bg-white">
                     <Image
-                      src={selected.image}
+                      src={activeImage || selected.image}
                       alt={selected.name}
                       fill
                       className="object-cover"
@@ -428,25 +430,71 @@ export default function ProductGrid({
                     <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">
                       Colores disponibles ({selected.colors.length})
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {selected.colors.map((color, i) => (
-                        <motion.button
-                          key={color}
-                          onClick={() => setActiveColor(activeColor === color ? null : color)}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
-                            activeColor === color
-                              ? "bg-[#F2B411] text-[#007DB8] border-[#F2B411]"
-                              : "bg-white/5 text-white/70 border-white/10 hover:border-white/30"
-                          }`}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.6 + i * 0.03 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          {color}
-                        </motion.button>
-                      ))}
-                    </div>
+                    {selected.colorImages ? (
+                      <div className="flex flex-wrap gap-3">
+                        {selected.colors.map((color, i) => {
+                          const img = selected.colorImages![color];
+                          const isActive = activeColor === color;
+                          return (
+                            <motion.button
+                              key={color}
+                              onClick={() => {
+                                if (isActive) {
+                                  setActiveColor(null);
+                                  setActiveImage(selected.image);
+                                } else {
+                                  setActiveColor(color);
+                                  if (img) setActiveImage(img);
+                                }
+                              }}
+                              className={`relative w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${
+                                isActive
+                                  ? "border-[#F2B411] ring-2 ring-[#F2B411]/30"
+                                  : "border-white/10 hover:border-white/30"
+                              }`}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.6 + i * 0.03 }}
+                              whileTap={{ scale: 0.9 }}
+                              title={color}
+                            >
+                              {img ? (
+                                <Image
+                                  src={img}
+                                  alt={color}
+                                  fill
+                                  className="object-cover"
+                                />
+                              ) : (
+                                <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                                  <span className="text-white/50 text-[10px]">{color[0]}</span>
+                                </div>
+                              )}
+                            </motion.button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="flex flex-wrap gap-2">
+                        {selected.colors.map((color, i) => (
+                          <motion.button
+                            key={color}
+                            onClick={() => setActiveColor(activeColor === color ? null : color)}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
+                              activeColor === color
+                                ? "bg-[#F2B411] text-[#007DB8] border-[#F2B411]"
+                                : "bg-white/5 text-white/70 border-white/10 hover:border-white/30"
+                            }`}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.6 + i * 0.03 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            {color}
+                          </motion.button>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Size table accordion */}

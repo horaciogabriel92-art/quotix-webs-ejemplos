@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -18,6 +18,7 @@ import {
   Layers,
   Sparkles,
   Info,
+  MessageCircle,
 } from "lucide-react";
 import { PRODUCTS, BRAND, type Product } from "@/lib/networkcapital-data";
 import DragMockupDemo from "./DragMockupDemo";
@@ -105,6 +106,15 @@ export default function ProductGrid({
   const [showSizes, setShowSizes] = useState(false);
   const [activeColor, setActiveColor] = useState<string | null>(null);
   const [activeImage, setActiveImage] = useState<string>("");
+  const [whatsAppQty, setWhatsAppQty] = useState<number>(10);
+  const [showWhatsAppForm, setShowWhatsAppForm] = useState(false);
+
+  useEffect(() => {
+    if (selected) {
+      setWhatsAppQty(selected.minQty);
+      setShowWhatsAppForm(false);
+    }
+  }, [selected]);
 
   return (
     <section id="productos" className="py-20 bg-[#0B1628]">
@@ -619,12 +629,68 @@ export default function ProductGrid({
                       <Tag className="w-5 h-5" />
                       HACÉ TU COTIZACIÓN AQUÍ
                     </motion.a>
-                    <a
-                      href={`${BRAND.ctaUrl}/?producto=${selected.id}`}
-                      className="flex items-center justify-center gap-2 w-full px-6 py-3 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/5 transition-all"
-                    >
-                      Ver en cotizador
-                    </a>
+
+                    {/* WhatsApp helper form */}
+                    {!showWhatsAppForm ? (
+                      <button
+                        type="button"
+                        onClick={() => setShowWhatsAppForm(true)}
+                        className="flex items-center justify-center gap-2 w-full px-6 py-3 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/5 transition-all"
+                      >
+                        <MessageCircle className="w-5 h-5" />
+                        Quiero que me ayuden por WhatsApp
+                      </button>
+                    ) : (
+                      <div className="w-full p-4 bg-[#0B1628]/40 border border-white/10 rounded-xl space-y-3">
+                        <p className="text-white/80 text-sm font-medium">
+                          Te armamos el mensaje con los datos de este producto:
+                        </p>
+                        <div>
+                          <label
+                            htmlFor="whatsapp-qty"
+                            className="block text-white/50 text-xs uppercase tracking-wider font-bold mb-1.5"
+                          >
+                            Cantidad (mínimo {selected.minQty})
+                          </label>
+                          <input
+                            id="whatsapp-qty"
+                            type="number"
+                            min={selected.minQty}
+                            value={whatsAppQty}
+                            onChange={(e) =>
+                              setWhatsAppQty(
+                                Math.max(selected.minQty, parseInt(e.target.value || "0", 10))
+                              )
+                            }
+                            className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white font-bold focus:outline-none focus:border-[#F2B411] focus:ring-1 focus:ring-[#F2B411]"
+                          />
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-white/50">Tipo:</span>
+                          <span className="text-white font-medium">
+                            {withPrint ? "Con estampado" : "Solo prenda"}
+                          </span>
+                        </div>
+                        <a
+                          href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(
+                            `Hola Network Capital! Vi su web y quiero que me ayuden con una cotización.\n\nProducto: ${selected.name}\nTipo: ${withPrint ? "Con estampado" : "Solo prenda"}\nCantidad: ${whatsAppQty} unidades\nMínimo del producto: ${selected.minQty} unidades\n\nDesde ya, muchas gracias.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1ebd59] transition-all"
+                        >
+                          <MessageCircle className="w-5 h-5 fill-white" />
+                          Enviar consulta por WhatsApp
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => setShowWhatsAppForm(false)}
+                          className="w-full text-white/40 text-xs hover:text-white/70 transition-colors"
+                        >
+                          Cancelar
+                        </button>
+                      </div>
+                    )}
                   </motion.div>
                 </div>
               </div>

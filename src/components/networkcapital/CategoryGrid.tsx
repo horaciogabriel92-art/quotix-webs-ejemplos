@@ -62,7 +62,7 @@ export default function CategoryGrid() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1628]/80 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <span className="px-3 py-1 bg-[#F2B411] text-[#007DB8] text-xs font-bold rounded-full uppercase">
+                    <span className="px-3 py-1 bg-[#F2B411] text-black text-xs font-bold rounded-full uppercase">
                       {category.count} productos
                     </span>
                   </div>

@@ -67,7 +67,7 @@ export default function Location() {
               href={BRAND.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#F2B411] text-[#007DB8] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all"
+              className="mt-8 flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#F2B411] text-black font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all"
             >
               <Navigation className="w-5 h-5" />
               CÓMO LLEGAR
@@ -78,6 +78,7 @@ export default function Location() {
           <div className="bg-[#131d2b] border border-white/10 rounded-3xl overflow-hidden min-h-[360px] relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.748509498104!2d-56.1773!3d-34.9106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU0JzM4LjIiUyA1NsKwMTAnMzguMyJX!5e0!3m2!1ses!2suy!4v1"
+              title="Ubicación de Network Capital en Google Maps"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "360px" }}

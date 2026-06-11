@@ -60,7 +60,7 @@ export default function Header() {
               href="https://app-networkcapital.quotixos.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-[#F2B411] text-[#007DB8] font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
+              className="px-5 py-2.5 bg-[#F2B411] text-black font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
             >
               Cotizar
             </a>
@@ -70,6 +70,9 @@ export default function Header() {
           <button
             className="md:hidden p-2 text-white"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -78,7 +81,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0B1628]/98 backdrop-blur-lg border-t border-white/10">
+        <div id="mobile-menu" className="md:hidden bg-[#0B1628]/98 backdrop-blur-lg border-t border-white/10">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a

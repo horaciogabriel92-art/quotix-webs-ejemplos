@@ -26,9 +26,9 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
               Navegación
-            </h4>
+            </h3>
             <div className="flex flex-col gap-3 items-center md:items-start">
               <a
                 href="#inicio"
@@ -59,9 +59,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
               Contacto
-            </h4>
+            </h3>
             <div className="flex flex-col gap-3 items-center md:items-start">
               <div className="flex items-start gap-2 text-white/60 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[#F2B411]" />
@@ -76,13 +76,19 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-3 mt-2">
                 <a
-                  href="#"
+                  href="https://instagram.com/networkcapital.uy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram de Network Capital"
                   className="p-2 bg-white/5 rounded-full hover:bg-[#F2B411]/20 transition-colors"
                 >
                   <Instagram className="w-4 h-4 text-white/70" />
                 </a>
                 <a
-                  href="#"
+                  href="https://facebook.com/networkcapital.uy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook de Network Capital"
                   className="p-2 bg-white/5 rounded-full hover:bg-[#F2B411]/20 transition-colors"
                 >
                   <Facebook className="w-4 h-4 text-white/70" />
@@ -93,9 +99,9 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
               ¿Empezamos?
-            </h4>
+            </h3>
             <p className="text-white/50 text-sm mb-4">
               Mínimo 10 unidades. Cotizá tu producción por mayor hoy mismo.
             </p>
@@ -103,7 +109,7 @@ export default function Footer() {
               href="https://app-networkcapital.quotixos.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-[#007DB8] font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-black font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
             >
               Cotizar ahora
             </a>
@@ -112,7 +118,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">
+          <p className="text-white/60 text-xs">
             © {new Date().getFullYear()} {BRAND.name} Co. Hecho en Uruguay.
             Todos los derechos reservados.
           </p>
@@ -120,7 +126,7 @@ export default function Footer() {
             href="https://enb.quotixos.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white/40 hover:text-[#F2B411] transition-colors text-xs"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-[#F2B411] transition-colors text-xs"
           >
             <span>Creado por</span>
             <span className="font-bold">Quotix</span>

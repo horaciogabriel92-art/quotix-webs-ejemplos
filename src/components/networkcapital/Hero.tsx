@@ -165,7 +165,7 @@ export default function Hero() {
           >
             <motion.a
               href="#productos"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#007DB8] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-black font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >

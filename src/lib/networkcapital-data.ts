@@ -155,6 +155,35 @@ const CANGURO_PRICE_WITHOUT: PriceTier[] = [
 export const PRODUCTS: Product[] = [
   // ─────────────────────────── REMERAS ───────────────────────────
   {
+    id: "remera-oversize",
+    name: "Remera Oversize",
+    category: "Remeras",
+    priceFrom: 350,
+    image: "/networkcapital/productos/over amarillo frente.jpg",
+    description:
+      "Remera oversize unisex. Estilo amplio y moderno, perfecta para estampados grandes. Disponible en varios colores.",
+    features: [
+      "100% algodón",
+      "Corte oversize",
+      "Unisex",
+      "Ideal para serigrafía y DTF",
+    ],
+    colors: ["Amarillo", "Arena", "Blanco", "Negro"],
+    colorImages: {
+      "Amarillo": "/networkcapital/productos/over amarillo frente.jpg",
+      "Arena": "/networkcapital/productos/remera oversize arena mujer.png",
+      "Blanco": "/networkcapital/productos/remera oversize blanco mujer.png",
+      "Negro": "/networkcapital/productos/remera oversize negro mujer.png",
+    },
+    minQty: 10,
+    weight: "200g",
+    composition: "100% algodón",
+    sizes: REMERA_SIZES,
+    sizeTable: REMERA_SIZE_TABLE,
+    priceWithPrint: REMERA_OVERSIZE_PRICE_WITH,
+    priceWithoutPrint: REMERA_OVERSIZE_PRICE_WITHOUT,
+  },
+  {
     id: "remera-stonewash",
     name: "Remera Stone Wash",
     category: "Remeras",
@@ -183,34 +212,6 @@ export const PRODUCTS: Product[] = [
     priceWithPrint: REMERA_STONE_WASH_PRICE_WITH,
     priceWithoutPrint: REMERA_STONE_WASH_PRICE_WITHOUT,
   },
-  {
-    id: "remera-oversize",
-    name: "Remera Oversize",
-    category: "Remeras",
-    priceFrom: 350,
-    image: "/networkcapital/productos/remera oversize arena mujer.png",
-    description:
-      "Remera oversize unisex. Estilo amplio y moderno, perfecta para estampados grandes. Disponible en varios colores.",
-    features: [
-      "100% algodón",
-      "Corte oversize",
-      "Unisex",
-      "Ideal para serigrafía y DTF",
-    ],
-    colors: ["Arena", "Blanco", "Negro"],
-    colorImages: {
-      "Arena": "/networkcapital/productos/remera oversize arena mujer.png",
-      "Blanco": "/networkcapital/productos/remera oversize blanco mujer.png",
-      "Negro": "/networkcapital/productos/remera oversize negro mujer.png",
-    },
-    minQty: 10,
-    weight: "200g",
-    composition: "100% algodón",
-    sizes: REMERA_SIZES,
-    sizeTable: REMERA_SIZE_TABLE,
-    priceWithPrint: REMERA_OVERSIZE_PRICE_WITH,
-    priceWithoutPrint: REMERA_OVERSIZE_PRICE_WITHOUT,
-  },
 
   // ─────────────────────────── BUZOS ───────────────────────────
   {
@@ -218,7 +219,7 @@ export const PRODUCTS: Product[] = [
     name: "Buzo Medio Cierre",
     category: "Buzos",
     priceFrom: 490,
-    image: "/networkcapital/productos/buzo medio cierre azul.jpeg",
+    image: "/networkcapital/productos/buzo medio gris frente.jpg",
     description:
       "Buzo medio cierre unisex. Cálido, cómodo y perfecto para personalizar con serigrafía o DTF. Disponible en varios colores.",
     features: [
@@ -230,7 +231,7 @@ export const PRODUCTS: Product[] = [
     colors: ["Azul", "Gris", "Negro"],
     colorImages: {
       "Azul": "/networkcapital/productos/buzo medio cierre azul.jpeg",
-      "Gris": "/networkcapital/productos/buzo medio cierre gris.jpeg",
+      "Gris": "/networkcapital/productos/buzo medio gris frente.jpg",
       "Negro": "/networkcapital/productos/buzo medio cierre negro.jpeg",
     },
     minQty: 10,
@@ -243,6 +244,29 @@ export const PRODUCTS: Product[] = [
   },
 
   // ─────────────────────────── CAMPERAS ───────────────────────────
+  {
+    id: "campera-neopreno-mujer",
+    name: "Campera Neopreno Mujer",
+    category: "Camperas",
+    priceFrom: 790,
+    image: "/networkcapital/productos/campera neopreno negra mujer frente.jpg",
+    description:
+      "Campera de neopreno corte mujer. Moderna, abrigada y perfecta para personalizar con serigrafía o DTF.",
+    features: [
+      "Neopreno",
+      "Abrigada",
+      "Corte mujer",
+      "Ideal para serigrafía y DTF",
+    ],
+    colors: ["Negro"],
+    minQty: 10,
+    weight: "400g",
+    composition: "Neopreno",
+    sizes: CAMPERA_SIZES,
+    sizeTable: CAMPERA_SIZE_TABLE,
+    priceWithPrint: CAMPERA_PRICE_WITH,
+    priceWithoutPrint: CAMPERA_PRICE_WITHOUT,
+  },
   {
     id: "campera-capitoneada",
     name: "Campera Capitoneada",
@@ -289,31 +313,36 @@ export const PRODUCTS: Product[] = [
     priceWithPrint: CAMPERA_PRICE_WITH,
     priceWithoutPrint: CAMPERA_PRICE_WITHOUT,
   },
-  {
-    id: "campera-neopreno-mujer",
-    name: "Campera Neopreno Mujer",
-    category: "Camperas",
-    priceFrom: 790,
-    image: "/networkcapital/productos/campera neopreno negro mujer.jpeg",
-    description:
-      "Campera de neopreno corte mujer. Moderna, abrigada y perfecta para personalizar con serigrafía o DTF.",
-    features: [
-      "Neopreno",
-      "Abrigada",
-      "Corte mujer",
-      "Ideal para serigrafía y DTF",
-    ],
-    colors: ["Negro"],
-    minQty: 10,
-    weight: "400g",
-    composition: "Neopreno",
-    sizes: CAMPERA_SIZES,
-    sizeTable: CAMPERA_SIZE_TABLE,
-    priceWithPrint: CAMPERA_PRICE_WITH,
-    priceWithoutPrint: CAMPERA_PRICE_WITHOUT,
-  },
 
   // ─────────────────────────── CANGUROS ───────────────────────────
+  {
+    id: "canguro-oversize",
+    name: "Canguro Oversize",
+    category: "Canguros",
+    priceFrom: 520,
+    image: "/networkcapital/productos/canguro over beige frente.jpg",
+    description:
+      "Canguro oversize unisex. Corte amplio y moderno, ideal para estampados grandes.",
+    features: [
+      "Corte oversize",
+      "Capucha",
+      "Unisex",
+      "Ideal para serigrafía y DTF",
+    ],
+    colors: ["Beige", "Negro", "Stone Wash"],
+    colorImages: {
+      "Beige": "/networkcapital/productos/canguro over beige frente.jpg",
+      "Negro": "/networkcapital/productos/cangruo oversize negro.jpeg",
+      "Stone Wash": "/networkcapital/productos/canguro oversize stone wash.jpeg",
+    },
+    minQty: 10,
+    weight: "300g",
+    composition: "80% algodón · 20% poliéster",
+    sizes: CANGURO_SIZES,
+    sizeTable: CANGURO_SIZE_TABLE,
+    priceWithPrint: CANGURO_PRICE_WITH,
+    priceWithoutPrint: CANGURO_PRICE_WITHOUT,
+  },
   {
     id: "canguro-clasico",
     name: "Canguro Clásico",
@@ -339,34 +368,6 @@ export const PRODUCTS: Product[] = [
     },
     minQty: 10,
     weight: "280g",
-    composition: "80% algodón · 20% poliéster",
-    sizes: CANGURO_SIZES,
-    sizeTable: CANGURO_SIZE_TABLE,
-    priceWithPrint: CANGURO_PRICE_WITH,
-    priceWithoutPrint: CANGURO_PRICE_WITHOUT,
-  },
-  {
-    id: "canguro-oversize",
-    name: "Canguro Oversize",
-    category: "Canguros",
-    priceFrom: 520,
-    image: "/networkcapital/productos/canguro oversize beige.jpeg",
-    description:
-      "Canguro oversize unisex. Corte amplio y moderno, ideal para estampados grandes.",
-    features: [
-      "Corte oversize",
-      "Capucha",
-      "Unisex",
-      "Ideal para serigrafía y DTF",
-    ],
-    colors: ["Beige", "Negro", "Stone Wash"],
-    colorImages: {
-      "Beige": "/networkcapital/productos/canguro oversize beige.jpeg",
-      "Negro": "/networkcapital/productos/cangruo oversize negro.jpeg",
-      "Stone Wash": "/networkcapital/productos/canguro oversize stone wash.jpeg",
-    },
-    minQty: 10,
-    weight: "300g",
     composition: "80% algodón · 20% poliéster",
     sizes: CANGURO_SIZES,
     sizeTable: CANGURO_SIZE_TABLE,

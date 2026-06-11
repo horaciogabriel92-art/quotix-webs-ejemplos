@@ -132,7 +132,7 @@ export default function ProductGrid({
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
               Calidad premium para tu marca. Todos nuestros productos están
-              pensados para estampado, bordado y personalización.
+              pensados para estampar con serigrafía y DTF.
             </p>
           </motion.div>
         )}
@@ -176,7 +176,7 @@ export default function ProductGrid({
                   </div>
                 </motion.div>
                 <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 bg-[#F2B411] text-[#007DB8] text-xs font-bold rounded-full uppercase">
+                  <span className="px-3 py-1 bg-[#F2B411] text-black text-xs font-bold rounded-full uppercase">
                     {product.category}
                   </span>
                 </div>
@@ -482,7 +482,7 @@ export default function ProductGrid({
                             onClick={() => setActiveColor(activeColor === color ? null : color)}
                             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
                               activeColor === color
-                                ? "bg-[#F2B411] text-[#007DB8] border-[#F2B411]"
+                                ? "bg-[#F2B411] text-black border-[#F2B411]"
                                 : "bg-white/5 text-white/70 border-white/10 hover:border-white/30"
                             }`}
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -612,7 +612,7 @@ export default function ProductGrid({
                   >
                     <motion.a
                       href={`${BRAND.ctaUrl}/?producto=${selected.id}`}
-                      className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#F2B411] text-[#007DB8] font-extrabold text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_20px_rgba(242,180,17,0.2)]"
+                      className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#F2B411] text-black font-extrabold text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_20px_rgba(242,180,17,0.2)]"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

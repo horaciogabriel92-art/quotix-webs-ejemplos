@@ -7,6 +7,7 @@ import Header from "@/components/networkcapital/Header";
 import Footer from "@/components/networkcapital/Footer";
 import WhatsAppSticky from "@/components/networkcapital/WhatsAppSticky";
 import ProductGrid from "@/components/networkcapital/ProductGrid";
+import JsonLd from "@/components/networkcapital/JsonLd";
 import {
   getCategoryBySlug,
   getCategories,
@@ -17,15 +18,34 @@ interface Props {
   params: Promise<{ categoria: string }>;
 }
 
+const CATEGORY_KEYWORDS: Record<string, string> = {
+  remeras: "remeras personalizadas, remeras por mayor Uruguay, remeras serigrafía, remeras DTF",
+  buzos: "buzos personalizados, buzos por mayor Uruguay, buzos serigrafía, buzos DTF",
+  camperas: "camperas personalizadas, camperas por mayor Uruguay, camperas serigrafía",
+  canguros: "canguros personalizados, canguros por mayor Uruguay, canguros serigrafía",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { categoria } = await params;
   const category = getCategoryBySlug(categoria);
   if (!category) {
     return { title: "Categoría no encontrada — Network Capital" };
   }
+  const slug = category.slug;
+  const keywords = CATEGORY_KEYWORDS[slug] || "personalización de prendas, serigrafía, DTF";
   return {
-    title: `${category.name} — Network Capital`,
-    description: `Catálogo de ${category.name.toLowerCase()} por mayor. ${category.count} productos para estampar y personalizar. Hecho en Uruguay.`,
+    title: `${category.name} personalizadas por mayor — Network Capital`,
+    description: `Catálogo de ${category.name.toLowerCase()} personalizadas por mayor en Uruguay. ${category.count} modelos para estampar con serigrafía y DTF. Mínimo 10 unidades. Calidad premium local.`,
+    keywords: keywords.split(", "),
+    alternates: {
+      canonical: `/networkcapital/${slug}`,
+    },
+    openGraph: {
+      url: `https://networkcapital.quotixos.com/networkcapital/${slug}`,
+      title: `${category.name} personalizadas por mayor — Network Capital`,
+      description: `Catálogo de ${category.name.toLowerCase()} personalizadas por mayor en Uruguay. ${category.count} modelos para estampar con serigrafía y DTF.`,
+      images: [category.image],
+    },
   };
 }
 
@@ -47,8 +67,35 @@ export default async function CategoryPage({ params }: Props) {
     (c) => c.slug !== category.slug
   );
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${category.name} personalizadas por mayor`,
+    itemListElement: products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: product.name,
+        image: `https://networkcapital.quotixos.com${product.image}`,
+        description: product.description,
+        brand: {
+          "@type": "Brand",
+          name: "Network Capital",
+        },
+        offers: {
+          "@type": "AggregateOffer",
+          lowPrice: product.priceFrom,
+          priceCurrency: "UYU",
+          availability: "https://schema.org/InStock",
+        },
+      },
+    })),
+  };
+
   return (
     <main className="bg-[#0B1628] min-h-screen">
+      <JsonLd data={itemListSchema} />
       <Header />
 
       {/* Hero de categoría */}
@@ -63,9 +110,9 @@ export default async function CategoryPage({ params }: Props) {
               Volver al catálogo
             </Link>
 
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex flex-wrap items-center gap-4 mb-4">
               <h1 className="text-4xl md:text-5xl font-black text-white">
-                {category.name}
+                {category.name} personalizadas
               </h1>
               <span className="px-3 py-1 bg-[#F2B411]/10 text-[#F2B411] text-sm font-bold rounded-full">
                 {category.count} productos
@@ -73,7 +120,7 @@ export default async function CategoryPage({ params }: Props) {
             </div>
             <p className="text-white/50 text-lg max-w-2xl">
               Calidad premium para tu marca. Todos los productos de{" "}
-              {category.name.toLowerCase()} están pensados para estampar con serigrafía y DTF.
+              {category.name.toLowerCase()} están pensados para personalizar con serigrafía y DTF.
             </p>
           </div>
         </div>
@@ -106,11 +153,12 @@ export default async function CategoryPage({ params }: Props) {
                     src={cat.image}
                     alt={cat.name}
                     fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1628]/80 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
-                    <span className="px-2 py-0.5 bg-[#F2B411] text-[#007DB8] text-[10px] font-bold rounded-full uppercase">
+                    <span className="px-2 py-0.5 bg-[#F2B411] text-black text-[10px] font-bold rounded-full uppercase">
                       {cat.count} prod.
                     </span>
                   </div>
@@ -131,4 +179,3 @@ export default async function CategoryPage({ params }: Props) {
     </main>
   );
 }
-

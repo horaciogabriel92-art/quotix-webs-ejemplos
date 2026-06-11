@@ -6,12 +6,23 @@ import Location from "@/components/networkcapital/Location";
 import Footer from "@/components/networkcapital/Footer";
 import WhatsAppSticky from "@/components/networkcapital/WhatsAppSticky";
 import AnimatedSection from "@/components/networkcapital/AnimatedSection";
-import { ShoppingBag, Truck, Award } from "lucide-react";
+import FAQ from "@/components/networkcapital/FAQ";
+import JsonLd from "@/components/networkcapital/JsonLd";
+import { ShoppingBag, Truck, Award, Sparkles, Shirt, Palette } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Network Capital — Venta por mayor de indumentaria personalizable",
+  title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
   description:
-    "Emprendé con estilo. Estampados personalizados, etiquetas y logos. Compra mínima 15 unidades. Hecho en Uruguay.",
+    "Fábrica de remeras personalizadas y personalización de prendas por mayor en Uruguay. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades. Calidad premium local.",
+  alternates: {
+    canonical: "/networkcapital",
+  },
+  openGraph: {
+    url: "https://networkcapital.quotixos.com/networkcapital",
+    title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
+    description:
+      "Fábrica de remeras personalizadas y personalización de prendas por mayor. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades.",
+  },
 };
 
 const TRUST_ITEMS = [
@@ -50,9 +61,52 @@ const STEPS = [
   },
 ];
 
+const FAQS = [
+  {
+    question: "¿Qué técnicas de personalización de prendas usan?",
+    answer:
+      "Trabajamos serigrafía y DTF de alta calidad sobre remeras, buzos, camperas y canguros. Son las técnicas más duraderas para estampados por mayor en Uruguay.",
+  },
+  {
+    question: "¿Cuál es el mínimo de unidades para remeras personalizadas?",
+    answer:
+      "El mínimo de pedido es de 10 unidades por diseño. Podés combinar colores y talles para llegar al mínimo.",
+  },
+  {
+    question: "¿Hacen remeras personalizadas por mayor para marcas y emprendedores?",
+    answer:
+      "Sí. Network Capital fabrica indumentaria personalizable por mayor para emprendedores, marcas, eventos y empresas en todo Uruguay.",
+  },
+  {
+    question: "¿Cuánto tarda la producción de un pedido personalizado?",
+    answer:
+      "El tiempo de producción es de 7 días hábiles una vez confirmado el diseño y abonada la seña del 50%.",
+  },
+  {
+    question: "¿Hacen envíos a todo Uruguay?",
+    answer:
+      "Sí, realizamos envíos a todo el país con entrega estimada de 48 a 72 horas hábiles.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
+};
+
 export default function NetworkCapitalPage() {
   return (
     <main className="bg-[#0B1628] min-h-screen">
+      <JsonLd data={faqSchema} />
+
       {/* Sticky Header */}
       <Header />
 
@@ -83,9 +137,60 @@ export default function NetworkCapitalPage() {
       {/* Categories */}
       <CategoryGrid />
 
+      {/* SEO Rich Content */}
+      <section className="py-16 bg-[#0B1628] border-t border-[#007DB8]/10">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <AnimatedSection className="text-center mb-10">
+            <span className="inline-block px-4 py-1 bg-[#F2B411]/10 text-[#F2B411] text-sm font-bold rounded-full mb-4 uppercase tracking-wider">
+              Personalización de prendas
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-white">
+              REMERAS PERSONALIZADAS Y MÁS PARA TU MARCA
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="prose prose-invert prose-lg mx-auto text-white/70">
+              <p>
+                En <strong className="text-white">Network Capital</strong> fabricamos
+                remeras personalizadas, buzos, camperas y canguros por mayor en Uruguay.
+                Usamos serigrafía y DTF para lograr estampados duraderos y de alto
+                impacto visual, ideales para emprendedores, marcas emergentes, eventos y
+                empresas que buscan personalización de prendas con calidad premium.
+              </p>
+              <p>
+                Nuestro catálogo incluye variedad de modelos, colores y talles. Podés
+                combinar hasta dos diseños distintos cada 10 prendas, lo que te da
+                flexibilidad para lanzar colecciones variadas sin necesidad de grandes
+                volúmenes. Todos los productos son hechos en Uruguay y pensados para
+                estampar con serigrafía y DTF.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="mt-10 grid sm:grid-cols-3 gap-4">
+              {[
+                { icon: Shirt, title: "Remeras y buzos", desc: "Cortes clásicos, oversize y stone wash." },
+                { icon: Palette, title: "Serigrafía y DTF", desc: "Técnicas profesionales de estampado." },
+                { icon: Sparkles, title: "Etiquetas y logos", desc: "Dale identidad a tu marca desde el primer lote." },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-5 bg-[#131d2b] rounded-2xl border border-[#007DB8]/10"
+                >
+                  <item.icon className="w-6 h-6 text-[#F2B411] mb-3" />
+                  <h3 className="text-white font-bold mb-1">{item.title}</h3>
+                  <p className="text-white/50 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Process */}
       <section className="py-20 bg-gradient-to-b from-[#0B1628] via-[#061828] to-[#0B1628] relative">
-        {/* Subtle texture */}
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{
@@ -124,10 +229,13 @@ export default function NetworkCapitalPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FAQ items={FAQS} />
+
       {/* Location */}
       <Location />
 
-      {/* CTA Final — gradiente de marca */}
+      {/* CTA Final */}
       <section className="py-20 bg-gradient-to-br from-[#0B1628]/30 via-[#0B1628] to-[#E91E8C]/20 border-t border-[#007DB8]/20">
         <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
@@ -137,7 +245,7 @@ export default function NetworkCapitalPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
-              Cotizá tu producción por mayor hoy mismo. Mínimo 15 unidades.
+              Cotizá tu producción por mayor hoy mismo. Mínimo 10 unidades.
               Atención personalizada.
             </p>
           </AnimatedSection>
@@ -147,7 +255,7 @@ export default function NetworkCapitalPage() {
                 href="https://app-networkcapital.quotixos.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-[#007DB8] font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-black font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
               >
                 Cotizar ahora
               </a>

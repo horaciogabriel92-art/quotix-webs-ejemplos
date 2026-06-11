@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Header from "@/components/networkcapital/Header";
 import Footer from "@/components/networkcapital/Footer";
 import WhatsAppSticky from "@/components/networkcapital/WhatsAppSticky";
+import ProductGrid from "@/components/networkcapital/ProductGrid";
 import {
   getCategoryBySlug,
   getCategories,
   getProductsByCategory,
 } from "@/lib/categories";
-import { BRAND, type Product } from "@/lib/networkcapital-data";
 
 interface Props {
   params: Promise<{ categoria: string }>;
@@ -80,15 +80,7 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       {/* Productos de la categoría */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductGrid products={products} showHeader={false} />
 
       {/* Otras categorías */}
       <section className="py-20 border-t border-[#007DB8]/10">
@@ -140,57 +132,3 @@ export default async function CategoryPage({ params }: Props) {
   );
 }
 
-// ProductCard inline para la página de categoría (reusa estilo de ProductGrid)
-function ProductCard({ product, index }: { product: Product; index: number }) {
-  return (
-    <div
-      style={{
-        animationDelay: `${index * 0.08}s`,
-      }}
-      className="animate-in fade-in slide-in-from-bottom-8 duration-500 fill-mode-backwards"
-    >
-      <Link
-        href={`${BRAND.ctaUrl}/?producto=${product.id}`}
-        className="group block bg-[#131d2b] rounded-2xl overflow-hidden border border-[#007DB8]/10 hover:border-[#F2B411]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,125,184,0.15)]"
-      >
-        <div className="relative aspect-[4/3] overflow-hidden bg-white">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div className="absolute top-3 left-3">
-            <span className="px-3 py-1 bg-[#F2B411] text-[#007DB8] text-xs font-bold rounded-full uppercase">
-              {product.category}
-            </span>
-          </div>
-          {product.weight && product.weight !== "—" && (
-            <div className="absolute bottom-3 right-3">
-              <span className="px-2 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold rounded-lg uppercase">
-                {product.weight}
-              </span>
-            </div>
-          )}
-        </div>
-        <div className="p-5">
-          <h3 className="text-white font-bold text-lg mb-1 group-hover:text-[#F2B411] transition-colors">
-            {product.name}
-          </h3>
-          <div className="flex items-baseline gap-2">
-            <p className="text-[#F2B411] font-extrabold text-xl">
-              Desde ${product.priceFrom.toLocaleString("es-UY")}
-            </p>
-            <p className="text-white/30 text-xs line-through">c/estampado</p>
-          </div>
-          <p className="text-white/40 text-sm mt-1">
-            Mínimo {product.minQty} unidades
-          </p>
-          <div className="mt-4 flex items-center gap-1 text-[#007DB8] text-sm font-medium">
-            Cotizar ahora <ArrowRight className="w-4 h-4" />
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
-}

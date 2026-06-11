@@ -93,7 +93,13 @@ function SizeTable({ table }: { table: { size: string; largo?: number; ancho?: n
   );
 }
 
-export default function ProductGrid() {
+export default function ProductGrid({
+  products = PRODUCTS,
+  showHeader = true,
+}: {
+  products?: Product[];
+  showHeader?: boolean;
+}) {
   const [selected, setSelected] = useState<Product | null>(null);
   const [withPrint, setWithPrint] = useState(true);
   const [showSizes, setShowSizes] = useState(false);
@@ -103,34 +109,36 @@ export default function ProductGrid() {
     <section id="productos" className="py-20 bg-[#0B1628]">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.span
-            className="inline-block px-4 py-1 bg-[#F2B411]/10 text-[#F2B411] text-sm font-bold rounded-full mb-4 uppercase tracking-wider"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+        {showHeader && (
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
           >
-            Catálogo por mayor
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-            NUESTROS <span className="text-[#F2B411]">PRODUCTOS</span>
-          </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Calidad premium para tu marca. Todos nuestros productos están
-            pensados para estampado, bordado y personalización.
-          </p>
-        </motion.div>
+            <motion.span
+              className="inline-block px-4 py-1 bg-[#F2B411]/10 text-[#F2B411] text-sm font-bold rounded-full mb-4 uppercase tracking-wider"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Catálogo por mayor
+            </motion.span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+              NUESTROS <span className="text-[#F2B411]">PRODUCTOS</span>
+            </h2>
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Calidad premium para tu marca. Todos nuestros productos están
+              pensados para estampado, bordado y personalización.
+            </p>
+          </motion.div>
+        )}
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PRODUCTS.map((product, index) => (
+          {products.map((product, index) => (
             <motion.button
               key={product.id}
               onClick={() => {

@@ -111,29 +111,29 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            className="text-5xl md:text-7xl font-black text-white mb-6 leading-[0.95] tracking-tight"
+            className="text-4xl md:text-6xl font-black text-white mb-4 leading-[0.95] tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
           >
-            ROMPÉLA CON{" "}
+            REMERAS PERSONALIZADAS{" "}
             <motion.span
               className="text-[#F2B411] inline-block"
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              TU MARCA
+              POR MAYOR
             </motion.span>
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-white/70 mb-6 max-w-2xl mx-auto font-medium"
+            className="text-lg md:text-2xl text-white/70 mb-6 max-w-2xl mx-auto font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1 }}
           >
-            Estampados personalizados, etiquetas y logos para emprendedores que
-            no siguen las reglas.
+            Personalización de prendas en Uruguay con serigrafía y DTF.
+            Para emprendedores que no siguen las reglas.
           </motion.p>
 
           {/* Promo badge */}

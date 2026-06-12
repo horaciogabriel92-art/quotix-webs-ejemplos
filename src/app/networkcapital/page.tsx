@@ -7,6 +7,7 @@ import Footer from "@/components/networkcapital/Footer";
 import WhatsAppSticky from "@/components/networkcapital/WhatsAppSticky";
 import AnimatedSection from "@/components/networkcapital/AnimatedSection";
 import FAQ from "@/components/networkcapital/FAQ";
+import PromoSection from "@/components/networkcapital/PromoSection";
 import JsonLd from "@/components/networkcapital/JsonLd";
 import { ShoppingBag, Truck, Award, Sparkles, Shirt, Palette } from "lucide-react";
 
@@ -133,6 +134,9 @@ export default function NetworkCapitalPage() {
           </div>
         </div>
       </section>
+
+      {/* Promos */}
+      <PromoSection />
 
       {/* Categories */}
       <CategoryGrid />

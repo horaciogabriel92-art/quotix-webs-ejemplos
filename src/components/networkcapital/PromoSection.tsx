@@ -1,0 +1,96 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "motion/react";
+import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { PROMOS, BRAND } from "@/lib/networkcapital-data";
+
+export default function PromoSection() {
+  return (
+    <section className="py-16 bg-gradient-to-b from-[#0B1628] via-[#061828] to-[#0B1628] border-y border-[#007DB8]/10">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.span
+            className="inline-flex items-center gap-2 px-4 py-1 bg-[#E91E8C]/10 text-[#E91E8C] text-sm font-bold rounded-full mb-4 uppercase tracking-wider"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <Sparkles className="w-4 h-4" />
+            Promos del mes
+          </motion.span>
+          <h2 className="text-3xl md:text-5xl font-black text-white">
+            LLEVÁ TU MARCA AL{" "}
+            <span className="text-[#F2B411]">SIGUIENTE NIVEL</span>
+          </h2>
+        </motion.div>
+
+        {/* Promos grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {PROMOS.map((promo, index) => (
+            <motion.div
+              key={promo.id}
+              className="group relative bg-[#131d2b] rounded-3xl border border-[#007DB8]/10 overflow-hidden hover:border-[#F2B411]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,125,184,0.15)]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              {/* Image */}
+              <div className="relative aspect-square bg-gradient-to-b from-[#1e2a3a] to-[#131d2b]">
+                <Image
+                  src={promo.image}
+                  alt={promo.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-black text-white mb-2 group-hover:text-[#F2B411] transition-colors">
+                  {promo.title}
+                </h3>
+                <p className="text-white/50 text-sm mb-5 leading-relaxed">
+                  {promo.subtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(
+                      `Hola Network Capital! Vi la promo de ${promo.title} en la web y quiero más info.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1ebd59] transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-white" />
+                    {promo.ctaText}
+                  </a>
+                  {promo.productLink && (
+                    <Link
+                      href={promo.productLink}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/5 transition-all"
+                    >
+                      Ver catálogo
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -25,6 +25,42 @@ export const BRAND = {
   },
 };
 
+export interface Promo {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  ctaText: string;
+  productLink?: string;
+}
+
+export const PROMOS: Promo[] = [
+  {
+    id: "promo-over-amarilla",
+    title: "Remera Over",
+    subtitle: "Corte amplio y moderno, ideal para estampados grandes.",
+    image: "/networkcapital/productos/promo remere over sin fondo.png",
+    ctaText: "Consultar por WhatsApp",
+    productLink: "/networkcapital/remeras",
+  },
+  {
+    id: "promo-canguro-oversize",
+    title: "Canguro Oversize",
+    subtitle: "Abrigo oversize perfecto para tu marca. Negro clásico.",
+    image: "/networkcapital/productos/promo canguro oversize negro sin fondo.png",
+    ctaText: "Consultar por WhatsApp",
+    productLink: "/networkcapital/canguros",
+  },
+  {
+    id: "promo-stone-wash-gris",
+    title: "Remera Stone Wash",
+    subtitle: "Look vintage desgastado. Ideal para serigrafía y DTF.",
+    image: "/networkcapital/productos/promo remera stone wash gris sin fondo.png",
+    ctaText: "Consultar por WhatsApp",
+    productLink: "/networkcapital/remeras",
+  },
+];
+
 export interface PriceTier {
   qty: number;
   label: string;

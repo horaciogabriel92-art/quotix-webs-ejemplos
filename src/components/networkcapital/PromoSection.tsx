@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import { PROMOS, BRAND } from "@/lib/networkcapital-data";
+import { FormattedPrice } from "@/components/FormattedPrice";
 
 export default function PromoSection() {
   return (
@@ -45,6 +46,13 @@ export default function PromoSection() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
+              {/* Promo badge */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F2B411] text-[#0A0A0A] text-xs font-black rounded-lg uppercase tracking-wider shadow-lg">
+                  Promo emprendedores
+                </span>
+              </div>
+
               {/* Image */}
               <div className="relative aspect-square bg-gradient-to-b from-[#1e2a3a] to-[#131d2b]">
                 <Image
@@ -52,26 +60,63 @@ export default function PromoSection() {
                   alt={promo.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-black text-white mb-2 group-hover:text-[#F2B411] transition-colors">
-                  {promo.title}
-                </h3>
-                <p className="text-white/50 text-sm mb-5 leading-relaxed">
-                  {promo.subtitle}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
+              <div className="p-5 space-y-4">
+                <div>
+                  <h3 className="text-xl font-black text-white group-hover:text-[#F2B411] transition-colors">
+                    {promo.title}
+                  </h3>
+                  <p className="text-white/50 text-sm mt-1 leading-relaxed">
+                    {promo.subtitle}
+                  </p>
+                </div>
+
+                {/* Price card */}
+                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0B1628]">
+                  <div className="bg-[#F2B411] px-4 py-2 text-center">
+                    <span className="text-[#0A0A0A] text-xs font-black uppercase tracking-wider">
+                      {promo.priceLabel}
+                    </span>
+                  </div>
+                  <div className="px-4 py-3">
+                    <p className="text-center text-[10px] font-bold text-white/60 uppercase tracking-wider mb-2">
+                      Precios por unidad
+                    </p>
+                    <div className="space-y-2">
+                      {promo.priceTiers.map((tier) => (
+                        <div
+                          key={tier.qty}
+                          className="flex items-center justify-between border-b border-white/5 last:border-0 pb-2 last:pb-0"
+                        >
+                          <span className="text-white/80 text-sm font-bold">
+                            {tier.qty}+{" "}
+                            <span className="text-white/50 text-xs font-medium uppercase">
+                              unidades
+                            </span>
+                          </span>
+                          <span className="text-white text-lg font-black">
+                            <FormattedPrice usd={tier.price} className="text-white" />{" "}
+                            <span className="text-xs text-white/50 font-medium">c/u</span>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-col gap-3">
                   <a
                     href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(
-                      `Hola Network Capital! Vi la promo de ${promo.title} en la web y quiero más info.`
+                      `Hola Network Capital! Vi la promo de ${promo.title} en la web y quiero cotizar.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1ebd59] transition-all"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1ebd59] transition-all"
                   >
                     <MessageCircle className="w-4 h-4 fill-white" />
                     {promo.ctaText}
@@ -79,7 +124,7 @@ export default function PromoSection() {
                   {promo.productLink && (
                     <Link
                       href={promo.productLink}
-                      className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/5 transition-all"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-white/10 text-white text-sm font-semibold rounded-xl hover:bg-white/5 transition-all"
                     >
                       Ver catálogo
                       <ArrowRight className="w-4 h-4" />

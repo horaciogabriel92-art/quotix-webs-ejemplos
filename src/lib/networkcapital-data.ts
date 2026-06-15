@@ -32,6 +32,8 @@ export interface Promo {
   image: string;
   ctaText: string;
   productLink?: string;
+  priceLabel: string;
+  priceTiers: PriceTier[];
 }
 
 export const PROMOS: Promo[] = [
@@ -40,24 +42,42 @@ export const PROMOS: Promo[] = [
     title: "Remera Over",
     subtitle: "Corte amplio y moderno, ideal para estampados grandes.",
     image: "/networkcapital/productos/promo remere over sin fondo.png",
-    ctaText: "Consultar por WhatsApp",
+    ctaText: "Cotizar",
     productLink: "/networkcapital/remeras",
+    priceLabel: "ESTAMPADO INCLUIDO",
+    priceTiers: [
+      { qty: 10, label: "10+ unidades", price: 490 },
+      { qty: 20, label: "20+ unidades", price: 470 },
+      { qty: 30, label: "30+ unidades", price: 450 },
+    ],
   },
   {
     id: "promo-canguro-oversize",
     title: "Canguro Oversize",
     subtitle: "Abrigo oversize perfecto para tu marca. Negro clásico.",
     image: "/networkcapital/productos/promo canguro oversize negro sin fondo.png",
-    ctaText: "Consultar por WhatsApp",
+    ctaText: "Cotizar",
     productLink: "/networkcapital/canguros",
+    priceLabel: "ESTAMPADO INCLUIDO",
+    priceTiers: [
+      { qty: 10, label: "10+ unidades", price: 1240 },
+      { qty: 20, label: "20+ unidades", price: 1200 },
+      { qty: 30, label: "30+ unidades", price: 1160 },
+    ],
   },
   {
     id: "promo-stone-wash-gris",
     title: "Remera Stone Wash",
     subtitle: "Look vintage desgastado. Ideal para serigrafía y DTF.",
     image: "/networkcapital/productos/promo remera stone wash gris sin fondo.png",
-    ctaText: "Consultar por WhatsApp",
+    ctaText: "Cotizar",
     productLink: "/networkcapital/remeras",
+    priceLabel: "ESTAMPADO INCLUIDO",
+    priceTiers: [
+      { qty: 10, label: "10+ unidades", price: 520 },
+      { qty: 20, label: "20+ unidades", price: 490 },
+      { qty: 30, label: "30+ unidades", price: 460 },
+    ],
   },
 ];
 

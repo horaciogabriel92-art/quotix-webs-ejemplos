@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { PROMOS, BRAND } from "@/lib/networkcapital-data";
 
 export default function PromoSection() {
@@ -110,14 +110,12 @@ export default function PromoSection() {
                 {/* CTAs */}
                 <div className="flex flex-col gap-3">
                   <a
-                    href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(
-                      `Hola Network Capital! Vi la promo de ${promo.title} en la web y quiero cotizar.`
-                    )}`}
+                    href={BRAND.ctaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1ebd59] transition-all"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#F2B411] text-black font-bold rounded-xl hover:bg-[#FFD700] transition-all"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white" />
+                    <Sparkles className="w-4 h-4" />
                     {promo.ctaText}
                   </a>
                   {promo.productLink && (

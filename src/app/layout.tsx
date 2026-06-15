@@ -14,23 +14,33 @@ export const metadata: Metadata = {
     template: "%s — Network Capital",
   },
   description:
-    "Fábrica de remeras personalizadas y personalización de prendas por mayor en Uruguay. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades. Hecho en Uruguay.",
+    "Network Capital es una fábrica de remeras personalizadas y prendas de vestir por mayor en Montevideo, Uruguay. Trabajamos serigrafía, DTF, etiquetas y logos para emprendedores, marcas y empresas. Mínimo 10 unidades, envíos a todo el país y calidad premium hecha en Uruguay.",
   keywords: [
     "remeras personalizadas",
+    "remeras personalizadas Uruguay",
+    "remeras por mayor",
     "personalización de prendas",
     "serigrafía Uruguay",
     "DTF Uruguay",
-    "remeras por mayor",
+    "estampados personalizados",
     "buzos personalizados",
     "canguros personalizados",
     "camperas personalizadas",
-    "estampados personalizados",
     "fábrica de indumentaria Uruguay",
+    "fábrica de remeras Montevideo",
+    "indumentaria por mayor",
+    "ropa personalizable por mayor",
+    "etiquetas personalizadas ropa",
+    "logos bordados Uruguay",
     "Network Capital",
+    "Network Capital Uruguay",
   ],
   authors: [{ name: "Network Capital" }],
   creator: "Network Capital",
   publisher: "Network Capital",
+  applicationName: "Network Capital",
+  category: "business",
+  classification: "Business",
   robots: {
     index: true,
     follow: true,
@@ -39,6 +49,7 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
   alternates: {
@@ -51,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Network Capital",
     title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
     description:
-      "Fábrica de remeras personalizadas y personalización de prendas por mayor. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades.",
+      "Fábrica de remeras personalizadas y prendas de vestir por mayor en Uruguay. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades. Envíos a todo el país.",
     images: [
       {
         url: "/networkcapital/hero.jpg",
@@ -65,8 +76,19 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
     description:
-      "Fábrica de remeras personalizadas y personalización de prendas por mayor. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades.",
+      "Fábrica de remeras personalizadas y prendas de vestir por mayor en Uruguay. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades. Envíos a todo el país.",
     images: ["/networkcapital/hero.jpg"],
+  },
+  icons: {
+    icon: "/networkcapital/logo.png",
+    shortcut: "/networkcapital/logo.png",
+    apple: "/networkcapital/logo.png",
+  },
+  themeColor: "#0B1628",
+  appleWebApp: {
+    title: "Network Capital",
+    statusBarStyle: "black-translucent",
+    capable: true,
   },
 };
 

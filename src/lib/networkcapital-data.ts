@@ -39,7 +39,7 @@ export interface Promo {
 export const PROMOS: Promo[] = [
   {
     id: "promo-over-amarilla",
-    title: "Remera Over",
+    title: "Remera Oversize",
     subtitle: "Corte amplio y moderno, ideal para estampados grandes.",
     image: "/networkcapital/productos/promo remere over sin fondo.png",
     ctaText: "Cotizar",

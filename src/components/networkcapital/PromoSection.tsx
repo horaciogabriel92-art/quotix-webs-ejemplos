@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import { PROMOS, BRAND } from "@/lib/networkcapital-data";
-import { FormattedPrice } from "@/components/FormattedPrice";
 
 export default function PromoSection() {
   return (
@@ -99,7 +98,7 @@ export default function PromoSection() {
                             </span>
                           </span>
                           <span className="text-white text-lg font-black">
-                            <FormattedPrice usd={tier.price} className="text-white" />{" "}
+                            ${tier.price}{" "}
                             <span className="text-xs text-white/50 font-medium">c/u</span>
                           </span>
                         </div>

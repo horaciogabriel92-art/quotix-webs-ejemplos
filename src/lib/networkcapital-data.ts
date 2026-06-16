@@ -127,14 +127,14 @@ const REMERA_SIZE_TABLE: SizeRow[] = [
 ];
 
 const REMERA_STONE_WASH_PRICE_WITH: PriceTier[] = [
-  { qty: 10, label: "10+", price: 370 },
-  { qty: 20, label: "20+", price: 350 },
-  { qty: 30, label: "30+", price: 330 },
+  { qty: 10, label: "10+", price: 590 },
+  { qty: 20, label: "20+", price: 570 },
+  { qty: 30, label: "30+", price: 550 },
 ];
 const REMERA_STONE_WASH_PRICE_WITHOUT: PriceTier[] = [
-  { qty: 10, label: "10+", price: 270 },
-  { qty: 20, label: "20+", price: 240 },
-  { qty: 30, label: "30+", price: 220 },
+  { qty: 10, label: "10+", price: 490 },
+  { qty: 20, label: "20+", price: 470 },
+  { qty: 30, label: "30+", price: 450 },
 ];
 
 const REMERA_OVERSIZE_PRICE_WITH: PriceTier[] = [
@@ -168,15 +168,15 @@ const BUZO_SIZE_TABLE: SizeRow[] = [
   { size: "XXL", largo: 78, ancho: 68, manga: 66 },
 ];
 
-const BUZO_PRICE_WITH: PriceTier[] = [
-  { qty: 10, label: "10+", price: 590 },
-  { qty: 20, label: "20+", price: 560 },
-  { qty: 30, label: "30+", price: 530 },
+const BUZO_MEDIO_CIERRE_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 790 },
+  { qty: 20, label: "20+", price: 770 },
+  { qty: 30, label: "30+", price: 750 },
 ];
-const BUZO_PRICE_WITHOUT: PriceTier[] = [
-  { qty: 10, label: "10+", price: 490 },
-  { qty: 20, label: "20+", price: 460 },
-  { qty: 30, label: "30+", price: 430 },
+const BUZO_MEDIO_CIERRE_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 690 },
+  { qty: 20, label: "20+", price: 670 },
+  { qty: 30, label: "30+", price: 650 },
 ];
 
 const BUZO_A_LA_BASE_SIZES = ["S", "M", "L", "XL", "XXL"];
@@ -207,12 +207,19 @@ const CAMPERA_SIZE_TABLE: SizeRow[] = [
   { size: "XXL", largo: 80, ancho: 70, manga: 68 },
 ];
 
-const CAMPERA_PRICE_WITH: PriceTier[] = [
+const CAMPERA_CAPITONEADA_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 1240 },
+];
+const CAMPERA_CAPITONEADA_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 990 },
+];
+
+const CAMPERA_NEOPRENO_PRICE_WITH: PriceTier[] = [
   { qty: 10, label: "10+", price: 890 },
   { qty: 20, label: "20+", price: 850 },
   { qty: 30, label: "30+", price: 820 },
 ];
-const CAMPERA_PRICE_WITHOUT: PriceTier[] = [
+const CAMPERA_NEOPRENO_PRICE_WITHOUT: PriceTier[] = [
   { qty: 10, label: "10+", price: 790 },
   { qty: 20, label: "20+", price: 750 },
   { qty: 30, label: "30+", price: 720 },
@@ -227,12 +234,34 @@ const CANGURO_SIZE_TABLE: SizeRow[] = [
   { size: "XXL", largo: 78, ancho: 68, manga: 66 },
 ];
 
-const CANGURO_PRICE_WITH: PriceTier[] = [
+const CANGURO_OVERSIZE_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 1240 },
+  { qty: 20, label: "20+", price: 1200 },
+  { qty: 30, label: "30+", price: 1160 },
+];
+const CANGURO_OVERSIZE_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 1090 },
+  { qty: 20, label: "20+", price: 990 },
+  { qty: 30, label: "30+", price: 970 },
+];
+
+const CANGURO_CLASICO_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 890 },
+  { qty: 20, label: "20+", price: 870 },
+  { qty: 30, label: "30+", price: 850 },
+];
+const CANGURO_CLASICO_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 790 },
+  { qty: 20, label: "20+", price: 770 },
+  { qty: 30, label: "30+", price: 750 },
+];
+
+const CANGURO_CON_CIERRE_PRICE_WITH: PriceTier[] = [
   { qty: 10, label: "10+", price: 590 },
   { qty: 20, label: "20+", price: 560 },
   { qty: 30, label: "30+", price: 530 },
 ];
-const CANGURO_PRICE_WITHOUT: PriceTier[] = [
+const CANGURO_CON_CIERRE_PRICE_WITHOUT: PriceTier[] = [
   { qty: 10, label: "10+", price: 490 },
   { qty: 20, label: "20+", price: 460 },
   { qty: 30, label: "30+", price: 430 },
@@ -323,7 +352,7 @@ export const PRODUCTS: Product[] = [
     id: "remera-stonewash",
     name: "Remera Stone Wash",
     category: "Remeras",
-    priceFrom: 270,
+    priceFrom: 450,
     image: "/networkcapital/productos/remera stone wash negro.jpeg",
     description:
       "Remera stone wash unisex. Corte clásico, ideal para estampar y revender. Disponible en varios colores con fotos de modelo hombre y mujer.",
@@ -354,7 +383,7 @@ export const PRODUCTS: Product[] = [
     id: "buzo-medio-cierre",
     name: "Buzo Medio Cierre",
     category: "Buzos",
-    priceFrom: 490,
+    priceFrom: 650,
     image: "/networkcapital/productos/buzo medio gris frente.jpg",
     description:
       "Buzo medio cierre unisex. Cálido, cómodo y perfecto para personalizar con serigrafía o DTF. Disponible en varios colores.",
@@ -375,8 +404,8 @@ export const PRODUCTS: Product[] = [
     composition: "80% algodón · 20% poliéster",
     sizes: BUZO_SIZES,
     sizeTable: BUZO_SIZE_TABLE,
-    priceWithPrint: BUZO_PRICE_WITH,
-    priceWithoutPrint: BUZO_PRICE_WITHOUT,
+    priceWithPrint: BUZO_MEDIO_CIERRE_PRICE_WITH,
+    priceWithoutPrint: BUZO_MEDIO_CIERRE_PRICE_WITHOUT,
   },
   {
     id: "buzo-a-la-base",
@@ -429,14 +458,14 @@ export const PRODUCTS: Product[] = [
     composition: "Neopreno",
     sizes: CAMPERA_SIZES,
     sizeTable: CAMPERA_SIZE_TABLE,
-    priceWithPrint: CAMPERA_PRICE_WITH,
-    priceWithoutPrint: CAMPERA_PRICE_WITHOUT,
+    priceWithPrint: CAMPERA_NEOPRENO_PRICE_WITH,
+    priceWithoutPrint: CAMPERA_NEOPRENO_PRICE_WITHOUT,
   },
   {
     id: "campera-capitoneada",
     name: "Campera Capitoneada",
     category: "Camperas",
-    priceFrom: 790,
+    priceFrom: 990,
     image: "/networkcapital/productos/campera capitoneada negro.jpeg",
     description:
       "Campera capitoneada unisex. Abrigo ideal para personalizar con serigrafía o DTF. Calidad premium.",
@@ -452,8 +481,8 @@ export const PRODUCTS: Product[] = [
     composition: "100% poliéster",
     sizes: CAMPERA_SIZES,
     sizeTable: CAMPERA_SIZE_TABLE,
-    priceWithPrint: CAMPERA_PRICE_WITH,
-    priceWithoutPrint: CAMPERA_PRICE_WITHOUT,
+    priceWithPrint: CAMPERA_CAPITONEADA_PRICE_WITH,
+    priceWithoutPrint: CAMPERA_CAPITONEADA_PRICE_WITHOUT,
   },
   {
     id: "campera-neopreno-hombre",
@@ -475,8 +504,8 @@ export const PRODUCTS: Product[] = [
     composition: "Neopreno",
     sizes: CAMPERA_SIZES,
     sizeTable: CAMPERA_SIZE_TABLE,
-    priceWithPrint: CAMPERA_PRICE_WITH,
-    priceWithoutPrint: CAMPERA_PRICE_WITHOUT,
+    priceWithPrint: CAMPERA_NEOPRENO_PRICE_WITH,
+    priceWithoutPrint: CAMPERA_NEOPRENO_PRICE_WITHOUT,
   },
 
   // ─────────────────────────── CANGUROS ───────────────────────────
@@ -484,7 +513,7 @@ export const PRODUCTS: Product[] = [
     id: "canguro-oversize",
     name: "Canguro Oversize",
     category: "Canguros",
-    priceFrom: 520,
+    priceFrom: 970,
     image: "/networkcapital/productos/canguro over beige frente.jpg",
     description:
       "Canguro oversize unisex. Corte amplio y moderno, ideal para estampados grandes.",
@@ -505,14 +534,14 @@ export const PRODUCTS: Product[] = [
     composition: "80% algodón · 20% poliéster",
     sizes: CANGURO_SIZES,
     sizeTable: CANGURO_SIZE_TABLE,
-    priceWithPrint: CANGURO_PRICE_WITH,
-    priceWithoutPrint: CANGURO_PRICE_WITHOUT,
+    priceWithPrint: CANGURO_OVERSIZE_PRICE_WITH,
+    priceWithoutPrint: CANGURO_OVERSIZE_PRICE_WITHOUT,
   },
   {
     id: "canguro-clasico",
     name: "Canguro Clásico",
     category: "Canguros",
-    priceFrom: 490,
+    priceFrom: 750,
     image: "/networkcapital/productos/canguro clasico arena.jpeg",
     description:
       "Canguro clásico unisex. Cómodo, con bolsillo delantero y capucha. Ideal para serigrafía y DTF. Disponible en varios colores.",
@@ -536,8 +565,8 @@ export const PRODUCTS: Product[] = [
     composition: "80% algodón · 20% poliéster",
     sizes: CANGURO_SIZES,
     sizeTable: CANGURO_SIZE_TABLE,
-    priceWithPrint: CANGURO_PRICE_WITH,
-    priceWithoutPrint: CANGURO_PRICE_WITHOUT,
+    priceWithPrint: CANGURO_CLASICO_PRICE_WITH,
+    priceWithoutPrint: CANGURO_CLASICO_PRICE_WITHOUT,
   },
   {
     id: "canguro-con-cierre",
@@ -559,7 +588,7 @@ export const PRODUCTS: Product[] = [
     composition: "80% algodón · 20% poliéster",
     sizes: CANGURO_SIZES,
     sizeTable: CANGURO_SIZE_TABLE,
-    priceWithPrint: CANGURO_PRICE_WITH,
-    priceWithoutPrint: CANGURO_PRICE_WITHOUT,
+    priceWithPrint: CANGURO_CON_CIERRE_PRICE_WITH,
+    priceWithoutPrint: CANGURO_CON_CIERRE_PRICE_WITHOUT,
   },
 ];

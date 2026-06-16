@@ -138,11 +138,22 @@ const REMERA_STONE_WASH_PRICE_WITHOUT: PriceTier[] = [
 ];
 
 const REMERA_OVERSIZE_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 490 },
+  { qty: 20, label: "20+", price: 470 },
+  { qty: 30, label: "30+", price: 450 },
+];
+const REMERA_OVERSIZE_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 350 },
+  { qty: 20, label: "20+", price: 330 },
+  { qty: 30, label: "30+", price: 310 },
+];
+
+const REMERA_CLASICA_PRICE_WITH: PriceTier[] = [
   { qty: 10, label: "10+", price: 390 },
   { qty: 20, label: "20+", price: 370 },
   { qty: 30, label: "30+", price: 350 },
 ];
-const REMERA_OVERSIZE_PRICE_WITHOUT: PriceTier[] = [
+const REMERA_CLASICA_PRICE_WITHOUT: PriceTier[] = [
   { qty: 10, label: "10+", price: 290 },
   { qty: 20, label: "20+", price: 270 },
   { qty: 30, label: "30+", price: 250 },
@@ -166,6 +177,25 @@ const BUZO_PRICE_WITHOUT: PriceTier[] = [
   { qty: 10, label: "10+", price: 490 },
   { qty: 20, label: "20+", price: 460 },
   { qty: 30, label: "30+", price: 430 },
+];
+
+const BUZO_A_LA_BASE_SIZES = ["S", "M", "L", "XL", "XXL"];
+const BUZO_A_LA_BASE_SIZE_TABLE: SizeRow[] = [
+  { size: "S", largo: 69, ancho: 51, manga: 61 },
+  { size: "M", largo: 71, ancho: 56, manga: 62 },
+  { size: "L", largo: 74, ancho: 61, manga: 63 },
+  { size: "XL", largo: 76, ancho: 66, manga: 64 },
+  { size: "XXL", largo: 79, ancho: 71, manga: 65 },
+];
+const BUZO_A_LA_BASE_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 790 },
+  { qty: 20, label: "20+", price: 770 },
+  { qty: 30, label: "30+", price: 750 },
+];
+const BUZO_A_LA_BASE_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 690 },
+  { qty: 20, label: "20+", price: 670 },
+  { qty: 30, label: "30+", price: 650 },
 ];
 
 const CAMPERA_SIZES = ["S", "M", "L", "XL", "XXL"];
@@ -210,6 +240,56 @@ const CANGURO_PRICE_WITHOUT: PriceTier[] = [
 
 export const PRODUCTS: Product[] = [
   // ─────────────────────────── REMERAS ───────────────────────────
+  {
+    id: "remera-clasica",
+    name: "Remera Clásica",
+    category: "Remeras",
+    priceFrom: 290,
+    image: "/networkcapital/productos/remera-clasica-amarillo-frente.jpg",
+    description:
+      "Remera clásica peso completo. 100% algodón 24/1, 200g. Calidad premium con costuras resistentes y terminaciones hechas para durar.",
+    features: [
+      "100% algodón 24/1",
+      "200g",
+      "Corte clásico",
+      "Costuras reforzadas",
+    ],
+    colors: [
+      "Amarillo",
+      "Arena",
+      "Azul",
+      "Azul Marino",
+      "Blanco",
+      "Bordó",
+      "Celeste",
+      "Fucsia",
+      "Gris",
+      "Rojo",
+      "Rosa Pastel",
+      "Verde Oliva",
+    ],
+    colorImages: {
+      "Amarillo": "/networkcapital/productos/remera-clasica-amarillo-frente.jpg",
+      "Arena": "/networkcapital/productos/remera-clasica-arena-frente.jpg",
+      "Azul": "/networkcapital/productos/remera-clasica-azul-frente.jpg",
+      "Azul Marino": "/networkcapital/productos/remera-clasica-azul-marino-frente.jpg",
+      "Blanco": "/networkcapital/productos/remera-clasica-blanco-frente.jpg",
+      "Bordó": "/networkcapital/productos/remera-clasica-bordo-frente.jpg",
+      "Celeste": "/networkcapital/productos/remera-clasica-celeste-frente.jpg",
+      "Fucsia": "/networkcapital/productos/remera-clasica-fucsia-frente.jpg",
+      "Gris": "/networkcapital/productos/remera-clasica-gris-frente.jpg",
+      "Rojo": "/networkcapital/productos/remera-clasica-rojo-frente.jpg",
+      "Rosa Pastel": "/networkcapital/productos/remera-clasica-rosa-pastel-frente.jpg",
+      "Verde Oliva": "/networkcapital/productos/remera-clasica-verde-oliva-frente.jpg",
+    },
+    minQty: 10,
+    weight: "200g",
+    composition: "100% algodón 24/1",
+    sizes: REMERA_SIZES,
+    sizeTable: REMERA_SIZE_TABLE,
+    priceWithPrint: REMERA_CLASICA_PRICE_WITH,
+    priceWithoutPrint: REMERA_CLASICA_PRICE_WITHOUT,
+  },
   {
     id: "remera-oversize",
     name: "Remera Oversize",
@@ -297,6 +377,35 @@ export const PRODUCTS: Product[] = [
     sizeTable: BUZO_SIZE_TABLE,
     priceWithPrint: BUZO_PRICE_WITH,
     priceWithoutPrint: BUZO_PRICE_WITHOUT,
+  },
+  {
+    id: "buzo-a-la-base",
+    name: "Buzo a la Base",
+    category: "Buzos",
+    priceFrom: 690,
+    image: "/networkcapital/productos/buzo-a-la-base-negro-frente.jpg",
+    description:
+      "Buzo a la base clásico. Frisa premium 280gr, 50% algodón y 50% poliéster con interior de felpa suave y abrigada. Puños y cintura en ribb.",
+    features: [
+      "Frisa premium 280gr",
+      "50% algodón · 50% poliéster",
+      "Interior felpado",
+      "Puños y cintura en ribb",
+    ],
+    colors: ["Negro", "Azul Marino", "Blanco", "Gris"],
+    colorImages: {
+      "Negro": "/networkcapital/productos/buzo-a-la-base-negro-frente.jpg",
+      "Azul Marino": "/networkcapital/productos/buzo-a-la-base-azul-marino-frente.jpg",
+      "Blanco": "/networkcapital/productos/buzo-a-la-base-blanco-frente.jpg",
+      "Gris": "/networkcapital/productos/buzo-a-la-base-gris-frente.jpg",
+    },
+    minQty: 10,
+    weight: "280g",
+    composition: "50% algodón · 50% poliéster",
+    sizes: BUZO_A_LA_BASE_SIZES,
+    sizeTable: BUZO_A_LA_BASE_SIZE_TABLE,
+    priceWithPrint: BUZO_A_LA_BASE_PRICE_WITH,
+    priceWithoutPrint: BUZO_A_LA_BASE_PRICE_WITHOUT,
   },
 
   // ─────────────────────────── CAMPERAS ───────────────────────────

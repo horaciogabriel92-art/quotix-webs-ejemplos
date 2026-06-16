@@ -101,6 +101,7 @@ export default function ProductGrid({
   products?: Product[];
   showHeader?: boolean;
 }) {
+  const visibleProducts = products.filter((p) => !p.hidden);
   const [selected, setSelected] = useState<Product | null>(null);
   const [withPrint, setWithPrint] = useState(true);
   const [showSizes, setShowSizes] = useState(false);
@@ -149,7 +150,7 @@ export default function ProductGrid({
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product, index) => (
+          {visibleProducts.map((product, index) => (
             <motion.button
               key={product.id}
               onClick={() => {

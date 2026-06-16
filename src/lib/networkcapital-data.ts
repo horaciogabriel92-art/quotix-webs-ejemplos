@@ -113,6 +113,7 @@ export interface Product {
   priceWithoutPrint: PriceTier[];
   stampIdeas?: string[];
   details?: string[];
+  hidden?: boolean;
 }
 
 // ─── Talles y precios compartidos ───
@@ -440,6 +441,7 @@ export const PRODUCTS: Product[] = [
   // ─────────────────────────── CAMPERAS ───────────────────────────
   {
     id: "campera-neopreno-mujer",
+    hidden: true,
     name: "Campera Neopreno Mujer",
     category: "Camperas",
     priceFrom: 790,
@@ -486,6 +488,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "campera-neopreno-hombre",
+    hidden: true,
     name: "Campera Neopreno Hombre",
     category: "Camperas",
     priceFrom: 790,
@@ -570,6 +573,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "canguro-con-cierre",
+    hidden: true,
     name: "Canguro con Cierre",
     category: "Canguros",
     priceFrom: 540,

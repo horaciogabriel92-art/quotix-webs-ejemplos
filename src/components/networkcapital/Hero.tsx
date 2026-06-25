@@ -115,11 +115,27 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
               {/* Buttons */}
               <motion.div
-                className="flex flex-col items-center gap-5"
+                className="relative flex flex-col items-center gap-5"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.9 }}
               >
+                {/* Arrow pointing to CATALOGO */}
+                <motion.svg
+                  className="absolute -left-20 md:-left-28 top-2 w-20 h-20 md:w-28 md:h-28 text-[#F2B411]"
+                  viewBox="0 0 120 120"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0, rotate: -30, scale: 0.4 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.1 }}
+                >
+                  <path d="M95 95 C75 95, 55 80, 45 55 C40 40, 42 25, 55 15" />
+                  <path d="M45 28 L55 15 L68 22" />
+                </motion.svg>
+
                 <motion.button
                   onClick={handleEnterCatalog}
                   className="inline-flex items-center justify-center px-12 py-4 min-w-[240px] bg-transparent border-2 border-white/30 text-white font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
@@ -128,6 +144,22 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                 >
                   Catálogo
                 </motion.button>
+
+                {/* Arrow pointing to ARMA TU PRENDA */}
+                <motion.svg
+                  className="absolute -right-20 md:-right-28 bottom-2 w-20 h-20 md:w-28 md:h-28 text-[#F2B411]"
+                  viewBox="0 0 120 120"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0, rotate: 30, scale: 0.4 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.3 }}
+                >
+                  <path d="M25 25 C45 25, 65 40, 75 65 C80 80, 78 95, 65 105" />
+                  <path d="M75 92 L65 105 L52 98" />
+                </motion.svg>
 
                 <motion.a
                   href="https://app-networkcapital.quotixos.com/"

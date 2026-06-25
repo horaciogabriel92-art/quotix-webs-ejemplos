@@ -66,25 +66,19 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
             <div className="max-w-3xl mx-auto">
               {/* CATALOGO button - above logo */}
               <motion.div
-                className="relative flex justify-center mb-4"
+                className="relative flex justify-center mb-4 min-w-[300px]"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <motion.svg
-                  className="absolute -left-16 top-1/2 -translate-y-1/2 w-16 h-16 text-[#F2B411]"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  initial={{ opacity: 0, rotate: -45, scale: 0.3 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                <motion.img
+                  src="/networkcapital/flecha-home.svg"
+                  alt=""
+                  className="absolute -left-10 top-1/2 -translate-y-1/2 w-16 h-20 object-contain pointer-events-none"
+                  initial={{ opacity: 0, rotate: -30, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: -15, scale: 1 }}
                   transition={{ type: "spring", stiffness: 120, damping: 12, delay: 0.8 }}
-                >
-                  <path d="M85 85 C65 85, 50 70, 45 50 C40 30, 48 15, 65 10" />
-                  <path d="M52 18 L65 10 L70 24" />
-                </motion.svg>
+                />
 
                 <motion.button
                   onClick={handleEnterCatalog}
@@ -147,25 +141,20 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
               {/* ARMA TU PRENDA button - below logo */}
               <motion.div
-                className="relative flex justify-center"
+                className="relative flex justify-center min-w-[300px]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                <motion.svg
-                  className="absolute -right-16 top-1/2 -translate-y-1/2 w-16 h-16 text-[#F2B411]"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  initial={{ opacity: 0, rotate: 45, scale: 0.3 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                <motion.img
+                  src="/networkcapital/flecha-home.svg"
+                  alt=""
+                  className="absolute -right-10 top-1/2 -translate-y-1/2 w-16 h-20 object-contain pointer-events-none"
+                  style={{ transform: "rotate(165deg)" }}
+                  initial={{ opacity: 0, rotate: 180, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 165, scale: 1 }}
                   transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.2 }}
-                >
-                  <path d="M15 15 C35 15, 50 30, 55 50 C60 70, 52 85, 35 90" />
-                  <path d="M48 82 L35 90 L30 76" />
-                </motion.svg>
+                />
 
                 <motion.a
                   href="https://app-networkcapital.quotixos.com/"

@@ -63,23 +63,14 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
           {/* Content */}
           <div className="relative z-10 container mx-auto px-6 text-center">
-            <div className="max-w-3xl mx-auto">
+            <div className="relative inline-flex flex-col items-center">
               {/* CATALOGO button - above logo */}
               <motion.div
-                className="relative flex justify-center mb-4 min-w-[300px]"
+                className="relative z-10 mb-4"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <motion.img
-                  src="/networkcapital/flecha-home.svg"
-                  alt=""
-                  className="absolute -left-10 top-1/2 -translate-y-1/2 w-16 h-20 object-contain pointer-events-none"
-                  initial={{ opacity: 0, rotate: -30, scale: 0.5 }}
-                  animate={{ opacity: 1, rotate: -15, scale: 1 }}
-                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 0.8 }}
-                />
-
                 <motion.button
                   onClick={handleEnterCatalog}
                   className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-transparent border-2 border-white/30 text-white font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
@@ -92,7 +83,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
               {/* Badge */}
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B411]/10 border border-[#F2B411]/30 mb-5"
+                className="relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B411]/10 border border-[#F2B411]/30 mb-5"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
@@ -105,7 +96,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
               {/* Logo with vortex entrance */}
               <motion.div
-                className="mb-5 flex justify-center"
+                className="relative z-10 mb-5 flex justify-center"
                 initial={{ opacity: 0, scale: 0.2, rotate: -180, filter: "blur(16px)" }}
                 animate={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }}
                 transition={{
@@ -141,21 +132,11 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
               {/* ARMA TU PRENDA button - below logo */}
               <motion.div
-                className="relative flex justify-center min-w-[300px]"
+                className="relative z-10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                <motion.img
-                  src="/networkcapital/flecha-home.svg"
-                  alt=""
-                  className="absolute -right-10 top-1/2 -translate-y-1/2 w-16 h-20 object-contain pointer-events-none"
-                  style={{ transform: "rotate(165deg)" }}
-                  initial={{ opacity: 0, rotate: 180, scale: 0.5 }}
-                  animate={{ opacity: 1, rotate: 165, scale: 1 }}
-                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.2 }}
-                />
-
                 <motion.a
                   href="https://app-networkcapital.quotixos.com/"
                   target="_blank"
@@ -167,6 +148,28 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                   Armá tu prenda
                 </motion.a>
               </motion.div>
+
+              {/* Arrow from logo to CATALOGO */}
+              <motion.img
+                src="/networkcapital/flecha-home.svg"
+                alt=""
+                className="absolute top-[2%] left-[58%] w-20 h-24 object-contain pointer-events-none z-0"
+                style={{ transform: "scaleX(-1) rotate(-20deg)" }}
+                initial={{ opacity: 0, rotate: -50, scale: 0.4 }}
+                animate={{ opacity: 1, rotate: -20, scaleX: -1, scaleY: 1 }}
+                transition={{ type: "spring", stiffness: 120, damping: 12, delay: 0.8 }}
+              />
+
+              {/* Arrow from logo to ARMA TU PRENDA */}
+              <motion.img
+                src="/networkcapital/flecha-home.svg"
+                alt=""
+                className="absolute bottom-[2%] right-[58%] w-20 h-24 object-contain pointer-events-none z-0"
+                style={{ transform: "rotate(160deg)" }}
+                initial={{ opacity: 0, rotate: 190, scale: 0.4 }}
+                animate={{ opacity: 1, rotate: 160, scale: 1 }}
+                transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.2 }}
+              />
             </div>
           </div>
         </motion.section>

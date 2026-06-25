@@ -53,35 +53,6 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
             <div className="absolute inset-0 bg-gradient-to-r from-[#0B1628]/90 via-[#007DB8]/10 to-transparent" />
           </div>
 
-          {/* Vortex rings behind logo */}
-          <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full border border-[#F2B411]/10"
-                style={{
-                  width: `${280 + i * 100}px`,
-                  height: `${280 + i * 100}px`,
-                }}
-                animate={{
-                  rotate: i % 2 === 0 ? 360 : -360,
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  rotate: { duration: 8 + i * 2, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                }}
-              >
-                <div
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    background: `conic-gradient(from ${i * 60}deg, transparent 0deg, rgba(242,180,17,0.08) 30deg, transparent 60deg)`,
-                  }}
-                />
-              </motion.div>
-            ))}
-          </div>
-
           {/* Urban texture overlay */}
           <div
             className="absolute inset-0 z-0 opacity-[0.03]"
@@ -144,14 +115,27 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
               {/* Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                className="relative flex flex-col items-center gap-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.9 }}
               >
+                {/* Flecha señalando CATÁLOGO */}
+                <svg
+                  className="absolute -left-24 top-3 w-20 h-16 text-[#F2B411] hidden md:block"
+                  viewBox="0 0 100 80"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                >
+                  <path d="M90 10 C70 10, 60 40, 20 50" />
+                  <path d="M28 42 L18 52 L30 56" />
+                </svg>
+
                 <motion.button
                   onClick={handleEnterCatalog}
-                  className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 min-w-[220px] bg-transparent border-2 border-white/30 text-white font-bold text-sm tracking-[0.15em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
+                  className="relative inline-flex items-center justify-center px-12 py-4 min-w-[240px] bg-transparent border-2 border-white/30 text-white font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -162,12 +146,25 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                   href="https://app-networkcapital.quotixos.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 min-w-[220px] bg-[#F2B411] text-black font-black text-sm tracking-[0.12em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
+                  className="relative inline-flex items-center justify-center px-12 py-4 min-w-[240px] bg-[#F2B411] text-black font-black text-sm tracking-[0.15em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >
                   Armá tu prenda
                 </motion.a>
+
+                {/* Flecha señalando ARMÁ TU PRENDA */}
+                <svg
+                  className="absolute -right-24 bottom-3 w-20 h-16 text-[#F2B411] hidden md:block"
+                  viewBox="0 0 100 80"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                >
+                  <path d="M10 70 C30 70, 40 40, 80 30" />
+                  <path d="M72 38 L82 28 L70 24" />
+                </svg>
               </motion.div>
             </div>
           </div>

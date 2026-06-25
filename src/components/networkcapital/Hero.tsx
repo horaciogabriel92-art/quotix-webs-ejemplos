@@ -64,27 +64,59 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
           {/* Content */}
           <div className="relative z-10 container mx-auto px-6 text-center">
             <div className="max-w-3xl mx-auto">
-              {/* Badge */}
+              {/* CATALOGO button - above logo */}
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B411]/10 border border-[#F2B411]/30 mb-10"
+                className="relative flex justify-center mb-4"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
+                <motion.svg
+                  className="absolute -left-16 top-1/2 -translate-y-1/2 w-16 h-16 text-[#F2B411]"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  initial={{ opacity: 0, rotate: -45, scale: 0.3 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 0.8 }}
+                >
+                  <path d="M85 85 C65 85, 50 70, 45 50 C40 30, 48 15, 65 10" />
+                  <path d="M52 18 L65 10 L70 24" />
+                </motion.svg>
+
+                <motion.button
+                  onClick={handleEnterCatalog}
+                  className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-transparent border-2 border-white/30 text-white font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Catálogo
+                </motion.button>
+              </motion.div>
+
+              {/* Badge */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B411]/10 border border-[#F2B411]/30 mb-5"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+              >
                 <span className="w-2 h-2 rounded-full bg-[#F2B411] animate-pulse" />
-                <span className="text-[#F2B411] text-xs md:text-sm font-bold tracking-widest uppercase">
+                <span className="text-[#F2B411] text-[10px] md:text-xs font-bold tracking-widest uppercase">
                   Venta por mayor · Mínimo 10 unidades
                 </span>
               </motion.div>
 
               {/* Logo with vortex entrance */}
               <motion.div
-                className="mb-12 flex justify-center"
+                className="mb-5 flex justify-center"
                 initial={{ opacity: 0, scale: 0.2, rotate: -180, filter: "blur(16px)" }}
                 animate={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }}
                 transition={{
                   duration: 1.2,
-                  delay: 0.3,
+                  delay: 0.5,
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
@@ -107,65 +139,39 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                     alt="Network Capital"
                     width={420}
                     height={140}
-                    className="object-contain w-[280px] md:w-[420px]"
+                    className="object-contain w-[260px] md:w-[380px]"
                     priority
                   />
                 </motion.div>
               </motion.div>
 
-              {/* Buttons */}
+              {/* ARMA TU PRENDA button - below logo */}
               <motion.div
-                className="relative flex flex-col items-center gap-5"
-                initial={{ opacity: 0, y: 30 }}
+                className="relative flex justify-center"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.9 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
               >
-                {/* Arrow pointing to CATALOGO */}
                 <motion.svg
-                  className="absolute -left-20 md:-left-28 top-2 w-20 h-20 md:w-28 md:h-28 text-[#F2B411]"
-                  viewBox="0 0 120 120"
+                  className="absolute -right-16 top-1/2 -translate-y-1/2 w-16 h-16 text-[#F2B411]"
+                  viewBox="0 0 100 100"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
-                  initial={{ opacity: 0, rotate: -30, scale: 0.4 }}
+                  initial={{ opacity: 0, rotate: 45, scale: 0.3 }}
                   animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.1 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.2 }}
                 >
-                  <path d="M95 95 C75 95, 55 80, 45 55 C40 40, 42 25, 55 15" />
-                  <path d="M45 28 L55 15 L68 22" />
-                </motion.svg>
-
-                <motion.button
-                  onClick={handleEnterCatalog}
-                  className="inline-flex items-center justify-center px-12 py-4 min-w-[240px] bg-transparent border-2 border-white/30 text-white font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  Catálogo
-                </motion.button>
-
-                {/* Arrow pointing to ARMA TU PRENDA */}
-                <motion.svg
-                  className="absolute -right-20 md:-right-28 bottom-2 w-20 h-20 md:w-28 md:h-28 text-[#F2B411]"
-                  viewBox="0 0 120 120"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  initial={{ opacity: 0, rotate: 30, scale: 0.4 }}
-                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                  transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.3 }}
-                >
-                  <path d="M25 25 C45 25, 65 40, 75 65 C80 80, 78 95, 65 105" />
-                  <path d="M75 92 L65 105 L52 98" />
+                  <path d="M15 15 C35 15, 50 30, 55 50 C60 70, 52 85, 35 90" />
+                  <path d="M48 82 L35 90 L30 76" />
                 </motion.svg>
 
                 <motion.a
                   href="https://app-networkcapital.quotixos.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-12 py-4 min-w-[240px] bg-[#F2B411] text-black font-black text-sm tracking-[0.15em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
+                  className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-[#F2B411] text-black font-black text-sm tracking-[0.15em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >

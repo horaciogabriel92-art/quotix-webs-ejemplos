@@ -62,7 +62,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-[#F2B411] text-black font-bold text-sm rounded-lg hover:bg-[#FFD700] transition-colors"
             >
-              Cotizar
+              Armá tu prenda
             </a>
           </nav>
 
@@ -100,7 +100,7 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className="mt-2 px-6 py-3 bg-[#F2B411] text-[#007DB8] font-bold text-center rounded-lg"
             >
-              Cotizar ahora
+              Armá tu prenda
             </a>
           </div>
         </div>

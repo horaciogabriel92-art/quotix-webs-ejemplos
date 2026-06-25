@@ -52,7 +52,7 @@ export default function Footer() {
                 href={BRAND.ctaUrl}
                 className="text-white/50 hover:text-[#F2B411] transition-colors text-sm"
               >
-                Cotizar
+                Armá tu prenda
               </a>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#F2B411] text-black font-bold rounded-xl hover:bg-[#FFD700] transition-all text-sm"
             >
-              Cotizar ahora
+              Armá tu prenda
             </a>
           </div>
         </div>

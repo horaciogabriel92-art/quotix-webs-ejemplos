@@ -42,7 +42,7 @@ export const PROMOS: Promo[] = [
     title: "Remera Oversize",
     subtitle: "Corte amplio y moderno, ideal para estampados grandes.",
     image: "/networkcapital/productos/promo remere over sin fondo.png",
-    ctaText: "Cotizar",
+    ctaText: "Armá tu prenda",
     productLink: "/networkcapital/remeras",
     priceLabel: "ESTAMPADO INCLUIDO",
     priceTiers: [
@@ -56,7 +56,7 @@ export const PROMOS: Promo[] = [
     title: "Canguro Oversize",
     subtitle: "Abrigo oversize perfecto para tu marca. Negro clásico.",
     image: "/networkcapital/productos/promo canguro oversize negro sin fondo.png",
-    ctaText: "Cotizar",
+    ctaText: "Armá tu prenda",
     productLink: "/networkcapital/canguros",
     priceLabel: "ESTAMPADO INCLUIDO",
     priceTiers: [
@@ -70,7 +70,7 @@ export const PROMOS: Promo[] = [
     title: "Remera Stone Wash",
     subtitle: "Look vintage desgastado. Ideal para serigrafía y DTF.",
     image: "/networkcapital/productos/promo remera stone wash gris sin fondo.png",
-    ctaText: "Cotizar",
+    ctaText: "Armá tu prenda",
     productLink: "/networkcapital/remeras",
     priceLabel: "ESTAMPADO INCLUIDO",
     priceTiers: [

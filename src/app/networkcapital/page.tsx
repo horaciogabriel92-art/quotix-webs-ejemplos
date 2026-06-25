@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/networkcapital/Header";
 import Hero from "@/components/networkcapital/Hero";
 import CategoryGrid from "@/components/networkcapital/CategoryGrid";
@@ -10,36 +12,6 @@ import FAQ from "@/components/networkcapital/FAQ";
 import PromoSection from "@/components/networkcapital/PromoSection";
 import JsonLd from "@/components/networkcapital/JsonLd";
 import { ShoppingBag, Truck, Award, Sparkles, Shirt, Palette } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
-  description:
-    "Fábrica de remeras personalizadas y prendas de vestir por mayor en Montevideo, Uruguay. Serigrafía, DTF, etiquetas y logos para emprendedores, marcas y empresas. Mínimo 10 unidades, envíos a todo el país.",
-  alternates: {
-    canonical: "/networkcapital",
-  },
-  openGraph: {
-    url: "https://networkcapital.quotixos.com/networkcapital",
-    title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
-    description:
-      "Fábrica de remeras personalizadas y prendas de vestir por mayor en Uruguay. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades. Envíos a todo el país.",
-    images: [
-      {
-        url: "/networkcapital/hero.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Remeras personalizadas por mayor - Network Capital",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Network Capital — Remeras personalizadas por mayor en Uruguay",
-    description:
-      "Fábrica de remeras personalizadas y prendas de vestir por mayor en Uruguay. Serigrafía, DTF, etiquetas y logos. Mínimo 10 unidades. Envíos a todo el país.",
-    images: ["/networkcapital/hero.jpg"],
-  },
-};
 
 const TRUST_ITEMS = [
   {
@@ -119,15 +91,19 @@ const faqSchema = {
 };
 
 export default function NetworkCapitalPage() {
+  const [entered, setEntered] = useState(false);
+
   return (
-    <main className="bg-[#0B1628] min-h-screen">
+    <main className={`bg-[#0B1628] min-h-screen ${!entered ? "overflow-hidden h-screen" : ""}`}>
       <JsonLd data={faqSchema} />
 
-      {/* Sticky Header */}
-      <Header />
+      {/* Hero as full-screen locked gate */}
+      <Hero isLocked={!entered} onEnterCatalog={() => setEntered(true)} />
 
-      {/* Hero */}
-      <Hero />
+      {entered && (
+        <>
+          {/* Sticky Header */}
+          <Header />
 
       {/* Trust Bar */}
       <section className="py-10 bg-[#0B1628] border-y border-[#007DB8]/30">
@@ -289,14 +265,11 @@ export default function NetworkCapitalPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+          {/* Footer */}
+          <Footer />
 
-      {/* WhatsApp sticky */}
-      <WhatsAppSticky />
-
-      {/* Schema WebSite */}
-      <JsonLd
+          {/* Schema WebSite */}
+          <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -308,7 +281,12 @@ export default function NetworkCapitalPage() {
             "query-input": "required name=search_term_string",
           },
         }}
-      />
+          />
+        </>
+      )}
+
+      {/* WhatsApp sticky - always visible */}
+      <WhatsAppSticky />
     </main>
   );
 }

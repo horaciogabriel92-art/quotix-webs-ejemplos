@@ -153,10 +153,10 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
               <motion.img
                 src="/networkcapital/flecha-home.svg"
                 alt=""
-                className="absolute top-[2%] left-[58%] w-20 h-24 object-contain pointer-events-none z-0"
-                style={{ transform: "scaleX(-1) rotate(-20deg)" }}
-                initial={{ opacity: 0, rotate: -50, scale: 0.4 }}
-                animate={{ opacity: 1, rotate: -20, scaleX: -1, scaleY: 1 }}
+                className="absolute top-[6%] left-[52%] w-16 h-20 object-contain pointer-events-none z-0"
+                style={{ transform: "scaleX(-1) rotate(-35deg)" }}
+                initial={{ opacity: 0, rotate: -65, scale: 0.4 }}
+                animate={{ opacity: 1, rotate: -35, scaleX: -1, scaleY: 1 }}
                 transition={{ type: "spring", stiffness: 120, damping: 12, delay: 0.8 }}
               />
 
@@ -164,10 +164,10 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
               <motion.img
                 src="/networkcapital/flecha-home.svg"
                 alt=""
-                className="absolute bottom-[2%] right-[58%] w-20 h-24 object-contain pointer-events-none z-0"
-                style={{ transform: "rotate(160deg)" }}
-                initial={{ opacity: 0, rotate: 190, scale: 0.4 }}
-                animate={{ opacity: 1, rotate: 160, scale: 1 }}
+                className="absolute bottom-[6%] right-[52%] w-16 h-20 object-contain pointer-events-none z-0"
+                style={{ transform: "rotate(35deg)" }}
+                initial={{ opacity: 0, rotate: 65, scale: 0.4 }}
+                animate={{ opacity: 1, rotate: 35, scale: 1 }}
                 transition={{ type: "spring", stiffness: 120, damping: 12, delay: 1.2 }}
               />
             </div>

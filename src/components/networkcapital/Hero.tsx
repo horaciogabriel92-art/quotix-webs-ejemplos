@@ -64,23 +64,25 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
           {/* Content */}
           <div className="relative z-10 container mx-auto px-6 text-center">
             <div className="relative flex flex-col items-center w-full max-w-lg mx-auto">
-              {/* Flecha hacia CATÁLOGO */}
+              {/* Flechas decorativas */}
               <motion.div
-                className="absolute -top-16 sm:-top-20 -left-12 sm:-left-16 w-28 h-28 sm:w-40 sm:h-40 pointer-events-none z-0"
-                initial={{ opacity: 0, x: -20, y: -20 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
               >
                 <motion.div
-                  animate={{ y: [0, 5, 0], x: [0, 3, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-[115%] max-w-[540px]"
                 >
                   <Image
-                    src="/networkcapital/flecha-home.svg"
+                    src="/networkcapital/flechas-home.png"
                     alt=""
-                    width={160}
-                    height={160}
-                    className="object-contain w-full h-full rotate-180 drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
+                    width={1002}
+                    height={955}
+                    className="object-contain w-full h-auto drop-shadow-[0_0_10px_rgba(242,180,17,0.4)]"
+                    priority
                   />
                 </motion.div>
               </motion.div>
@@ -159,26 +161,6 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                {/* Flecha hacia ARMÁ TU PRENDA */}
-                <motion.div
-                  className="absolute -bottom-16 sm:-bottom-20 -right-12 sm:-right-16 w-28 h-28 sm:w-40 sm:h-40 pointer-events-none z-0"
-                  initial={{ opacity: 0, x: 20, y: 20 }}
-                  animate={{ opacity: 1, x: 0, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                >
-                  <motion.div
-                    animate={{ y: [0, -5, 0], x: [0, -3, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-                  >
-                    <Image
-                      src="/networkcapital/flecha-home.svg"
-                      alt=""
-                      width={160}
-                      height={160}
-                      className="object-contain w-full h-full drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
-                    />
-                  </motion.div>
-                </motion.div>
                 <motion.a
                   href="https://app-networkcapital.quotixos.com/"
                   target="_blank"

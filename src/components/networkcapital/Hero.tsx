@@ -66,7 +66,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
             <div className="relative flex flex-col items-center w-full max-w-lg mx-auto">
               {/* Flecha hacia CATÁLOGO */}
               <motion.div
-                className="absolute -left-24 sm:-left-32 top-1/2 -translate-y-1/2 w-32 h-32 sm:w-44 sm:h-44 pointer-events-none z-0"
+                className="absolute -left-14 sm:-left-20 top-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 pointer-events-none z-0"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
@@ -78,8 +78,8 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                   <Image
                     src="/networkcapital/flecha-home.svg"
                     alt=""
-                    width={176}
-                    height={176}
+                    width={80}
+                    height={80}
                     className="object-contain w-full h-full drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
                   />
                 </motion.div>
@@ -161,7 +161,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
               >
                 {/* Flecha hacia ARMÁ TU PRENDA */}
                 <motion.div
-                  className="absolute -right-24 sm:-right-32 top-1/2 -translate-y-1/2 w-32 h-32 sm:w-44 sm:h-44 pointer-events-none z-0"
+                  className="absolute -right-14 sm:-right-20 top-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 pointer-events-none z-0"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 1.2 }}

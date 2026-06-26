@@ -256,7 +256,7 @@ export default function NetworkCapitalPage() {
               </a>
               <a
                 href="#productos"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#F2B411] text-black font-black text-lg rounded-xl hover:bg-[#FFD700] transition-all shadow-[0_0_30px_rgba(242,180,17,0.2)]"
               >
                 Ver productos
               </a>

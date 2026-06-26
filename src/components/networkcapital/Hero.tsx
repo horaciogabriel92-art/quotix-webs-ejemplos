@@ -63,7 +63,28 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
 
           {/* Content */}
           <div className="relative z-10 container mx-auto px-6 text-center">
-            <div className="relative inline-flex flex-col items-center">
+            <div className="relative flex flex-col items-center w-full max-w-lg mx-auto">
+              {/* Flecha hacia CATÁLOGO */}
+              <motion.div
+                className="absolute -top-24 sm:-top-28 -left-10 sm:-left-20 w-36 h-36 sm:w-48 sm:h-48 pointer-events-none z-0"
+                initial={{ opacity: 0, x: -20, y: -20 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+              >
+                <motion.div
+                  animate={{ y: [0, 5, 0], x: [0, 3, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Image
+                    src="/networkcapital/flecha-home.svg"
+                    alt=""
+                    width={192}
+                    height={192}
+                    className="object-contain w-full h-full rotate-180 drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
+                  />
+                </motion.div>
+              </motion.div>
+
               {/* CATALOGO button - above logo */}
               <motion.div
                 className="relative z-10 mb-4 flex flex-col items-center"
@@ -73,7 +94,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
               >
                 <motion.button
                   onClick={handleEnterCatalog}
-                  className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-[#F2B411] text-black font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
+                  className="relative z-20 inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-[#F2B411] text-black font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -138,11 +159,31 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
+                {/* Flecha hacia ARMÁ TU PRENDA */}
+                <motion.div
+                  className="absolute -bottom-24 sm:-bottom-28 -right-10 sm:-right-20 w-36 h-36 sm:w-48 sm:h-48 pointer-events-none z-0"
+                  initial={{ opacity: 0, x: 20, y: 20 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                >
+                  <motion.div
+                    animate={{ y: [0, -5, 0], x: [0, -3, 0] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                  >
+                    <Image
+                      src="/networkcapital/flecha-home.svg"
+                      alt=""
+                      width={192}
+                      height={192}
+                      className="object-contain w-full h-full drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
+                    />
+                  </motion.div>
+                </motion.div>
                 <motion.a
                   href="https://app-networkcapital.quotixos.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-[#F2B411] text-black font-black text-sm tracking-[0.15em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
+                  className="relative z-20 inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-[#F2B411] text-black font-black text-sm tracking-[0.15em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >

@@ -66,20 +66,20 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
             <div className="relative flex flex-col items-center w-full max-w-lg mx-auto">
               {/* Flecha hacia CATÁLOGO */}
               <motion.div
-                className="absolute -left-14 sm:-left-20 top-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 pointer-events-none z-0"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="absolute -top-16 sm:-top-20 -left-12 sm:-left-16 w-28 h-28 sm:w-40 sm:h-40 pointer-events-none z-0"
+                initial={{ opacity: 0, x: -20, y: -20 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
               >
                 <motion.div
-                  animate={{ y: [0, -5, 0], x: [0, 3, 0] }}
+                  animate={{ y: [0, 5, 0], x: [0, 3, 0] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <Image
                     src="/networkcapital/flecha-home.svg"
                     alt=""
-                    width={80}
-                    height={80}
+                    width={160}
+                    height={160}
                     className="object-contain w-full h-full rotate-180 drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
                   />
                 </motion.div>
@@ -161,20 +161,20 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
               >
                 {/* Flecha hacia ARMÁ TU PRENDA */}
                 <motion.div
-                  className="absolute -right-14 sm:-right-20 top-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 pointer-events-none z-0"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  className="absolute -bottom-16 sm:-bottom-20 -right-12 sm:-right-16 w-28 h-28 sm:w-40 sm:h-40 pointer-events-none z-0"
+                  initial={{ opacity: 0, x: 20, y: 20 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.2 }}
                 >
                   <motion.div
-                    animate={{ y: [0, 5, 0], x: [0, -3, 0] }}
+                    animate={{ y: [0, -5, 0], x: [0, -3, 0] }}
                     transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
                   >
                     <Image
                       src="/networkcapital/flecha-home.svg"
                       alt=""
-                      width={176}
-                      height={176}
+                      width={160}
+                      height={160}
                       className="object-contain w-full h-full drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
                     />
                   </motion.div>

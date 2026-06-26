@@ -80,7 +80,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                     alt=""
                     width={192}
                     height={192}
-                    className="object-contain w-full h-full rotate-180 drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
+                    className="object-contain w-full h-full drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
                   />
                 </motion.div>
               </motion.div>
@@ -175,7 +175,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                       alt=""
                       width={192}
                       height={192}
-                      className="object-contain w-full h-full drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
+                      className="object-contain w-full h-full rotate-180 drop-shadow-[0_0_10px_rgba(242,180,17,0.5)]"
                     />
                   </motion.div>
                 </motion.div>

@@ -73,7 +73,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
               >
                 <motion.button
                   onClick={handleEnterCatalog}
-                  className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-transparent border-2 border-white/30 text-white font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white/10 hover:border-white/50 transition-all backdrop-blur-sm"
+                  className="inline-flex items-center justify-center px-10 py-3.5 min-w-[200px] bg-[#F2B411] text-black font-black text-sm tracking-[0.2em] uppercase rounded-full hover:bg-[#FFD700] transition-all shadow-[0_0_40px_rgba(242,180,17,0.25)]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >

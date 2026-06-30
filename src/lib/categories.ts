@@ -24,7 +24,12 @@ export function getCategories(): Category[] {
   }
 
   return Array.from(map.entries()).map(([name, data]) => ({
-    slug: name.toLowerCase().replace(/\s+/g, "-"),
+    slug: name
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/ñ/g, "n")
+      .replace(/\s+/g, "-"),
     name,
     count: data.count,
     image: data.image,

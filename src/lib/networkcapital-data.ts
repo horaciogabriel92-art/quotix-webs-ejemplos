@@ -292,8 +292,8 @@ const PANTALON_PRICE_WITHOUT: PriceTier[] = [
 
 // ─── Gorro ───
 const GORRO_SIZE_TABLE: SizeRow[] = [{ size: "Único" }];
-const GORRO_PRICE_WITH: PriceTier[] = [{ qty: 10, label: "10+", price: 120 }];
-const GORRO_PRICE_WITHOUT: PriceTier[] = [{ qty: 10, label: "10+", price: 120 }];
+const GORRO_PRICE_WITH: PriceTier[] = [{ qty: 10, label: "10+", price: 170 }];
+const GORRO_PRICE_WITHOUT: PriceTier[] = [{ qty: 10, label: "10+", price: 170 }];
 
 // ─── Línea Niños ───
 const NINO_CANGURO_SIZES = ["4", "6", "8", "10", "12", "14", "16"];
@@ -756,7 +756,7 @@ export const PRODUCTS: Product[] = [
     id: "gorro",
     name: "Gorro",
     category: "Accesorios",
-    priceFrom: 120,
+    priceFrom: 170,
     image: "/networkcapital/productos/gorro-negro.jpg",
     description:
       "Gorro de lana. Suave, cómodo y con un calce perfecto. Ideal para el frío y para completar tu línea de invierno.",

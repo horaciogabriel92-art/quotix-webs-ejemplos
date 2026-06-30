@@ -268,6 +268,63 @@ const CANGURO_CON_CIERRE_PRICE_WITHOUT: PriceTier[] = [
   { qty: 30, label: "30+", price: 430 },
 ];
 
+// ─── Pantalón Deportivo ───
+const PANTALON_SIZES = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
+const PANTALON_SIZE_TABLE: SizeRow[] = [
+  { size: "XS", ancho: 34, largo: 96 },
+  { size: "S", ancho: 36, largo: 98 },
+  { size: "M", ancho: 38, largo: 100 },
+  { size: "L", ancho: 40, largo: 102 },
+  { size: "XL", ancho: 42, largo: 104 },
+  { size: "XXL", ancho: 44, largo: 106 },
+  { size: "XXXL", ancho: 46, largo: 106 },
+];
+const PANTALON_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 790 },
+  { qty: 20, label: "20+", price: 770 },
+  { qty: 30, label: "30+", price: 750 },
+];
+const PANTALON_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 690 },
+  { qty: 20, label: "20+", price: 670 },
+  { qty: 30, label: "30+", price: 650 },
+];
+
+// ─── Gorro ───
+const GORRO_SIZE_TABLE: SizeRow[] = [{ size: "Único" }];
+const GORRO_PRICE_WITH: PriceTier[] = [{ qty: 10, label: "10+", price: 120 }];
+const GORRO_PRICE_WITHOUT: PriceTier[] = [{ qty: 10, label: "10+", price: 120 }];
+
+// ─── Línea Niños ───
+const NINO_CANGURO_SIZES = ["4", "6", "8", "10", "12", "14", "16"];
+const NINO_CANGURO_SIZE_TABLE: SizeRow[] = [
+  { size: "4" },
+  { size: "6" },
+  { size: "8" },
+  { size: "10" },
+  { size: "12" },
+  { size: "14" },
+  { size: "16" },
+];
+const NINO_CANGURO_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 790 },
+  { qty: 20, label: "20+", price: 770 },
+  { qty: 30, label: "30+", price: 750 },
+];
+const NINO_CANGURO_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 690 },
+  { qty: 20, label: "20+", price: 670 },
+  { qty: 30, label: "30+", price: 650 },
+];
+
+// ─── Canguro Premium ───
+const CANGURO_PREMIUM_PRICE_WITH: PriceTier[] = [
+  { qty: 10, label: "10+", price: 990 },
+];
+const CANGURO_PREMIUM_PRICE_WITHOUT: PriceTier[] = [
+  { qty: 10, label: "10+", price: 890 },
+];
+
 export const PRODUCTS: Product[] = [
   // ─────────────────────────── REMERAS ───────────────────────────
   {
@@ -463,21 +520,23 @@ export const PRODUCTS: Product[] = [
 
   // ─────────────────────────── CAMPERAS ───────────────────────────
   {
-    id: "campera-neopreno-mujer",
-    hidden: true,
-    name: "Campera Neopreno Mujer",
+    id: "campera-neopreno",
+    name: "Campera Neopreno",
     category: "Camperas",
     priceFrom: 790,
-    image: "/networkcapital/productos/campera neopreno negra mujer frente.jpg",
+    image: "/networkcapital/productos/campera-neopreno-negra-frente.jpg",
     description:
-      "Campera de neopreno corte mujer. Moderna, abrigada y perfecta para personalizar con serigrafía o DTF.",
+      "Campera de neopreno. Moderna, abrigada y perfecta para personalizar con serigrafía o DTF.",
     features: [
       "Neopreno",
       "Abrigada",
-      "Corte mujer",
+      "Unisex",
       "Ideal para serigrafía y DTF",
     ],
     colors: ["Negro"],
+    colorImages: {
+      "Negro": "/networkcapital/productos/campera-neopreno-negra-frente.jpg",
+    },
     minQty: 10,
     weight: "400g",
     composition: "Neopreno",
@@ -500,7 +559,14 @@ export const PRODUCTS: Product[] = [
       "Unisex",
       "Ideal para serigrafía y DTF",
     ],
-    colors: ["Negro"],
+    colors: ["Negro", "Azul", "Bordó", "Gris", "Verde"],
+    colorImages: {
+      "Negro": "/networkcapital/productos/campera capitoneada negro.jpeg",
+      "Azul": "/networkcapital/productos/campera-capitoneada-azul-frente.jpg",
+      "Bordó": "/networkcapital/productos/campera-capitoneada-bordo-frente.jpg",
+      "Gris": "/networkcapital/productos/campera-capitoneada-gris-frente.jpg",
+      "Verde": "/networkcapital/productos/campera-capitoneada-verde-frente.jpg",
+    },
     minQty: 10,
     weight: "350g",
     composition: "100% poliéster",
@@ -509,31 +575,6 @@ export const PRODUCTS: Product[] = [
     priceWithPrint: CAMPERA_CAPITONEADA_PRICE_WITH,
     priceWithoutPrint: CAMPERA_CAPITONEADA_PRICE_WITHOUT,
   },
-  {
-    id: "campera-neopreno-hombre",
-    hidden: true,
-    name: "Campera Neopreno Hombre",
-    category: "Camperas",
-    priceFrom: 790,
-    image: "/networkcapital/productos/campera de neopreno negro.jpeg",
-    description:
-      "Campera de neopreno corte hombre. Moderna, abrigada y perfecta para personalizar con serigrafía o DTF.",
-    features: [
-      "Neopreno",
-      "Abrigada",
-      "Corte hombre",
-      "Ideal para serigrafía y DTF",
-    ],
-    colors: ["Negro"],
-    minQty: 10,
-    weight: "400g",
-    composition: "Neopreno",
-    sizes: CAMPERA_SIZES,
-    sizeTable: CAMPERA_SIZE_TABLE,
-    priceWithPrint: CAMPERA_NEOPRENO_PRICE_WITH,
-    priceWithoutPrint: CAMPERA_NEOPRENO_PRICE_WITHOUT,
-  },
-
   // ─────────────────────────── CANGUROS ───────────────────────────
   {
     id: "canguro-oversize",
@@ -577,10 +618,21 @@ export const PRODUCTS: Product[] = [
       "Unisex",
       "Ideal para serigrafía y DTF",
     ],
-    colors: ["Arena", "Azul", "Francia", "Negro", "Rosa Pastel", "Verde Bosque"],
+    colors: [
+      "Arena",
+      "Azul",
+      "Blanco",
+      "Celeste",
+      "Francia",
+      "Negro",
+      "Rosa Pastel",
+      "Verde Bosque",
+    ],
     colorImages: {
       "Arena": "/networkcapital/productos/canguro clasico arena.jpeg",
       "Azul": "/networkcapital/productos/canguro clasico azul hombre.jpeg",
+      "Blanco": "/networkcapital/productos/canguro-clasico-blanco-frente.jpg",
+      "Celeste": "/networkcapital/productos/canguro-clasico-celeste-frente.jpg",
       "Francia": "/networkcapital/productos/canguro clasico francia.jpeg",
       "Negro": "/networkcapital/productos/canguro clasico negro.jpeg",
       "Rosa Pastel": "/networkcapital/productos/canguro clasico rosa pastel.jpeg",
@@ -617,5 +669,202 @@ export const PRODUCTS: Product[] = [
     sizeTable: CANGURO_SIZE_TABLE,
     priceWithPrint: CANGURO_CON_CIERRE_PRICE_WITH,
     priceWithoutPrint: CANGURO_CON_CIERRE_PRICE_WITHOUT,
+  },
+
+  // ─────────────────────────── CANGURO PREMIUM ───────────────────────────
+  {
+    id: "canguro-premium",
+    name: "Canguro Premium",
+    category: "Canguros",
+    priceFrom: 1140,
+    image: "/networkcapital/productos/canguro-premium-negro-frente.jpg",
+    description:
+      "Canguro premium unisex. Corte moderno, capucha doble capa y felpa de alta calidad. Ideal para marcas que buscan un producto superior.",
+    features: [
+      "Felpa premium",
+      "Capucha doble capa",
+      "Unisex",
+      "Ideal para serigrafía y DTF",
+    ],
+    colors: [
+      "Arena",
+      "Azul",
+      "Blanco",
+      "Celeste",
+      "Gris",
+      "Naranja",
+      "Negro",
+      "Rojo",
+      "Rosa",
+      "Verde",
+      "Verde Claro",
+    ],
+    colorImages: {
+      "Arena": "/networkcapital/productos/canguro-premium-arena-frente.jpg",
+      "Azul": "/networkcapital/productos/canguro-premium-azul-frente.jpg",
+      "Blanco": "/networkcapital/productos/canguro-premium-blanco-frente.jpg",
+      "Celeste": "/networkcapital/productos/canguro-premium-celeste-frente.jpg",
+      "Gris": "/networkcapital/productos/canguro-premium-gris-frente.jpg",
+      "Naranja": "/networkcapital/productos/canguro-premium-naranja-frente.jpg",
+      "Negro": "/networkcapital/productos/canguro-premium-negro-frente.jpg",
+      "Rojo": "/networkcapital/productos/canguro-premium-rojo-frente.jpg",
+      "Rosa": "/networkcapital/productos/canguro-premium-rosa-frente.jpg",
+      "Verde": "/networkcapital/productos/canguro-premium-verde-frente.jpg",
+      "Verde Claro": "/networkcapital/productos/canguro-premium-verde-claro-frente.jpg",
+    },
+    minQty: 10,
+    weight: "320g",
+    composition: "80% algodón · 20% poliéster",
+    sizes: CANGURO_SIZES,
+    sizeTable: CANGURO_SIZE_TABLE,
+    priceWithPrint: CANGURO_PREMIUM_PRICE_WITH,
+    priceWithoutPrint: CANGURO_PREMIUM_PRICE_WITHOUT,
+  },
+
+  // ─────────────────────────── PANTALONES ───────────────────────────
+  {
+    id: "pantalon-deportivo",
+    name: "Pantalón Deportivo con Puño",
+    category: "Pantalones",
+    priceFrom: 690,
+    image: "/networkcapital/productos/pantalon-deportivo-negro-frente.jpg",
+    description:
+      "Pantalón de felpa con puños. Ideal para uniformes, clubes, gimnasios y colegios. Cintura elástica con cordón y bolsillos laterales.",
+    features: [
+      "Felpa 280g",
+      "Cintura elástica con cordón",
+      "Bolsillos laterales",
+      "Puños en ribb",
+    ],
+    colors: ["Azul", "Gris", "Negro"],
+    colorImages: {
+      "Azul": "/networkcapital/productos/pantalon-deportivo-azul-frente.jpg",
+      "Gris": "/networkcapital/productos/pantalon-deportivo-gris-frente.jpg",
+      "Negro": "/networkcapital/productos/pantalon-deportivo-negro-frente.jpg",
+    },
+    minQty: 10,
+    weight: "280g",
+    composition: "35% algodón · 65% poliéster",
+    sizes: PANTALON_SIZES,
+    sizeTable: PANTALON_SIZE_TABLE,
+    priceWithPrint: PANTALON_PRICE_WITH,
+    priceWithoutPrint: PANTALON_PRICE_WITHOUT,
+  },
+
+  // ─────────────────────────── ACCESORIOS ───────────────────────────
+  {
+    id: "gorro",
+    name: "Gorro",
+    category: "Accesorios",
+    priceFrom: 120,
+    image: "/networkcapital/productos/gorro-negro.jpg",
+    description:
+      "Gorro de lana. Suave, cómodo y con un calce perfecto. Ideal para el frío y para completar tu línea de invierno.",
+    features: [
+      "Lana",
+      "Suave y abrigado",
+      "Talle único",
+      "Ideal para bordado o DTF",
+    ],
+    colors: ["Amarillo", "Azul", "Negro", "Rojo"],
+    colorImages: {
+      "Amarillo": "/networkcapital/productos/gorro-amarillo.jpg",
+      "Azul": "/networkcapital/productos/gorro-azul.jpg",
+      "Negro": "/networkcapital/productos/gorro-negro.jpg",
+      "Rojo": "/networkcapital/productos/gorro-rojo.jpg",
+    },
+    minQty: 10,
+    weight: "80g",
+    composition: "100% acrílico",
+    sizes: ["Único"],
+    sizeTable: GORRO_SIZE_TABLE,
+    priceWithPrint: GORRO_PRICE_WITH,
+    priceWithoutPrint: GORRO_PRICE_WITHOUT,
+  },
+
+  // ─────────────────────────── NIÑOS ───────────────────────────
+  {
+    id: "remera-clasica-nino",
+    name: "Remera Clásica Niño",
+    category: "Niños",
+    priceFrom: 240,
+    image: "/networkcapital/productos/remera-clasica-nino-blanco-frente.jpg",
+    description:
+      "Remera clásica para niños. 100% algodón, cómoda y resistente. Ideal para uniformes, eventos y marcas infantiles.",
+    features: [
+      "100% algodón",
+      "Corte clásico",
+      "Colores variados",
+      "Ideal para serigrafía y DTF",
+    ],
+    colors: [
+      "Amarillo",
+      "Azul",
+      "Azul Francia",
+      "Blanco",
+      "Gris",
+      "Negro",
+      "Verde",
+    ],
+    colorImages: {
+      "Amarillo": "/networkcapital/productos/remera-clasica-nino-amarillo-frente.jpg",
+      "Azul": "/networkcapital/productos/remera-clasica-nino-azul-frente.jpg",
+      "Azul Francia": "/networkcapital/productos/remera-clasica-nino-azul-francia-frente.jpg",
+      "Blanco": "/networkcapital/productos/remera-clasica-nino-blanco-frente.jpg",
+      "Gris": "/networkcapital/productos/remera-clasica-nino-gris-frente.jpg",
+      "Negro": "/networkcapital/productos/remera-clasica-nino-negro-frente.jpg",
+      "Verde": "/networkcapital/productos/remera-clasica-nino-verde-frente.jpg",
+    },
+    minQty: 10,
+    weight: "160g",
+    composition: "100% algodón",
+    sizes: REMERA_SIZES,
+    sizeTable: REMERA_SIZE_TABLE,
+    priceWithPrint: REMERA_CLASICA_PRICE_WITH,
+    priceWithoutPrint: REMERA_CLASICA_PRICE_WITHOUT,
+  },
+  {
+    id: "canguro-nino",
+    name: "Canguro Niño",
+    category: "Niños",
+    priceFrom: 690,
+    image: "/networkcapital/productos/canguro-nino-negro-frente.jpg",
+    description:
+      "Canguro clásico para niños. Cálido, con bolsillo delantero y capucha. Ideal para uniformes y marcas infantiles.",
+    features: [
+      "Felpa suave",
+      "Capucha y bolsillo",
+      "Colores variados",
+      "Ideal para serigrafía y DTF",
+    ],
+    colors: [
+      "Amarillo",
+      "Arena",
+      "Azul Francia",
+      "Blanco",
+      "Naranja",
+      "Negro",
+      "Rojo",
+      "Rosa",
+      "Verde",
+    ],
+    colorImages: {
+      "Amarillo": "/networkcapital/productos/canguro-nino-amarillo-frente.jpg",
+      "Arena": "/networkcapital/productos/canguro-nino-arena-frente.jpg",
+      "Azul Francia": "/networkcapital/productos/canguro-nino-azul-francia-frente.jpg",
+      "Blanco": "/networkcapital/productos/canguro-nino-blanco-frente.jpg",
+      "Naranja": "/networkcapital/productos/canguro-nino-naranja-frente.jpg",
+      "Negro": "/networkcapital/productos/canguro-nino-negro-frente.jpg",
+      "Rojo": "/networkcapital/productos/canguro-nino-rojo-frente.jpg",
+      "Rosa": "/networkcapital/productos/canguro-nino-rosa-frente.jpg",
+      "Verde": "/networkcapital/productos/canguro-nino-verde-frente.jpg",
+    },
+    minQty: 10,
+    weight: "260g",
+    composition: "50% algodón · 50% poliéster",
+    sizes: NINO_CANGURO_SIZES,
+    sizeTable: NINO_CANGURO_SIZE_TABLE,
+    priceWithPrint: NINO_CANGURO_PRICE_WITH,
+    priceWithoutPrint: NINO_CANGURO_PRICE_WITHOUT,
   },
 ];

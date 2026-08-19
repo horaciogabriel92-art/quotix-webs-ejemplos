@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getCategories } from "@/lib/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://networkcapital.quotixos.com";
+  const baseUrl = "https://networkcapital.com.uy";
   const categories = getCategories();
 
   const categoryUrls = categories.map((cat) => ({

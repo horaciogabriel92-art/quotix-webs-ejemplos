@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/networkcapital",
       disallow: "/",
     },
-    sitemap: "https://networkcapital.quotixos.com/sitemap.xml",
+    sitemap: "https://networkcapital.com.uy/sitemap.xml",
   };
 }

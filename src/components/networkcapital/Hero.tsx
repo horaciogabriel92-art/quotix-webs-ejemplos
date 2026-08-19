@@ -74,7 +74,7 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                 <motion.div
                   animate={{ y: [0, 6, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-[115%] max-w-[540px]"
+                  className="w-full max-w-[540px]"
                 >
                   <Image
                     src="/networkcapital/flechas-home.png"

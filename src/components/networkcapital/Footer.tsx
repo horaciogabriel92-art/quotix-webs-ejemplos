@@ -118,12 +118,12 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-center md:text-left">
-            <p className="text-white/60 text-xs">
+          <div className="text-center md:text-left max-w-full">
+            <p className="text-white/60 text-xs break-words">
               © {new Date().getFullYear()} {BRAND.name} Co. Hecho en Uruguay.
               Todos los derechos reservados.
             </p>
-            <p className="text-white/40 text-[10px] mt-1">
+            <p className="text-white/40 text-[10px] mt-1 break-words">
               NETWORK CAPITAL SAS — RUT 219503030019
             </p>
           </div>

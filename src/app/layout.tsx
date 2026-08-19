@@ -156,7 +156,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name="ICBM" content="-34.9106, -56.1773" />
         <JsonLd data={[organizationSchema, localBusinessSchema]} />
       </head>
-      <body className={`${inter.variable} antialiased font-body`}>
+      <body className={`${inter.variable} antialiased font-body overflow-x-hidden`}>
         <MetaPixel />
         <CurrencyProvider>
           {children}

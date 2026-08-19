@@ -94,7 +94,7 @@ export default function NetworkCapitalPage() {
   const [entered, setEntered] = useState(false);
 
   return (
-    <main className={`bg-[#0B1628] min-h-screen ${!entered ? "overflow-hidden h-screen" : ""}`}>
+    <main className={`bg-[#0B1628] min-h-screen overflow-x-hidden ${!entered ? "overflow-hidden h-screen" : ""}`}>
       <JsonLd data={faqSchema} />
 
       {/* Hero as full-screen locked gate */}

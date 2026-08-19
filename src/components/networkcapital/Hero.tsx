@@ -174,6 +174,15 @@ export default function Hero({ isLocked, onEnterCatalog }: HeroProps) {
                 <div className="mt-3 w-12 h-0.5 bg-gradient-to-r from-transparent via-black/40 to-transparent rounded-full animate-pulse" />
               </motion.div>
 
+              {/* Razón social visible para bots y usuarios */}
+              <motion.p
+                className="relative z-10 mt-8 text-white/40 text-[10px] md:text-xs text-center break-words max-w-full px-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+              >
+                NETWORK CAPITAL SAS — RUT 219503030019
+              </motion.p>
 
             </div>
           </div>
